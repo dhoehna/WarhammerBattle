@@ -13,7 +13,10 @@ class StandardIO :
 public:
 	StandardIO();
 	StandardIO(StandardIO& rightSide);
-	~StandardIO();
+	virtual ~StandardIO();
+
+	StandardIO* Create();
+	StandardIO* Clone();
 
 	virtual int GetUserInput(std::string message, std::string validInputs);
 	virtual void ShowMessage(std::string message);

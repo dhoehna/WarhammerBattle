@@ -13,7 +13,10 @@ private:
 public:
 	IO(IIO* IOMechanizm);
 	IO(IO& rightSide);
-	~IO();
+	virtual ~IO();
+
+	virtual IO* Create(IIO* IOMechanizm);
+	virtual IO* Clone();
 
 	int GetUserResponse(std::string message, char* validResponces);
 	void ShowMessage(std::string message);

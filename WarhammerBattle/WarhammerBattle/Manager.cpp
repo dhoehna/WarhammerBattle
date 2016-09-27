@@ -5,6 +5,11 @@ Manager::Manager()
 {
 }
 
+Manager::Manager(Manager& rightSide)
+{
+
+}
+
 
 Manager::~Manager()
 {

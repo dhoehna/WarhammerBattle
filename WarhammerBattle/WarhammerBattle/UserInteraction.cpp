@@ -4,7 +4,7 @@
  @name basic constructor
  @description sets up the IO class.
 */
-IO::IO(IIO* IOMechanizm) : IOMechanizm(IOMechanizm);
+IO::IO(IIO* IOMechanizm) : IOMechanizm(IOMechanizm)
 {
 	/* left blank intentionally*/
 }
@@ -16,13 +16,18 @@ IO::IO(IIO* IOMechanizm) : IOMechanizm(IOMechanizm);
 */
 IO::IO(IO& rightSide)
 {
-	this->IOMechanizm = new IIO(rightSide.IOMechanizm);
+	
 }
 
 
 IO::~IO()
 {
 	/* nothing to do here*/
+}
+
+IO* IO::Create(IIO* IOMechanizm)
+{
+	return new IO(IOMechanizm);
 }
 
 int IO::GetUserResponse(std::string message, char* validResponses)
