@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+WarhammerBattle/WarhammerBattle/WarhammerBattle.vcxproj.filters
+*.vcxproj
+*.opensdf
+WarhammerBattle/WarhammerBattle.sdf
+WarhammerBattle/WarhammerBattle.sln
