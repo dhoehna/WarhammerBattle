@@ -19,7 +19,7 @@ public:
 	 @param validResponses the responses the program will accept.
 	 @return the returned answer in the form of an int. 
 	*/
-	virtual int GetResponse(std::string message, std::string validResponses) = 0;
+	virtual int GetUserInput(std::string message, std::string validResponses) = 0;
 
 	/*-------------------------------------------------------------------------
 	@name ShowMessage
@@ -40,12 +40,6 @@ public:
 		@return a pointer to a new IIO class.
 	*/
 	virtual IIO* Create() = 0;
-
-	/*-------------------------------------------------------------------------
-	 @name Create with IIO
-	 @Description makes a new IIO class with the passed in 
-	*/
-	virtual IIO* Create(IIO* IOMechanizm) = 0;
 
 	/*-------------------------------------------------------------------------
 	 @name clone

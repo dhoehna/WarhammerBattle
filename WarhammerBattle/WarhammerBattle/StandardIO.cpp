@@ -15,7 +15,17 @@ StandardIO::~StandardIO()
 {
 }
 
-int StandardIO::GetResponse(std::string message, std::string validResponses)
+StandardIO* StandardIO::Create()
+{
+	return new StandardIO();
+}
+
+StandardIO* StandardIO::Clone()
+{
+	return new StandardIO(*this);
+}
+
+int StandardIO::GetUserInput(std::string message, std::string validResponses)
 {
 	std::cout << message << std::endl;
 	return 1;
