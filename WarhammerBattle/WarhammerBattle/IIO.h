@@ -8,6 +8,10 @@
 	This uses the Virtual Constructor idiom
 	*/
 
+#ifndef IIO_H
+#define IIO_H
+
+
 #include <string>
 class IIO
 {
@@ -48,3 +52,5 @@ public:
 	*/
 	virtual IIO* Clone() = 0;
 };
+
+#endif

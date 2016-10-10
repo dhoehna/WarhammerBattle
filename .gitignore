@@ -45,3 +45,12 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.obj
+WarhammerBattle/Debug/WarhammerBattle.exe
+*.ilk
+WarhammerBattle/WarhammerBattle/Debug/WarhammerBattle.tlog/CL.command.1.tlog
+*.tlog
+*.log
+*.pdb
+*.db
+*.idb

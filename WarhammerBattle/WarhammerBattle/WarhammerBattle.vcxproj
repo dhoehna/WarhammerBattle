@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -19,13 +19,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -87,6 +87,7 @@
     <ClInclude Include="ByTheBooksHitCalculator.h" />
     <ClInclude Include="IHitCalculator.h" />
     <ClInclude Include="IIO.h" />
+    <ClInclude Include="IOFactory.h" />
     <ClInclude Include="IOptions.h" />
     <ClInclude Include="ISpecialRules.h" />
     <ClInclude Include="IStats.h" />
@@ -99,9 +100,11 @@
     <ClInclude Include="SpecialRulesFactory.h" />
     <ClInclude Include="Squad.h" />
     <ClInclude Include="StandardIO.h" />
+    <ClInclude Include="StandardIOTests.h" />
     <ClInclude Include="StatsFactory.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TestBase.h" />
     <ClInclude Include="Unit.h" />
     <ClInclude Include="IUnitCounts.h" />
     <ClInclude Include="UnitCountRangeFactory.h" />
@@ -114,7 +117,8 @@
     <ClCompile Include="BloodletterStats.cpp" />
     <ClCompile Include="BloodletterUnitCounts.cpp" />
     <ClCompile Include="ByTheBooksHitCalculator.cpp" />
-    <ClCompile Include="IO.cpp" />
+    <ClCompile Include="IOFactory.cpp" />
+    <ClCompile Include="MainTests.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="OptionsFactory.cpp" />
     <ClCompile Include="SequentialWoundCalculator.cpp" />
@@ -122,8 +126,8 @@
     <ClCompile Include="SpecialRulesFactory.cpp" />
     <ClCompile Include="Squad.cpp" />
     <ClCompile Include="StandardIO.cpp" />
+    <ClCompile Include="StandardIOTests.cpp" />
     <ClCompile Include="StatsFactory.cpp" />
-    <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Unit.cpp" />
     <ClCompile Include="UnitCountRangeFactory.cpp" />
     <ClCompile Include="UnitFactory.cpp" />

@@ -102,18 +102,21 @@
     <ClInclude Include="UserInteraction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TestBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StandardIOTests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IOFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="WarhammerBattle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="IO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BloodletterStats.cpp">
@@ -159,6 +162,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StandardIO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StandardIOTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IOFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
