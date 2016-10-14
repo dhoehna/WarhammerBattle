@@ -41,6 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Visual Leak Detector\lib\Win64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -77,61 +79,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="BattleEngine.h" />
-    <ClInclude Include="BloodletterOptions.h" />
-    <ClInclude Include="BloodletterSpecialRules.h" />
-    <ClInclude Include="BloodletterStats.h" />
-    <ClInclude Include="BloodletterUnitCounts.h" />
-    <ClInclude Include="ByTheBooksHitCalculator.h" />
-    <ClInclude Include="IHitCalculator.h" />
-    <ClInclude Include="IIO.h" />
-    <ClInclude Include="IOFactory.h" />
-    <ClInclude Include="IOptions.h" />
-    <ClInclude Include="ISpecialRules.h" />
-    <ClInclude Include="IStats.h" />
-    <ClInclude Include="IWoundCalculator.h" />
-    <ClInclude Include="IWoundInflictor.h" />
-    <ClInclude Include="Manager.h" />
-    <ClInclude Include="OptionsFactory.h" />
-    <ClInclude Include="SequentialWoundCalculator.h" />
-    <ClInclude Include="SequentialWoundInflictor.h" />
-    <ClInclude Include="SpecialRulesFactory.h" />
-    <ClInclude Include="Squad.h" />
-    <ClInclude Include="StandardIO.h" />
-    <ClInclude Include="StandardIOTests.h" />
-    <ClInclude Include="StatsFactory.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
-    <ClInclude Include="TestBase.h" />
-    <ClInclude Include="Unit.h" />
-    <ClInclude Include="IUnitCounts.h" />
-    <ClInclude Include="UnitCountRangeFactory.h" />
-    <ClInclude Include="UnitFactory.h" />
-    <ClInclude Include="UserInteraction.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="BloodletterOptions.cpp" />
-    <ClCompile Include="BloodletterSpecialRules.cpp" />
-    <ClCompile Include="BloodletterStats.cpp" />
-    <ClCompile Include="BloodletterUnitCounts.cpp" />
-    <ClCompile Include="ByTheBooksHitCalculator.cpp" />
-    <ClCompile Include="IOFactory.cpp" />
-    <ClCompile Include="MainTests.cpp" />
-    <ClCompile Include="Manager.cpp" />
-    <ClCompile Include="OptionsFactory.cpp" />
-    <ClCompile Include="SequentialWoundCalculator.cpp" />
-    <ClCompile Include="SequentialWoundInflictor.cpp" />
-    <ClCompile Include="SpecialRulesFactory.cpp" />
-    <ClCompile Include="Squad.cpp" />
-    <ClCompile Include="StandardIO.cpp" />
-    <ClCompile Include="StandardIOTests.cpp" />
-    <ClCompile Include="StatsFactory.cpp" />
-    <ClCompile Include="Unit.cpp" />
-    <ClCompile Include="UnitCountRangeFactory.cpp" />
-    <ClCompile Include="UnitFactory.cpp" />
-    <ClCompile Include="WarhammerBattle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
