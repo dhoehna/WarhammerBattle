@@ -80,6 +80,15 @@
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BattleEngine.cpp" />
+    <ClCompile Include="BloodLetter.cpp" />
+    <ClCompile Include="WarhammerBattle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BattleEngine.h" />
+    <ClInclude Include="BloodLetter.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
