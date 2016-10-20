@@ -14,6 +14,7 @@ public:
 	int getStrength();
 	int getToughness();
 	int getSave();
+	int getInitiative();
 
 private:
 	int weaponSkill;
@@ -24,6 +25,7 @@ private:
 	int wounds;
 	int save;
 	int leaderShip;
+	int initiative;
 
 	int numberOfWounds;
 	bool isDead;

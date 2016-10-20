@@ -46,6 +46,11 @@ int BloodLetter::getSave()
 	return save;
 }
 
+int BloodLetter::getInitiative()
+{
+	return initiative;
+}
+
 void BloodLetter::AllocateWounds(int numberOfUnSavedWounds)
 {
 	int woundCounter = 0;
@@ -72,4 +77,6 @@ void BloodLetter::Initilize()
 	attacks = 1;
 	wounds = 1;
 	save = 5;
+	leaderShip = 9;
+	initiative = 5;
 }
