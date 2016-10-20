@@ -15,6 +15,7 @@ public:
 	int getToughness();
 	int getSave();
 	int getInitiative();
+	int getAttacks();
 
 private:
 	int weaponSkill;

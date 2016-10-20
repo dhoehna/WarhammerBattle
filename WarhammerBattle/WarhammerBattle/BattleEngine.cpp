@@ -65,8 +65,8 @@ int BattleEngine::Battle(BloodLetter attacker, BloodLetter defender)
 		/* Ugh.  This whole thing can be moved to a different method.  I just don't know what to call it */
 		if (attackersInitiave == defendersInitiave) //both attack at the same time
 		{
-			int numberOfWoundsAgainstDefender = GetWoundsInflicted(attacker.getWeaponSkill(), defender.getWeaponSkill(), attacker.getStrength(), defender.getToughness(), defender.getSave());
-			int numberOfWoundsAgainstAttacker = GetWoundsInflicted(defender.getWeaponSkill(), attacker.getWeaponSkill(), defender.getStrength(), attacker.getToughness(), attacker.getSave());
+			int numberOfWoundsAgainstDefender = GetWoundsInflicted(attacker.getWeaponSkill(), defender.getWeaponSkill(), attacker.getStrength(), defender.getToughness(), attacker.getAttacks(), defender.getSave());
+			int numberOfWoundsAgainstAttacker = GetWoundsInflicted(defender.getWeaponSkill(), attacker.getWeaponSkill(), defender.getStrength(), attacker.getToughness(), defender.getAttacks(), attacker.getSave());
 
 			defender.AllocateWounds(numberOfWoundsAgainstDefender);
 			attacker.AllocateWounds(numberOfWoundsAgainstAttacker);
@@ -76,14 +76,14 @@ int BattleEngine::Battle(BloodLetter attacker, BloodLetter defender)
 		}
 		else if (attackersInitiave > defendersInitiave) //attacker attackes first
 		{
-			int numberOfWoundsAgainstDefender = GetWoundsInflicted(attacker.getWeaponSkill(), defender.getWeaponSkill(), attacker.getStrength(), defender.getToughness(), defender.getSave());
+			int numberOfWoundsAgainstDefender = GetWoundsInflicted(attacker.getWeaponSkill(), defender.getWeaponSkill(), attacker.getStrength(), defender.getToughness(), attacker.getAttacks(), defender.getSave());
 			defender.AllocateWounds(numberOfWoundsAgainstDefender);
 
 			isDefenderDead = defender.getIsDead();
 
 			if (!isDefenderDead)
 			{
-				int numberOfWoundsAgainstAttacker = GetWoundsInflicted(defender.getWeaponSkill(), attacker.getWeaponSkill(), defender.getStrength(), attacker.getToughness(), attacker.getSave());
+				int numberOfWoundsAgainstAttacker = GetWoundsInflicted(defender.getWeaponSkill(), attacker.getWeaponSkill(), defender.getStrength(), attacker.getToughness(), defender.getAttacks(), attacker.getSave());
 				attacker.AllocateWounds(numberOfWoundsAgainstAttacker);
 				
 				isAttackerDead = attacker.getIsDead();
@@ -93,7 +93,7 @@ int BattleEngine::Battle(BloodLetter attacker, BloodLetter defender)
 		else //defender attackes first
 		{
 
-			int numberOfWoundsAgainstAttacker = GetWoundsInflicted(defender.getWeaponSkill(), attacker.getWeaponSkill(), defender.getStrength(), attacker.getToughness(), attacker.getSave());
+			int numberOfWoundsAgainstAttacker = GetWoundsInflicted(defender.getWeaponSkill(), attacker.getWeaponSkill(), defender.getStrength(), attacker.getToughness(), defender.getAttacks(), attacker.getSave());
 			attacker.AllocateWounds(numberOfWoundsAgainstAttacker);
 
 			isAttackerDead = attacker.getIsDead();
@@ -101,7 +101,7 @@ int BattleEngine::Battle(BloodLetter attacker, BloodLetter defender)
 
 			if (!isAttackerDead)
 			{
-				int numberOfWoundsAgainstDefender = GetWoundsInflicted(attacker.getWeaponSkill(), defender.getWeaponSkill(), attacker.getStrength(), defender.getToughness(), defender.getSave());
+				int numberOfWoundsAgainstDefender = GetWoundsInflicted(attacker.getWeaponSkill(), defender.getWeaponSkill(), attacker.getStrength(), defender.getToughness(), attacker.getAttacks(), defender.getSave());
 				defender.AllocateWounds(numberOfWoundsAgainstDefender);
 
 				isDefenderDead = defender.getIsDead();
@@ -128,6 +128,8 @@ int BattleEngine::Battle(BloodLetter attacker, BloodLetter defender)
 	}
 }
 
+
+
 /*-----------------------------------------------------------------------------
  @name GetWoundsInflicted
  @description Runs through the toHit, toWound, and toSave rolls to get the number of wounds to allocate
@@ -135,28 +137,46 @@ int BattleEngine::Battle(BloodLetter attacker, BloodLetter defender)
  @param defendersWeaponSkill the weapon skill of the defender, used to get the number of hits
  @param attackersStrength the strength of the attacker.  THis is used to get the number of wounds
  @param defendersToughness the toughness of the defender.  This is used to get the number of wounds
+ @param attackerAttacks the number of times the attacker attacks.  Used to get the number of hits.
  @param defenderSave the save value of the defender.  THis is used to see how manyu wounds the defender ignores.
  @return int representing the number of unsaved wounds the defender needs to take
 */
-int BattleEngine::GetWoundsInflicted(int attackersWeaponSKill, int defendersWeaponSkill, int attackersStrength, int defendersToughness, int defendersSave)
+int BattleEngine::GetWoundsInflicted(int attackersWeaponSKill, int defendersWeaponSkill, int attackersStrength, int defendersToughness, int attackerAttacks, int defendersSave)
 {
-	int numberOfWoundInflicted = 0;
+	int numberOfHits = 0;
 
-	int didAttackerHitDefender = numberDistributor->operator()(*numberGenerator);
-	if (didAttackerHitDefender >= toHit[attackersWeaponSKill - 1][defendersWeaponSkill - 1])
+	for (int attacks = 0; attacks < attackerAttacks; attacks++)
+	{
+		int didAttackerHitDefender = numberDistributor->operator()(*numberGenerator);
+		if (didAttackerHitDefender >= toHit[attackersWeaponSKill - 1][defendersWeaponSkill - 1])
+		{
+			numberOfHits++;
+		}
+	}
+
+	int numberOfWounds = 0;
+
+	for (int attack = 0; attack < numberOfHits; attack++)
 	{
 		int didAttackWound = numberDistributor->operator()(*numberGenerator);
 		if (didAttackWound >= toWound[attackersStrength - 1][defendersToughness - 1])
 		{
-			int didDefenderSave = numberDistributor->operator()(*numberGenerator);
-			if (didDefenderSave >= defendersSave)
-			{
-				numberOfWoundInflicted = 1;
-			}
+			numberOfWounds++;
 		}
 	}
 
-	return numberOfWoundInflicted;
+	int numberOfUnsavedWounds = numberOfWounds;
+
+	for (int wound = 0; wound < numberOfWounds; wound++)
+	{
+		int didDefenderSave = numberDistributor->operator()(*numberGenerator);
+		if (didDefenderSave >= defendersSave)
+		{
+			numberOfUnsavedWounds--;
+		}
+	}
+
+	return numberOfUnsavedWounds;
 }
 
 

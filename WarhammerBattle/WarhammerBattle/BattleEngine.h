@@ -100,9 +100,10 @@ private:
 	 @param defendersWeaponSkill the weapon skill of the defender
 	 @param attackersStrength the strength of the attacker
 	 @param defendersToughness the toughness of the defender
+	 @param attackerAttacks the number of attacks the attacker has
 	 @param defendersSave the save of the defender.
 	*/
-	int GetWoundsInflicted(int attackersWeaponSkill, int defendersWeaponSkill, int attackersStrength, int defendersToughness, int defendersSave);
+	int GetWoundsInflicted(int attackersWeaponSkill, int defendersWeaponSkill, int attackersStrength, int defendersToughness,int attackerAttacks, int defendersSave);
 
 };
 

@@ -15,7 +15,7 @@ int main(int argc, char* argv)
 	int defenderWonCounter = 0;
 	int tieCounter = 0;
 
-	while (counter < 1000)
+	while (counter < 100000)
 	{
 		int winner = engine.Battle(first, second);
 
