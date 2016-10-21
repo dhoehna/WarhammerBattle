@@ -83,12 +83,16 @@
   <ItemGroup>
     <ClCompile Include="BattleEngine.cpp" />
     <ClCompile Include="BloodLetter.cpp" />
+    <ClCompile Include="BloodLetterStats.cpp" />
+    <ClCompile Include="Stats.cpp" />
     <ClCompile Include="Unit.cpp" />
     <ClCompile Include="WarhammerBattle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BattleEngine.h" />
     <ClInclude Include="BloodLetter.h" />
+    <ClInclude Include="BloodLetterStats.h" />
+    <ClInclude Include="Stats.h" />
     <ClInclude Include="Unit.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

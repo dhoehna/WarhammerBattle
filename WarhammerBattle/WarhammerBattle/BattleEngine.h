@@ -14,18 +14,19 @@
 #include "BloodLetter.h"
 #include <time.h> 
 #include <random>
+#include "Unit.h"
 class BattleEngine
 {
 public:
 
 	/*----------------------------------------------------------------------------
-	 @name default constructor
+	 @name default ructor
 	 @description makes a new BattleEngine
 	*/
 	BattleEngine();
 
 	/*----------------------------------------------------------------------------
-	 @name Copy constructor
+	 @name Copy ructor
 	 @description make a copy of the passed in BattleEngine
 	 @param rightSide the BattleEngine to copy
 	*/
@@ -44,7 +45,7 @@ public:
 	 @param defender the defender
 	 @return an int representation of who won.
 	*/
-	int Battle(BloodLetter attacker, BloodLetter defender);
+	int Battle( Unit* attacker,  Unit* defender);
 
 	enum { TIE, ATTACKER, DEFENDER }; //represents who won in the battle.
 

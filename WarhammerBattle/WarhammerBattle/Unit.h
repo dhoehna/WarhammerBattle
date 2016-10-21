@@ -1,13 +1,22 @@
-#pragma once
+#ifndef UNIT_H
+#define UNIT_H
+#include "Stats.h"
 class Unit
 {
 public:
-	Unit();
+	 Stats * stats; //Don't edit this yet.  Please don't edit it.  Just wait until the class is more defined.
+	 //THen I'll add consts' everywhere.
+
+	Unit(Stats* stats);
+	Unit( Unit&  rightSide);
 	~Unit();
 
-private:
+	void AllocateWounds(int numberOfUnSavedWounds);
+	bool IsDead();
 
+private:
 	int numberOfWounds;
 	bool isDead;
 };
 
+#endif

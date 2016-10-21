@@ -2,38 +2,50 @@
 #include "BattleEngine.h"
 #include <iostream>
 #include "vld.h"
+#include "Stats.h"
+#include "BloodLetterStats.h"
+#include "Unit.h"
 int main(int argc, char* argv)
 {
-	BloodLetter first;
-	BloodLetter second;
+	Stats* bloodLetterStats = new BloodLetterStats();
+	Unit* attacker = new Unit(bloodLetterStats);
 
-	BattleEngine engine;
+	Unit* defender = new Unit(*attacker);
 
-	int counter = 0;
 
-	int attackerWonCounter = 0;
-	int defenderWonCounter = 0;
-	int tieCounter = 0;
 
-	while (counter < 100000)
-	{
-		int winner = engine.Battle(first, second);
+	delete attacker;
+	delete defender;
+	//BloodLetter first;
+	//BloodLetter second;
 
-		if (BattleEngine::TIE == winner)
-		{
-			tieCounter++;
-		}
-		else if (BattleEngine::ATTACKER == winner)
-		{
-			attackerWonCounter++;
-		}
-		else
-		{
-			defenderWonCounter++;
-		}
-		counter++;
-	}
+	//BattleEngine engine;
 
-	std::cout << "Attacker won: " << attackerWonCounter << "\nDefender won: " << defenderWonCounter << "\ntie: " << tieCounter << std::endl;
+	//int counter = 0;
+
+	//int attackerWonCounter = 0;
+	//int defenderWonCounter = 0;
+	//int tieCounter = 0;
+
+	//while (counter < 100000)
+	//{
+	//	int winner = engine.Battle(first, second);
+
+	//	if (BattleEngine::TIE == winner)
+	//	{
+	//		tieCounter++;
+	//	}
+	//	else if (BattleEngine::ATTACKER == winner)
+	//	{
+	//		attackerWonCounter++;
+	//	}
+	//	else
+	//	{
+	//		defenderWonCounter++;
+	//	}
+	//	counter++;
+	//}
+
+	//std::cout << "Attacker won: " << attackerWonCounter << "\nDefender won: " << defenderWonCounter << "\ntie: " << tieCounter << std::endl;
 }
 

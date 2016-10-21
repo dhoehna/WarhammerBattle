@@ -1,25 +1,23 @@
-#ifndef ISTATS_H
-#define ISTATS_H
+#ifndef STATS_H
+#define STATS_H
 class Stats {
 
 public:
-	int WeaponSkill();
-	int BallisticSkill();
-	int Strength();
-	int Toughness();
-	int Attacks();
-	int Wounds();
-	int Save();
-	int LeaderShip();
-	int Initiative();
+	 int WeaponSkill();
+	 int BallisticSkill();
+	 int Strength();
+	 int Toughness();
+	 int Attacks();
+	 int Wounds();
+	 int Save();
+	 int LeaderShip();
+	 int Initiative();
 
-private:
+	virtual Stats* Create()  = 0;
+	virtual Stats* Clone()  = 0;
+	virtual ~Stats();
 
-	Stats();
-	Stats(Stats& rightSide);
-
-
-
+protected:
 	int weaponSkill;
 	int ballisticSkill;
 	int strength;

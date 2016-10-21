@@ -1,49 +1,53 @@
 #include "Stats.h"
 
+Stats::~Stats()
+{
+	//nothing to do here.
+}
 
-int Stats::WeaponSkill()
+ int Stats::WeaponSkill()
 {
 	return weaponSkill;
 }
 
 
-int Stats::BallisticSkill()
+ int Stats::BallisticSkill()
 {
 	return ballisticSkill;
 }
 
-int Stats::Strength()
+ int Stats::Strength()
 {
 	return strength;
 }
 
-int Stats::Toughness()
+ int Stats::Toughness()
 {
 	return toughness;
 }
 
-int Stats::Attacks()
+ int Stats::Attacks()
 {
 	return attacks;
 }
 
-int Stats::Wounds()
+ int Stats::Wounds()
 {
 	return wounds;
 }
 
 
-int Stats::Save()
+ int Stats::Save()
 {
 	return save;
 }
 
-int Stats::LeaderShip()
+ int Stats::LeaderShip()
 {
 	return leaderShip;
 }
 
-int Stats::Initiative()
+ int Stats::Initiative() 
 {
 	return initiative;
 }
