@@ -1,7 +1,5 @@
 #include "BloodLetterStats.h"
 
-
-
 BloodLetterStats::BloodLetterStats()
 {
 	Initilize();
@@ -17,7 +15,7 @@ BloodLetterStats::~BloodLetterStats()
 {
 }
 
-BloodLetterStats* BloodLetterStats::Create() 
+BloodLetterStats* BloodLetterStats::Create()
 {
 	return new BloodLetterStats();
 }

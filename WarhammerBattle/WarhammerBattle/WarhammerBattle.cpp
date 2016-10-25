@@ -1,21 +1,50 @@
-#include "BloodLetter.h"
 #include "BattleEngine.h"
 #include <iostream>
 #include "vld.h"
 #include "Stats.h"
 #include "BloodLetterStats.h"
 #include "Unit.h"
-int main(int argc, char* argv)
+#include <string>
+#include <algorithm>
+#include "BloodLetterStatsTester.h"
+#include "UnitTester.h"
+
+int main(int argc, char** argv)
 {
-	Stats* bloodLetterStats = new BloodLetterStats();
-	Unit* attacker = new Unit(bloodLetterStats);
+	bool shouldWeTest = false;
+	if (argc >= 2)
+	{
+		std::string test(argv[1]);
 
-	Unit* defender = new Unit(*attacker);
+		std::transform(test.begin(), test.end(), test.begin(), ::tolower);
+
+		if (test.compare("test") == 0)
+		{
+			shouldWeTest = true;
+		}
+	}
+
+	if (shouldWeTest)
+	{
+		BloodLetterStatsTester bloodletterStatsTester;
+
+		bloodletterStatsTester.RunAllTests();
+
+		UnitTester tester;
+
+		tester.RunAllTests();
+	}
+
+
+	//Stats* bloodLetterStats = new BloodLetterStats();
+	//Unit* attacker = new Unit(bloodLetterStats);
+
+	//Unit* defender = new Unit(*attacker);
 
 
 
-	delete attacker;
-	delete defender;
+	//delete attacker;
+	//delete defender;
 	//BloodLetter first;
 	//BloodLetter second;
 

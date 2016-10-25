@@ -82,18 +82,23 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BattleEngine.cpp" />
-    <ClCompile Include="BloodLetter.cpp" />
     <ClCompile Include="BloodLetterStats.cpp" />
+    <ClCompile Include="BloodLetterStatsTester.cpp" />
+    <ClCompile Include="DefaultStats.cpp" />
     <ClCompile Include="Stats.cpp" />
     <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="UnitTester.cpp" />
     <ClCompile Include="WarhammerBattle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BattleEngine.h" />
-    <ClInclude Include="BloodLetter.h" />
     <ClInclude Include="BloodLetterStats.h" />
+    <ClInclude Include="BloodLetterStatsTester.h" />
+    <ClInclude Include="DefaultStats.h" />
+    <ClInclude Include="ITestable.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="Unit.h" />
+    <ClInclude Include="UnitTester.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

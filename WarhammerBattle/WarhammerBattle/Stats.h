@@ -1,21 +1,24 @@
 #ifndef STATS_H
 #define STATS_H
-class Stats {
+#include "ITestable.h"
+
+class Stats : public ITestable {
 
 public:
-	 int WeaponSkill();
-	 int BallisticSkill();
-	 int Strength();
-	 int Toughness();
-	 int Attacks();
-	 int Wounds();
-	 int Save();
-	 int LeaderShip();
-	 int Initiative();
+	int WeaponSkill();
+	int BallisticSkill();
+	int Strength();
+	int Toughness();
+	int Attacks();
+	int Wounds();
+	int Save();
+	int LeaderShip();
+	int Initiative();
 
-	virtual Stats* Create()  = 0;
-	virtual Stats* Clone()  = 0;
+	virtual Stats* Create() = 0;
+	virtual Stats* Clone() = 0;
 	virtual ~Stats();
+	virtual bool operator==(ITestable& rightSide);
 
 protected:
 	int weaponSkill;

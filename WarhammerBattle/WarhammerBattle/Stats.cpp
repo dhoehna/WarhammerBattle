@@ -5,6 +5,11 @@ Stats::~Stats()
 	//nothing to do here.
 }
 
+bool Stats::operator==(ITestable& rightSide)
+{
+	return true;
+}
+
  int Stats::WeaponSkill()
 {
 	return weaponSkill;

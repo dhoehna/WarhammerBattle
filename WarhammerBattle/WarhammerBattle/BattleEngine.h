@@ -11,7 +11,6 @@
 
 #ifndef BATTLE_ENGINE_H
 #define BATTLE_ENGINE_H
-#include "BloodLetter.h"
 #include <time.h> 
 #include <random>
 #include "Unit.h"

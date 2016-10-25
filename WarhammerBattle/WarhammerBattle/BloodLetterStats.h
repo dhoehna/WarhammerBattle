@@ -5,11 +5,11 @@ class BloodLetterStats : public Stats
 {
 public:
 	BloodLetterStats();
-	BloodLetterStats(BloodLetterStats  & rightSide);
+	BloodLetterStats(BloodLetterStats& rightSide);
 	virtual ~BloodLetterStats();
 
-	BloodLetterStats* BloodLetterStats::Create() ;
-	BloodLetterStats* BloodLetterStats::Clone() ;
+	BloodLetterStats* BloodLetterStats::Create();
+	BloodLetterStats* BloodLetterStats::Clone();
 
 private:
 	void Initilize();
