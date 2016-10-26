@@ -50,8 +50,9 @@ public:
 
 private:
 
-	//Table to see if the attacker wounds the defender
+	//Table to see if the attacker hit the defender.
 	//Use it like this [attackersStrength][defendersToughness]
+	//Consult this once per attack of the attacker.
 	int toHit[10][10] = 
 	{
 		{4, 4, 5, 5, 5, 5, 5, 5, 5, 5},
@@ -66,8 +67,10 @@ private:
 		{3, 3, 3, 3, 3, 3, 3, 3, 3, 4}
 	};
 
-	//Represents the ToHit table.  Use it like this
+	//Represents the ToWound table.  Use it like this
 	//[AttackersWeaponSkill][defendersWeaponSkill]
+	//Used to see if a hit wounded the defender.
+	//COnsult this once per successful hit.
 	int toWound[10][10] = 
 	{
 		{4, 5, 6, 6, 7, 7, 7, 7, 7, 7},
