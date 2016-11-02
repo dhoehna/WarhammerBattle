@@ -18,6 +18,8 @@ void BloodLetterStatsTester::RunAllTests()
 	TestConstructor();
 	TestCreateMethod();
 	TestCloneMethod();
+	TestOutput();
+	TestEquality();
 }
 
 void BloodLetterStatsTester::TestConstructor()
@@ -59,4 +61,42 @@ void BloodLetterStatsTester::TestCloneMethod()
 
 	hi1 = nullptr;
 	hi2 = nullptr;
+}
+
+void BloodLetterStatsTester::TestOutput()
+{
+	std::cout << "Testing output" << std::endl;
+
+	Stats* hi1 = new BloodLetterStats();
+
+	std::cout << "Expect 5 5 4 3 1 4 4 7 5" << std::endl;
+	std::cout << "result " << (*hi1) << std::endl;
+
+	delete hi1;
+
+	hi1 = nullptr;
+}
+
+void BloodLetterStatsTester::TestEquality()
+{
+	std::cout << "Testing to make sure equality works" << std::endl;
+
+	Stats* hi1 = new BloodLetterStats();
+	Stats* hi2 = new BloodLetterStats();
+
+	std::cout << "Expect true" << std::endl;
+	std::cout << "Result " << ((*hi1) == (*hi2)) << std::endl;
+
+	Stats* hi3 = new DefaultStats();
+
+	std::cout << "Expect false" << std::endl;
+	std::cout << "Result " << ((*hi1) == (*hi3)) << std::endl;
+
+	delete hi1;
+	delete hi2;
+	delete hi3;
+
+	hi1 = nullptr;
+	hi2 = nullptr;
+	hi3 = nullptr;
 }

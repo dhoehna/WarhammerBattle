@@ -95,7 +95,6 @@
     <ClInclude Include="BloodLetterStats.h" />
     <ClInclude Include="BloodLetterStatsTester.h" />
     <ClInclude Include="DefaultStats.h" />
-    <ClInclude Include="ITestable.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="Unit.h" />
     <ClInclude Include="UnitTester.h" />

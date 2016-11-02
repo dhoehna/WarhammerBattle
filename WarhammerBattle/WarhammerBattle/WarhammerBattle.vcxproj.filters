@@ -65,8 +65,5 @@
     <ClInclude Include="UnitTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ITestable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

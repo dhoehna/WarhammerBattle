@@ -46,8 +46,15 @@ void UnitTester::TestConstructorStatsNull()
 	Unit hello1(hi1);
 	Unit* hello2 = new Unit(hi2);
 
-	//Will call stats::operation==
-	std::cout << (*(hello1.stats) == (*(hello2->stats))) << std::endl;
-
 	std::cout << "Expect 1 1 1 1 1 1 1 1 1 1 1" << std::endl;
+
+	delete hi1;
+	delete hi2;
+	delete hello2;
+
+	hi1 = nullptr;
+	hi2 = nullptr;
+	hello2 = nullptr;
+
+
 }

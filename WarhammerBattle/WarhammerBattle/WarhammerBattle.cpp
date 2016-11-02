@@ -27,11 +27,9 @@ int main(int argc, char** argv)
 	if (shouldWeTest)
 	{
 		BloodLetterStatsTester bloodletterStatsTester;
-
 		bloodletterStatsTester.RunAllTests();
 
 		UnitTester tester;
-
 		tester.RunAllTests();
 	}
 
