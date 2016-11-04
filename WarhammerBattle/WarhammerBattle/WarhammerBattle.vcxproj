@@ -86,6 +86,8 @@
     <ClCompile Include="BloodLetterStatsTester.cpp" />
     <ClCompile Include="DefaultStats.cpp" />
     <ClCompile Include="Stats.cpp" />
+    <ClCompile Include="StatsFactory.cpp" />
+    <ClCompile Include="StatsFactoryTester.cpp" />
     <ClCompile Include="Unit.cpp" />
     <ClCompile Include="UnitTester.cpp" />
     <ClCompile Include="WarhammerBattle.cpp" />
@@ -94,8 +96,11 @@
     <ClInclude Include="BattleEngine.h" />
     <ClInclude Include="BloodLetterStats.h" />
     <ClInclude Include="BloodLetterStatsTester.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="DefaultStats.h" />
     <ClInclude Include="Stats.h" />
+    <ClInclude Include="StatsFactory.h" />
+    <ClInclude Include="StatsFactoryTester.h" />
     <ClInclude Include="Unit.h" />
     <ClInclude Include="UnitTester.h" />
   </ItemGroup>

@@ -8,6 +8,7 @@
 #include <algorithm>
 #include "BloodLetterStatsTester.h"
 #include "UnitTester.h"
+#include "StatsFactoryTester.h"
 
 int main(int argc, char** argv)
 {
@@ -31,6 +32,10 @@ int main(int argc, char** argv)
 
 		UnitTester tester;
 		tester.RunAllTests();
+
+		StatsFactoryTester statsFactoryTester;
+		statsFactoryTester.RunAllTests();
+
 	}
 
 
