@@ -10,7 +10,6 @@ BloodLetterStatsTester::BloodLetterStatsTester()
 
 BloodLetterStatsTester::~BloodLetterStatsTester()
 {
-	std::cout << "Done testing Bloodletter stats" << std::endl;
 }
 
 void BloodLetterStatsTester::RunAllTests()
@@ -20,6 +19,7 @@ void BloodLetterStatsTester::RunAllTests()
 	TestCloneMethod();
 	TestOutput();
 	TestEquality();
+	std::cout << "Done testing Bloodletter stats" << std::endl;
 }
 
 void BloodLetterStatsTester::TestConstructor()

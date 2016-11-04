@@ -10,7 +10,7 @@
 	ANY ASSUMPTIONS?
 	If stats is null in the constructor, the unit will be given default stats (all 1)
 
-	HOW DOES THIS CLASS HANDLE THE DI'S?
+	HOW DOES THIS CLASS HANDLE THE PASSED IN STUFF TO THE CONSTRUCTORS?
 	This class will free up the stats that was passed in.
 */
 
@@ -60,16 +60,22 @@ Unit::~Unit()
 	stats = nullptr;
 }
 
+std::ostream& operator<<(std::ostream& os, const Unit& rightSide)
+{
+	os << (*rightSide.stats);
+	return os;
+}
+
 /*-----------------------------------------------------------------------------
  @name AllocateWounds
  @description gives this unit a number of wounds equal to numberOfUnSavedWounds
  @sideeffect this will turn isDead to true if the unit has reached the max number of unsaved wounds.
  @param numberOfUnsavedWounds the number of unsaved wounds to give to the unit
+ @return the number of wounds that still need to be allocated
 */
-void Unit::AllocateWounds(int numberOfUnSavedWounds)
+int Unit::AllocateWounds(int numberOfUnSavedWounds)
 {
-	int woundCounter = 0;
-	while (!isDead && woundCounter < numberOfUnSavedWounds)
+	while (!isDead && numberOfUnSavedWounds > 0)
 	{
 		numberOfUnsavedWounds++;
 
@@ -78,8 +84,12 @@ void Unit::AllocateWounds(int numberOfUnSavedWounds)
 			isDead = true;
 		}
 
-		woundCounter++;
+		numberOfUnSavedWounds--;
 	}
+
+	int tempNumberOfUnsavedWounds = numberOfUnsavedWounds;
+
+	return tempNumberOfUnsavedWounds;
 }
 
 /*-----------------------------------------------------------------------------
