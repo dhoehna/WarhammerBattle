@@ -17,9 +17,9 @@ StatsFactory::StatsFactory()
 */
 StatsFactory::StatsFactory(StatsFactory& rightSide)
 {
-	for (std::map<std::string, Stats*>::const_iterator it = stats.begin(); it != stats.end(); ++it)
+	for (auto &foo : rightSide.stats)
 	{
-		stats[(*it).first] = (*it).second->Clone();
+		stats[foo.first] = foo.second->Clone();
 	}
 }
 
@@ -30,8 +30,8 @@ StatsFactory::StatsFactory(StatsFactory& rightSide)
 */
 StatsFactory::~StatsFactory()
 {
-	for (std::map<std::string, Stats*>::const_iterator it = stats.begin(); it != stats.end(); ++it)
+	for (auto &foo : stats)
 	{
-		delete  ((*it).second);
+		delete foo.second;
 	}
 }
