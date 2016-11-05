@@ -16,6 +16,11 @@ void StatsFactoryTester::RunAllTests()
 {
 	TestConstructor();
 	TestCopyConstructor();
+	std::cout << std::endl;
+	TestGetStatsPassingInNonExistingStats();
+	std::cout << std::endl;
+	TestGetStatsPassingExistingStats();
+	std::cout << std::endl;
 
 	std::cout << "Done testing stats factory" << std::endl;
 }
@@ -39,4 +44,35 @@ void StatsFactoryTester::TestCopyConstructor()
 
 	StatsFactory hi1;
 	StatsFactory hi2(hi1);
+}
+
+void StatsFactoryTester::TestGetStatsPassingExistingStats()
+{
+	std::cout << "Testing Get Stats and passing in Bloodletter which exists" << std::endl;
+
+	StatsFactory hi1;
+
+	Stats* YOLO = hi1.GetStats(BLOODLETTER);
+
+	std::cout << "Expect 5 5 4 3 1 4 4 7 5" << std::endl;
+	std::cout << "result " << (*YOLO) << std::endl;
+
+	delete YOLO;
+	YOLO = nullptr;
+}
+
+void StatsFactoryTester::TestGetStatsPassingInNonExistingStats()
+{
+	std::cout << "Testing get stats and passing in a non-existing stats" << std::endl;
+
+	StatsFactory hi1;
+
+	Stats* YOLO = hi1.GetStats("BLARG");
+
+	std::cout << "Expect 1 1 1 1 1 1 1 1 1" << std::endl;
+	std::cout << "Result " << (*YOLO) << std::endl;
+
+	delete YOLO;
+
+	YOLO = nullptr;
 }

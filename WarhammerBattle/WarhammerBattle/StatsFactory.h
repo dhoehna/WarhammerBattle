@@ -15,6 +15,7 @@
 #include "Stats.h"
 #include <string>
 #include "BloodLetterStats.h"
+#include "DefaultStats.h"
 #include "Constants.h"
 class StatsFactory
 {
@@ -37,6 +38,14 @@ public:
 	 @description destroys this factory
 	*/
 	virtual ~StatsFactory();
+
+	/*----------------------------------------------------------------------------
+	 @name GetStats
+	 @description Makes a new stats given statsName
+	 @param statsName the stats to make
+	 @return a pointer to the newly created Stats.
+	*/
+	Stats* GetStats(std::string statsName);
 
 private:
 	std::map<std::string, Stats*> stats;

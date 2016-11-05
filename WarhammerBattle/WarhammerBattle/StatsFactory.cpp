@@ -8,6 +8,7 @@
 StatsFactory::StatsFactory()
 {
 	stats[BLOODLETTER] = new BloodLetterStats();
+	stats[DEFAULT] = new DefaultStats();
 }
 
 /*-----------------------------------------------------------------------------
@@ -33,5 +34,26 @@ StatsFactory::~StatsFactory()
 	for (auto &foo : stats)
 	{
 		delete foo.second;
+	}
+}
+
+
+/*-----------------------------------------------------------------------------
+ @name GetStats
+ @description Gets the specified stats.
+ @param statsName the name of the stats to get
+ @return a pointer to the newly created Stats.  Returns default if the stats type does not exist.
+*/
+Stats* StatsFactory::GetStats(std::string statsName)
+{
+	std::map<std::string, Stats*>::iterator it = stats.find(statsName);
+
+	if (it != stats.end())
+	{
+		return stats[statsName]->Create();
+	}
+	else
+	{
+		return stats[DEFAULT]->Create();
 	}
 }

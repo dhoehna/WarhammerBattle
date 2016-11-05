@@ -12,6 +12,8 @@ public:
 private:
 	void TestConstructor();
 	void TestCopyConstructor();
+	void TestGetStatsPassingExistingStats();
+	void TestGetStatsPassingInNonExistingStats();
 };
 
 #endif
