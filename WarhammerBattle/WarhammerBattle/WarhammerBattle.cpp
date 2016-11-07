@@ -2,10 +2,12 @@
 #include <iostream>
 #include "vld.h"
 #include "Stats.h"
-#include "BloodLetterStats.h"
 #include "Unit.h"
+#include "StatsFactory.h"
 #include <string>
 #include <algorithm>
+
+//Tests
 #include "BloodLetterStatsTester.h"
 #include "UnitTester.h"
 #include "StatsFactoryTester.h"
@@ -25,59 +27,68 @@ int main(int argc, char** argv)
 		}
 	}
 
-	if (shouldWeTest)
+	//if (shouldWeTest)
+	//{
+	//	BloodLetterStatsTester bloodletterStatsTester;
+	//	bloodletterStatsTester.RunAllTests();
+
+	//	UnitTester tester;
+	//	tester.RunAllTests();
+
+	//	StatsFactoryTester statsFactoryTester;
+	//	statsFactoryTester.RunAllTests();
+
+	//}
+
+
+	StatsFactory statsFactory;
+
+	BattleEngine battleEngine;
+
+
+	int counter = 0;
+
+	int attackerWonCounter = 0;
+	int defenderWonCounter = 0;
+	int tieCounter = 0;
+
+	Stats* bloodLetterStats = statsFactory.GetStats(BLOODLETTER);
+	Stats* secondStats = bloodLetterStats->Clone();
+
+	Unit attacker(bloodLetterStats);
+	Unit defender(secondStats);
+	int totalRounds = 100000;
+
+	while (counter < totalRounds)
 	{
-		BloodLetterStatsTester bloodletterStatsTester;
-		bloodletterStatsTester.RunAllTests();
 
-		UnitTester tester;
-		tester.RunAllTests();
+		int winner = battleEngine.Battle(attacker, defender);
 
-		StatsFactoryTester statsFactoryTester;
-		statsFactoryTester.RunAllTests();
+		if (BattleEngine::TIE == winner)
+		{
+			tieCounter++;
+		}
+		else if (BattleEngine::ATTACKER == winner)
+		{
+			attackerWonCounter++;
+		}
+		else
+		{
+			defenderWonCounter++;
+		}
+		counter++;
 
+		attacker.Reset();
+		defender.Reset();
 	}
 
 
-	//Stats* bloodLetterStats = new BloodLetterStats();
-	//Unit* attacker = new Unit(bloodLetterStats);
 
-	//Unit* defender = new Unit(*attacker);
+	double percentAttackerWon = 100 * (((double)attackerWonCounter) / ((double)totalRounds));
+	double percentDefenderWon = 100 * (((double)defenderWonCounter) / ((double)totalRounds));
+	double percentTie = 100 - (percentAttackerWon + percentDefenderWon);
 
 
-
-	//delete attacker;
-	//delete defender;
-	//BloodLetter first;
-	//BloodLetter second;
-
-	//BattleEngine engine;
-
-	//int counter = 0;
-
-	//int attackerWonCounter = 0;
-	//int defenderWonCounter = 0;
-	//int tieCounter = 0;
-
-	//while (counter < 100000)
-	//{
-	//	int winner = engine.Battle(first, second);
-
-	//	if (BattleEngine::TIE == winner)
-	//	{
-	//		tieCounter++;
-	//	}
-	//	else if (BattleEngine::ATTACKER == winner)
-	//	{
-	//		attackerWonCounter++;
-	//	}
-	//	else
-	//	{
-	//		defenderWonCounter++;
-	//	}
-	//	counter++;
-	//}
-
-	//std::cout << "Attacker won: " << attackerWonCounter << "\nDefender won: " << defenderWonCounter << "\ntie: " << tieCounter << std::endl;
+	std::cout << "Attacker won: " << percentAttackerWon << "\nDefender won: " << percentDefenderWon << "\ntie: " << percentTie << std::endl;
 }
 

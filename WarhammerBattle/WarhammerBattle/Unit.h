@@ -54,6 +54,12 @@ public:
 	 @return true if the unit is dead, otherwise false.
 	*/
 	bool IsDead();
+	
+	/*----------------------------------------------------------------------------
+	 @name Reset
+	 @description resets this  unit to being alive.
+	*/
+	void Reset();
 
 private:
 	int numberOfUnsavedWounds;

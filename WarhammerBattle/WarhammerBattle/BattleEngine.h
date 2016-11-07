@@ -44,7 +44,7 @@ public:
 	 @param defender the defender
 	 @return an int representation of who won.
 	*/
-	int Battle( Unit* attacker,  Unit* defender);
+	int Battle( Unit& attacker,  Unit& defender);
 
 	enum { TIE, ATTACKER, DEFENDER }; //represents who won in the battle.
 

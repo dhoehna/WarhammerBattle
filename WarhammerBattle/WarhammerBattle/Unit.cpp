@@ -102,3 +102,13 @@ bool Unit::IsDead()
 {
 	return isDead;
 }
+
+/*-----------------------------------------------------------------------------
+ @name Reset
+ @description make the unit alive again.
+*/
+void Unit::Reset()
+{
+	isDead = false;
+	numberOfUnsavedWounds = 0;
+}

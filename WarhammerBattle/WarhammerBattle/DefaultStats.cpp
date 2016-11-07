@@ -37,5 +37,5 @@ void DefaultStats::Initilize()
 	initiative = 1;
 	attacks = 1;
 	leaderShip = 1;
-	save = 1;
+	save = 6;
 }

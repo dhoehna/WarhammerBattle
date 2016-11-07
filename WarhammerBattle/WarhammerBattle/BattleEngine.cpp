@@ -50,7 +50,7 @@ BattleEngine::~BattleEngine()
  @param defender The defender
  @return an int representing who won. Either TIE, ATTACKER, or DEFENDER
 */
-int BattleEngine::Battle( Unit* attacker, Unit* defender)
+int BattleEngine::Battle(Unit& attacker, Unit& defender)
 {
 
 	bool isAttackerDead = false;
@@ -59,52 +59,52 @@ int BattleEngine::Battle( Unit* attacker, Unit* defender)
 
 	while (!isAttackerDead && !isDefenderDead)
 	{
-		int attackersInitiave = attacker->stats->Initiative();
-		int defendersInitiave = defender->stats->Initiative();
+		int attackersInitiave = attacker.stats->Initiative();
+		int defendersInitiave = defender.stats->Initiative();
 
 		/* Ugh.  This whole thing can be moved to a different method.  I just don't know what to call it */
 		if (attackersInitiave == defendersInitiave) //both attack at the same time
 		{
-			int numberOfWoundsAgainstDefender = GetWoundsInflicted(attacker->stats->WeaponSkill(), defender->stats->WeaponSkill(), attacker->stats->Strength(), defender->stats->Toughness(), attacker->stats->Attacks(), defender->stats->Save());
-			int numberOfWoundsAgainstAttacker = GetWoundsInflicted(defender->stats->WeaponSkill(), attacker->stats->WeaponSkill(), defender->stats->Strength(), attacker->stats->Toughness(), defender->stats->Attacks(), attacker->stats->Save());
+			int numberOfWoundsAgainstDefender = GetWoundsInflicted(attacker.stats->WeaponSkill(), defender.stats->WeaponSkill(), attacker.stats->Strength(), defender.stats->Toughness(), attacker.stats->Attacks(), defender.stats->Save());
+			int numberOfWoundsAgainstAttacker = GetWoundsInflicted(defender.stats->WeaponSkill(), attacker.stats->WeaponSkill(), defender.stats->Strength(), attacker.stats->Toughness(), defender.stats->Attacks(), attacker.stats->Save());
 
-			defender->AllocateWounds(numberOfWoundsAgainstDefender);
-			attacker->AllocateWounds(numberOfWoundsAgainstAttacker);
+			defender.AllocateWounds(numberOfWoundsAgainstDefender);
+			attacker.AllocateWounds(numberOfWoundsAgainstAttacker);
 
-			isAttackerDead = attacker->IsDead();
-			isDefenderDead = defender->IsDead();
+			isAttackerDead = attacker.IsDead();
+			isDefenderDead = defender.IsDead();
 		}
 		else if (attackersInitiave > defendersInitiave) //attacker attackes first
 		{
-			int numberOfWoundsAgainstDefender = GetWoundsInflicted(attacker->stats->WeaponSkill(), defender->stats->WeaponSkill(), attacker->stats->Strength(), defender->stats->Toughness(), attacker->stats->Attacks(), defender->stats->Save());
-			defender->AllocateWounds(numberOfWoundsAgainstDefender);
+			int numberOfWoundsAgainstDefender = GetWoundsInflicted(attacker.stats->WeaponSkill(), defender.stats->WeaponSkill(), attacker.stats->Strength(), defender.stats->Toughness(), attacker.stats->Attacks(), defender.stats->Save());
+			defender.AllocateWounds(numberOfWoundsAgainstDefender);
 
-			isDefenderDead = defender->IsDead();
+			isDefenderDead = defender.IsDead();
 
 			if (!isDefenderDead)
 			{
-				int numberOfWoundsAgainstAttacker = GetWoundsInflicted(defender->stats->WeaponSkill(), attacker->stats->WeaponSkill(), defender->stats->Strength(), attacker->stats->Toughness(), defender->stats->Attacks(), attacker->stats->Save());
-				attacker->AllocateWounds(numberOfWoundsAgainstAttacker);
+				int numberOfWoundsAgainstAttacker = GetWoundsInflicted(defender.stats->WeaponSkill(), attacker.stats->WeaponSkill(), defender.stats->Strength(), attacker.stats->Toughness(), defender.stats->Attacks(), attacker.stats->Save());
+				attacker.AllocateWounds(numberOfWoundsAgainstAttacker);
 				
-				isAttackerDead = attacker->IsDead();
+				isAttackerDead = attacker.IsDead();
 			}
 
 		}
 		else //defender attackes first
 		{
 
-			int numberOfWoundsAgainstAttacker = GetWoundsInflicted(defender->stats->WeaponSkill(), attacker->stats->WeaponSkill(), defender->stats->Strength(), attacker->stats->Toughness(), defender->stats->Attacks(), attacker->stats->Save());
-			attacker->AllocateWounds(numberOfWoundsAgainstAttacker);
+			int numberOfWoundsAgainstAttacker = GetWoundsInflicted(defender.stats->WeaponSkill(), attacker.stats->WeaponSkill(), defender.stats->Strength(), attacker.stats->Toughness(), defender.stats->Attacks(), attacker.stats->Save());
+			attacker.AllocateWounds(numberOfWoundsAgainstAttacker);
 
-			isAttackerDead = attacker->IsDead();
+			isAttackerDead = attacker.IsDead();
 
 
 			if (!isAttackerDead)
 			{
-				int numberOfWoundsAgainstDefender = GetWoundsInflicted(attacker->stats->WeaponSkill(), defender->stats->WeaponSkill(), attacker->stats->Strength(), defender->stats->Toughness(), attacker->stats->Attacks(), defender->stats->Save());
-				defender->AllocateWounds(numberOfWoundsAgainstDefender);
+				int numberOfWoundsAgainstDefender = GetWoundsInflicted(attacker.stats->WeaponSkill(), defender.stats->WeaponSkill(), attacker.stats->Strength(), defender.stats->Toughness(), attacker.stats->Attacks(), defender.stats->Save());
+				defender.AllocateWounds(numberOfWoundsAgainstDefender);
 
-				isDefenderDead = defender->IsDead();
+				isDefenderDead = defender.IsDead();
 			}
 		}
 
