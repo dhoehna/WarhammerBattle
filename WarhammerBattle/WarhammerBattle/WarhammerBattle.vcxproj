@@ -85,6 +85,8 @@
     <ClCompile Include="BloodLetterStats.cpp" />
     <ClCompile Include="BloodLetterStatsTester.cpp" />
     <ClCompile Include="DefaultStats.cpp" />
+    <ClCompile Include="Squad.cpp" />
+    <ClCompile Include="SquadTester.cpp" />
     <ClCompile Include="Stats.cpp" />
     <ClCompile Include="StatsFactory.cpp" />
     <ClCompile Include="StatsFactoryTester.cpp" />
@@ -98,6 +100,8 @@
     <ClInclude Include="BloodLetterStatsTester.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="DefaultStats.h" />
+    <ClInclude Include="Squad.h" />
+    <ClInclude Include="SquadTester.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="StatsFactory.h" />
     <ClInclude Include="StatsFactoryTester.h" />

@@ -16,10 +16,6 @@ public:
 	*/
 	friend std::ostream& operator<<(std::ostream& os, const Unit& rightSide);
 
-
-	 Stats * stats; //Don't edit this yet.  Please don't edit it.  Just wait until the class is more defined.
-	 //THen I'll add consts' everywhere.
-
 	 /*---------------------------------------------------------------------------
 	  @name constructor
 	  @description makes a ne unit object with the passed in stats.
@@ -61,9 +57,20 @@ public:
 	*/
 	void Reset();
 
+	int WeaponSkill();
+	int BallisticSkill();
+	int Strength();
+	int Toughness();
+	int Attacks();
+	int Wounds();
+	int Save();
+	int LeaderShip();
+	int Initiative();
+
 private:
 	int numberOfUnsavedWounds;
 	bool isDead;
+	Stats* stats;
 };
 
 #endif

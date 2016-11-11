@@ -4,7 +4,7 @@
 		armor values.
 
 	WHAT IS INJECTED INTO THE UNIT?
-	Stats.  Each unit has stats.  This are the Weapon SKills and Ballistic Skills and those numbers.
+	stats->  Each unit has stats->  This are the Weapon SKills and Ballistic Skills and those numbers.
 		Each unit has them. So, we pass in the stats the unit will use.
 
 	ANY ASSUMPTIONS?
@@ -19,21 +19,13 @@
 
 /*-----------------------------------------------------------------------------
  @name Default constructor
- @description Makes a new unit with the passed in stats.
+ @description Makes a new unit with the passed in stats->
  @remark this class will delete stats when this object is dosposed of.
  @param stats the stats that the unit should use.
 */
 Unit::Unit(Stats* stats)
 {
-	if (stats == nullptr)
-	{
-		this->stats = new DefaultStats();
-	}
-	else
-	{
-		this->stats = stats;
-	}
-
+	this->stats = stats;
 	isDead = false;
 	numberOfUnsavedWounds = 0;
 }
@@ -51,7 +43,7 @@ Unit::Unit(Unit& rightSide)
 
 /*-----------------------------------------------------------------------------
  @name destructor
- @description destroys the injected stats.
+ @description
 */
 Unit::~Unit()
 {
@@ -62,7 +54,7 @@ Unit::~Unit()
 
 std::ostream& operator<<(std::ostream& os, const Unit& rightSide)
 {
-	os << (*rightSide.stats);
+	os << ((*rightSide.stats));
 	return os;
 }
 
@@ -94,7 +86,7 @@ int Unit::AllocateWounds(int numberOfUnSavedWounds)
 
 /*-----------------------------------------------------------------------------
  @name IsDead
- @description sees if the number of unsaved wounds is equal to the total number 
+ @description sees if the number of unsaved wounds is equal to the total number
 	of wounds.
  @return boolean
 */
@@ -111,4 +103,49 @@ void Unit::Reset()
 {
 	isDead = false;
 	numberOfUnsavedWounds = 0;
+}
+
+int Unit::WeaponSkill() 
+{
+	return stats->WeaponSkill();
+}
+
+int Unit::BallisticSkill() 
+{
+	return stats->BallisticSkill();
+}
+
+int Unit::Strength() 
+{	
+	return stats->Strength();
+}
+
+int Unit::Toughness() 
+{
+	return stats->Toughness();
+}
+
+int Unit::Attacks() 
+{
+	return stats->Attacks();
+}
+
+int Unit::Wounds()
+{
+	return stats->Wounds();
+}
+
+int Unit::Save()
+{
+	return stats->Save();
+}
+
+int Unit::LeaderShip() 
+{
+	return stats->LeaderShip();
+}
+
+int Unit::Initiative()
+{
+	return stats->Initiative();
 }

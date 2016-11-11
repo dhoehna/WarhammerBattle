@@ -27,68 +27,70 @@ int main(int argc, char** argv)
 		}
 	}
 
-	//if (shouldWeTest)
-	//{
-	//	BloodLetterStatsTester bloodletterStatsTester;
-	//	bloodletterStatsTester.RunAllTests();
+	if (shouldWeTest)
+	{
+		BloodLetterStatsTester bloodletterStatsTester;
+		bloodletterStatsTester.RunAllTests();
 
-	//	UnitTester tester;
-	//	tester.RunAllTests();
+		UnitTester tester;
+		tester.RunAllTests();
 
-	//	StatsFactoryTester statsFactoryTester;
-	//	statsFactoryTester.RunAllTests();
+		StatsFactoryTester statsFactoryTester;
+		statsFactoryTester.RunAllTests();
+	}
+	else
 
-	//}
-
-
-	StatsFactory statsFactory;
-
-	BattleEngine battleEngine;
-
-
-	int counter = 0;
-
-	int attackerWonCounter = 0;
-	int defenderWonCounter = 0;
-	int tieCounter = 0;
-
-	Stats* bloodLetterStats = statsFactory.GetStats(BLOODLETTER);
-	Stats* secondStats = bloodLetterStats->Clone();
-
-	Unit attacker(bloodLetterStats);
-	Unit defender(secondStats);
-	int totalRounds = 100000;
-
-	while (counter < totalRounds)
 	{
 
-		int winner = battleEngine.Battle(attacker, defender);
 
-		if (BattleEngine::TIE == winner)
-		{
-			tieCounter++;
-		}
-		else if (BattleEngine::ATTACKER == winner)
-		{
-			attackerWonCounter++;
-		}
-		else
-		{
-			defenderWonCounter++;
-		}
-		counter++;
+		StatsFactory statsFactory;
 
-		attacker.Reset();
-		defender.Reset();
+		BattleEngine battleEngine;
+
+
+		int counter = 0;
+
+		int attackerWonCounter = 0;
+		int defenderWonCounter = 0;
+		int tieCounter = 0;
+
+		Stats* bloodLetterStats = statsFactory.GetStats(BLOODLETTER);
+		Stats* secondStats = statsFactory.GetStats(DEFAULT);
+
+		Unit attacker(bloodLetterStats);
+		Unit defender(secondStats);
+		int totalRounds = 100000;
+
+		while (counter < totalRounds)
+		{
+
+			int winner = battleEngine.Battle(attacker, defender);
+
+			if (BattleEngine::TIE == winner)
+			{
+				tieCounter++;
+			}
+			else if (BattleEngine::ATTACKER == winner)
+			{
+				attackerWonCounter++;
+			}
+			else
+			{
+				defenderWonCounter++;
+			}
+			counter++;
+
+			attacker.Reset();
+			defender.Reset();
+		}
+
+
+		double percentAttackerWon = 100 * (((double)attackerWonCounter) / ((double)totalRounds));
+		double percentDefenderWon = 100 * (((double)defenderWonCounter) / ((double)totalRounds));
+		double percentTie = 100 - (percentAttackerWon + percentDefenderWon);
+
+
+		std::cout << "Attacker won: " << percentAttackerWon << "\nDefender won: " << percentDefenderWon << "\ntie: " << percentTie << std::endl;
 	}
-
-
-
-	double percentAttackerWon = 100 * (((double)attackerWonCounter) / ((double)totalRounds));
-	double percentDefenderWon = 100 * (((double)defenderWonCounter) / ((double)totalRounds));
-	double percentTie = 100 - (percentAttackerWon + percentDefenderWon);
-
-
-	std::cout << "Attacker won: " << percentAttackerWon << "\nDefender won: " << percentDefenderWon << "\ntie: " << percentTie << std::endl;
 }
 

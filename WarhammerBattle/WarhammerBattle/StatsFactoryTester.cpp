@@ -52,13 +52,13 @@ void StatsFactoryTester::TestGetStatsPassingExistingStats()
 
 	StatsFactory hi1;
 
-	Stats* YOLO = hi1.GetStats(BLOODLETTER);
+	Stats* bloodLetter = hi1.GetStats(BLOODLETTER);
 
 	std::cout << "Expect 5 5 4 3 1 4 4 7 5" << std::endl;
-	std::cout << "result " << (*YOLO) << std::endl;
+	std::cout << "result " << (*bloodLetter) << std::endl;
 
-	delete YOLO;
-	YOLO = nullptr;
+	delete bloodLetter;
+	bloodLetter = nullptr;
 }
 
 void StatsFactoryTester::TestGetStatsPassingInNonExistingStats()
@@ -69,10 +69,9 @@ void StatsFactoryTester::TestGetStatsPassingInNonExistingStats()
 
 	Stats* YOLO = hi1.GetStats("BLARG");
 
-	std::cout << "Expect 1 1 1 1 1 1 1 1 1" << std::endl;
+	std::cout << "Expect 1 1 1 1 1 1 1 1 6" << std::endl;
 	std::cout << "Result " << (*YOLO) << std::endl;
 
 	delete YOLO;
-
 	YOLO = nullptr;
 }

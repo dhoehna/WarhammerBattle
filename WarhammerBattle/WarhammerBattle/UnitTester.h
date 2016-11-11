@@ -14,7 +14,6 @@ public:
 
 private:
 	void TestConstructorStatsNotNull();
-	void TestConstructorStatsNull();
 	void TestOutput();
 
 };
