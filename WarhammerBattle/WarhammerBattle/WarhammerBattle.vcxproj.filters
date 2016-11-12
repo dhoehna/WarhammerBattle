@@ -92,5 +92,8 @@
     <ClInclude Include="SquadTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ITester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

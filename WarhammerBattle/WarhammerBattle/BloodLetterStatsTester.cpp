@@ -5,16 +5,17 @@
 BloodLetterStatsTester::BloodLetterStatsTester()
 {
 	std::cout << "Testing Bloodletter Stats" << std::endl;
+	Initilize();
 }
 
 
 BloodLetterStatsTester::~BloodLetterStatsTester()
 {
+	CleanUp();
 }
 
 void BloodLetterStatsTester::RunAllTests()
 {
-	TestConstructor();
 	TestCreateMethod();
 	TestCloneMethod();
 	TestOutput();
@@ -22,29 +23,32 @@ void BloodLetterStatsTester::RunAllTests()
 	std::cout << "Done testing Bloodletter stats" << std::endl;
 }
 
-void BloodLetterStatsTester::TestConstructor()
+void BloodLetterStatsTester::Initilize()
 {
-	std::cout << "Testing the constructor. This is just to test for memory leaks" << std::endl;
+	testingStats = new BloodLetterStats();
+	test2 = new BloodLetterStats();
+	defaultStats = new DefaultStats();
+}
 
-	Stats* hello = new BloodLetterStats();
+void BloodLetterStatsTester::CleanUp()
+{
+	delete testingStats;
+	delete test2;
+	delete defaultStats;
 
-	delete hello;
-
-	hello = nullptr;
+	testingStats = nullptr;
+	test2 = nullptr;
+	defaultStats = nullptr;
 }
 
 void BloodLetterStatsTester::TestCreateMethod()
 {
 	std::cout << "Testing the Create method.  This is to just test for memory leaks" << std::endl;
 
-	Stats* hi1 = new BloodLetterStats();
+	Stats* hi2 = testingStats->Create();
 
-	Stats* hi2 = hi1->Create();
-
-	delete hi1;
 	delete hi2;
 
-	hi1 = nullptr;
 	hi2 = nullptr;
 }
 
@@ -52,14 +56,10 @@ void BloodLetterStatsTester::TestCloneMethod()
 {
 	std::cout << "Testing the Clone method.  This is just used for memory leaks" << std::endl;
 
-	Stats* hi1 = new BloodLetterStats();
+	Stats* hi2 = testingStats->Clone();
 
-	Stats* hi2 = hi1->Clone();
-
-	delete hi1;
 	delete hi2;
 
-	hi1 = nullptr;
 	hi2 = nullptr;
 }
 
@@ -67,36 +67,17 @@ void BloodLetterStatsTester::TestOutput()
 {
 	std::cout << "Testing output" << std::endl;
 
-	Stats* hi1 = new BloodLetterStats();
-
 	std::cout << "Expect 5 5 4 3 1 4 4 7 5" << std::endl;
-	std::cout << "result " << (*hi1) << std::endl;
-
-	delete hi1;
-
-	hi1 = nullptr;
+	std::cout << "result " << (*testingStats) << std::endl;
 }
 
 void BloodLetterStatsTester::TestEquality()
 {
 	std::cout << "Testing to make sure equality works" << std::endl;
 
-	Stats* hi1 = new BloodLetterStats();
-	Stats* hi2 = new BloodLetterStats();
-
 	std::cout << "Expect true" << std::endl;
-	std::cout << "Result " << ((*hi1) == (*hi2)) << std::endl;
-
-	Stats* hi3 = new DefaultStats();
+	std::cout << "Result " << ((*testingStats) == (*testingStats)) << std::endl;
 
 	std::cout << "Expect false" << std::endl;
-	std::cout << "Result " << ((*hi1) == (*hi3)) << std::endl;
-
-	delete hi1;
-	delete hi2;
-	delete hi3;
-
-	hi1 = nullptr;
-	hi2 = nullptr;
-	hi3 = nullptr;
+	std::cout << "Result " << ((*testingStats) == (*defaultStats)) << std::endl;
 }

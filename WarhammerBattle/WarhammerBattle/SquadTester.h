@@ -6,15 +6,19 @@
 #include "Stats.h"
 #include "Constants.h"
 #include "StatsFactory.h"
-class SquadTester
+#include "ITester.h"
+class SquadTester : public ITester
 {
 public:
 	SquadTester();
 	~SquadTester();
 
 	void RunAllTests();
+	void Initilize();
+	void CleanUp();
 
 private:
+	void TestConstructor();
 	void TestAddUnit();
 };
 

@@ -4,13 +4,16 @@
 #include "Stats.h"
 #include "BloodLetterStats.h"
 #include "Unit.h"
-class UnitTester
+#include "ITester.h"
+class UnitTester : public ITester
 {
 public:
 	UnitTester();
 	~UnitTester();
 
 	void RunAllTests();
+	void Initilize();
+	void CleanUp();
 
 private:
 	void TestConstructorStatsNotNull();

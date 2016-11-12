@@ -8,8 +8,9 @@ class Squad
 public:
 	Squad();
 	~Squad();
+	Squad(Squad& rightSide);
 
-	bool AddUnit(Unit& unitToAdd);
+	bool AddUnit(Unit unitToAdd);
 
 private:
 	std::string name;

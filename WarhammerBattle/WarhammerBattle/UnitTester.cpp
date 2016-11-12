@@ -5,11 +5,23 @@
 UnitTester::UnitTester()
 {
 	std::cout << "Testing the unit class" << std::endl;
+	Initilize();
 }
 
 
 UnitTester::~UnitTester()
 {
+	CleanUp();
+}
+
+void UnitTester::Initilize()
+{
+
+}
+
+void UnitTester::CleanUp()
+{
+
 }
 
 void UnitTester::RunAllTests()

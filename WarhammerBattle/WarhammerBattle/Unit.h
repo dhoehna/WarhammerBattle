@@ -28,7 +28,7 @@ public:
 	 @description makes a new Unit based on the passed in unit
 	 @param rightSide the unit to make a copy of.
 	*/
-	Unit(Unit&  rightSide);
+	Unit(const Unit&  rightSide);
 
 	/*----------------------------------------------------------------------------
 	 @name destructor

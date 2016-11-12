@@ -9,9 +9,16 @@ Squad::Squad()
 
 Squad::~Squad()
 {
+	
 }
 
-bool Squad::AddUnit(Unit& unitToAdd)
+Squad::Squad(Squad& rightSide)
 {
+
+}
+
+bool Squad::AddUnit(Unit unitToAdd)
+{
+	units.push_back(unitToAdd);
 	return true;
 }

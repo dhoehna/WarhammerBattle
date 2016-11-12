@@ -34,7 +34,7 @@ Unit::Unit(Stats* stats)
  @name copy constructor
  @description makes a new Unit based on the unit passed in.  This is a deep copy.
 */
-Unit::Unit(Unit& rightSide)
+Unit::Unit(const Unit& rightSide)
 {
 	stats = rightSide.stats->Clone();
 	isDead = rightSide.isDead;
