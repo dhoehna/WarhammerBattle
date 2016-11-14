@@ -5,13 +5,18 @@
 BloodLetterStatsTester::BloodLetterStatsTester()
 {
 	std::cout << "Testing Bloodletter Stats" << std::endl;
-	Initilize();
+
+	testingStats = new BloodLetterStats();
+	test2 = new BloodLetterStats();
+	defaultStats = new DefaultStats();
 }
 
 
 BloodLetterStatsTester::~BloodLetterStatsTester()
 {
-	CleanUp();
+	delete testingStats;
+	delete test2;
+	delete defaultStats;
 }
 
 void BloodLetterStatsTester::RunAllTests()
@@ -21,24 +26,6 @@ void BloodLetterStatsTester::RunAllTests()
 	TestOutput();
 	TestEquality();
 	std::cout << "Done testing Bloodletter stats" << std::endl;
-}
-
-void BloodLetterStatsTester::Initilize()
-{
-	testingStats = new BloodLetterStats();
-	test2 = new BloodLetterStats();
-	defaultStats = new DefaultStats();
-}
-
-void BloodLetterStatsTester::CleanUp()
-{
-	delete testingStats;
-	delete test2;
-	delete defaultStats;
-
-	testingStats = nullptr;
-	test2 = nullptr;
-	defaultStats = nullptr;
 }
 
 void BloodLetterStatsTester::TestCreateMethod()

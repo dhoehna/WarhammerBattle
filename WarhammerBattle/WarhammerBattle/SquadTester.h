@@ -14,12 +14,14 @@ public:
 	~SquadTester();
 
 	void RunAllTests();
-	void Initilize();
-	void CleanUp();
 
 private:
-	void TestConstructor();
 	void TestAddUnit();
+
+	Squad* squad;
+	Stats* stats;
+	StatsFactory* factory;
+	Unit* unit;
 };
 
 #endif

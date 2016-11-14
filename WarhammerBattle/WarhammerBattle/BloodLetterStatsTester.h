@@ -12,8 +12,6 @@ public:
 	~BloodLetterStatsTester();
 
 	void RunAllTests();
-	void Initilize();
-	void CleanUp();
 
 private:
 	void TestCreateMethod();

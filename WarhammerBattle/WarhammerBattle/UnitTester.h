@@ -12,12 +12,13 @@ public:
 	~UnitTester();
 
 	void RunAllTests();
-	void Initilize();
-	void CleanUp();
 
 private:
-	void TestConstructorStatsNotNull();
+	
 	void TestOutput();
+
+	BloodLetterStats* stats;
+	Unit* unit;
 
 };
 

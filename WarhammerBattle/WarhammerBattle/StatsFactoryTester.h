@@ -2,7 +2,8 @@
 #define STATSFACTORYTESTER_H
 #include <iostream>
 #include "StatsFactory.h"
-class StatsFactoryTester
+#include "ITester.h"
+class StatsFactoryTester : ITester
 {
 public:
 	StatsFactoryTester();
@@ -10,10 +11,11 @@ public:
 	void RunAllTests();
 
 private:
-	void TestConstructor();
 	void TestCopyConstructor();
 	void TestGetStatsPassingExistingStats();
 	void TestGetStatsPassingInNonExistingStats();
+
+	StatsFactory* factory;
 };
 
 #endif

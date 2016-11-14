@@ -33,14 +33,14 @@ int main(int argc, char** argv)
 		BloodLetterStatsTester bloodletterStatsTester;
 		bloodletterStatsTester.RunAllTests();
 
-		//UnitTester tester;
-		//tester.RunAllTests();
+		UnitTester tester;
+		tester.RunAllTests();
 
-		//StatsFactoryTester statsFactoryTester;
-		//statsFactoryTester.RunAllTests();
+		StatsFactoryTester statsFactoryTester;
+		statsFactoryTester.RunAllTests();
 
-		//SquadTester squadTester;
-		//squadTester.RunAllTests();
+		SquadTester squadTester;
+		squadTester.RunAllTests();
 	}
 	else
 

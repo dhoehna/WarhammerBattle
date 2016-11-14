@@ -10,11 +10,11 @@ public:
 	~Squad();
 	Squad(Squad& rightSide);
 
-	bool AddUnit(Unit unitToAdd);
+	bool AddUnit(Unit* unitToAdd);
 
 private:
 	std::string name;
-	std::vector<Unit> units;
+	std::vector<Unit*> units;
 
 };
 

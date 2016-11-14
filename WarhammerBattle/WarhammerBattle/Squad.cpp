@@ -9,7 +9,12 @@ Squad::Squad()
 
 Squad::~Squad()
 {
-	
+	for (Unit* unit : units)
+	{
+		delete unit;
+
+		unit = nullptr;
+	}
 }
 
 Squad::Squad(Squad& rightSide)
@@ -17,7 +22,7 @@ Squad::Squad(Squad& rightSide)
 
 }
 
-bool Squad::AddUnit(Unit unitToAdd)
+bool Squad::AddUnit(Unit* unitToAdd)
 {
 	units.push_back(unitToAdd);
 	return true;
