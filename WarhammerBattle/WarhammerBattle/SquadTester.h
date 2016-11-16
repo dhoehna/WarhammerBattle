@@ -17,11 +17,10 @@ public:
 
 private:
 	void TestAddUnit();
-
-	Squad* squad;
-	Stats* stats;
-	StatsFactory* factory;
-	Unit* unit;
+	void TestAddUnitPassInNull();
+	void TestOutput();
+	void TestCopyConstructor();
+	void TestSize();
 };
 
 #endif

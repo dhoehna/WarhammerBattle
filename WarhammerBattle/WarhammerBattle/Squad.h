@@ -10,7 +10,11 @@ public:
 	~Squad();
 	Squad(Squad& rightSide);
 
+	friend std::ostream& operator<<(std::ostream& os, const Squad& rightSide);
+
 	bool AddUnit(Unit* unitToAdd);
+	int Size();
+
 
 private:
 	std::string name;
