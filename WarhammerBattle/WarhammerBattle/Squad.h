@@ -7,6 +7,7 @@ class Squad
 {
 public:
 	Squad();
+	Squad(std::string name);
 	~Squad();
 	Squad(Squad& rightSide);
 
@@ -14,6 +15,7 @@ public:
 
 	bool AddUnit(Unit* unitToAdd);
 	int Size();
+	std::string Name();
 
 
 private:
