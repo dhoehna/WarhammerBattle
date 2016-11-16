@@ -17,6 +17,10 @@
 #include "BloodLetterStats.h"
 #include "DefaultStats.h"
 #include "Constants.h"
+#include "KairosFateweaverStats.h"
+#include "SkarbrandStats.h"
+#include "KuGathStats.h"
+#include "BloodThirsterStats.h"
 class StatsFactory
 {
 public:

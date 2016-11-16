@@ -45,9 +45,12 @@ int main(int argc, char** argv)
 	else
 
 	{
+		/*
+		Alright, down to the meat of things two squads fighting each other.
+		*/
 
 
-		StatsFactory statsFactory;
+		/*StatsFactory statsFactory;
 
 		BattleEngine battleEngine;
 
@@ -94,7 +97,7 @@ int main(int argc, char** argv)
 		double percentTie = 100 - (percentAttackerWon + percentDefenderWon);
 
 
-		std::cout << "Attacker won: " << percentAttackerWon << "\nDefender won: " << percentDefenderWon << "\ntie: " << percentTie << std::endl;
+		std::cout << "Attacker won: " << percentAttackerWon << "\nDefender won: " << percentDefenderWon << "\ntie: " << percentTie << std::endl;*/
 	}
 }
 

@@ -9,6 +9,10 @@ StatsFactory::StatsFactory()
 {
 	stats[BLOODLETTER] = new BloodLetterStats();
 	stats[DEFAULT] = new DefaultStats();
+	stats[KAIROS_FATEWEAVER] = new KairosFateweaverStats();
+	stats[SKARBRAND] = new SkarbrandStats();
+	stats[KU_GATH] = new KuGathStats();
+	stats[BLOODTHIRSTER] = new BloodThirsterStats();
 }
 
 /*-----------------------------------------------------------------------------

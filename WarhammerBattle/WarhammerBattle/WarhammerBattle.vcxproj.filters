@@ -54,6 +54,21 @@
     <ClCompile Include="SquadTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SkarbrandStats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KairosFateweaverStats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KuGathStats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BloodThirsterStats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LordOfChangeStats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BattleEngine.h">
@@ -93,6 +108,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ITester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SkarbrandStats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KairosFateweaverStats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KuGathStats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BloodThirsterStats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LordOfChangeStats.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

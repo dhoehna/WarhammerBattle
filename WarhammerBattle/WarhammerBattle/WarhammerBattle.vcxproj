@@ -84,7 +84,12 @@
     <ClCompile Include="BattleEngine.cpp" />
     <ClCompile Include="BloodLetterStats.cpp" />
     <ClCompile Include="BloodLetterStatsTester.cpp" />
+    <ClCompile Include="BloodThirsterStats.cpp" />
     <ClCompile Include="DefaultStats.cpp" />
+    <ClCompile Include="KairosFateweaverStats.cpp" />
+    <ClCompile Include="KuGathStats.cpp" />
+    <ClCompile Include="LordOfChangeStats.cpp" />
+    <ClCompile Include="SkarbrandStats.cpp" />
     <ClCompile Include="Squad.cpp" />
     <ClCompile Include="SquadTester.cpp" />
     <ClCompile Include="Stats.cpp" />
@@ -98,9 +103,14 @@
     <ClInclude Include="BattleEngine.h" />
     <ClInclude Include="BloodLetterStats.h" />
     <ClInclude Include="BloodLetterStatsTester.h" />
+    <ClInclude Include="BloodThirsterStats.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="DefaultStats.h" />
     <ClInclude Include="ITester.h" />
+    <ClInclude Include="KairosFateweaverStats.h" />
+    <ClInclude Include="KuGathStats.h" />
+    <ClInclude Include="LordOfChangeStats.h" />
+    <ClInclude Include="SkarbrandStats.h" />
     <ClInclude Include="Squad.h" />
     <ClInclude Include="SquadTester.h" />
     <ClInclude Include="Stats.h" />
