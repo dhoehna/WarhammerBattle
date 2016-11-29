@@ -21,6 +21,7 @@ private:
 	void TestOutput();
 	void TestCopyConstructor();
 	void TestSize();
+	void TestGetMajorityToughness();
 };
 
 #endif

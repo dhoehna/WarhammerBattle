@@ -15,11 +15,12 @@
 Squad::Squad()
 {
 	name = "nothing";
+	Initilize();
 }
 
 Squad::Squad(std::string name) : name(name)
 {
-	//Intentionally left blank
+	Initilize();
 }
 
 
@@ -51,8 +52,27 @@ Squad::Squad(Squad& rightSide)
 	}
 
 	name = rightSide.name;
+
+	Initilize();
 }
 
+void Squad::Initilize()
+{ 
+	toughnesses.resize(20);
+	weaponSkills.resize(20);
+	for (int toughnessIndex = 0; toughnessIndex < toughnesses.size(); toughnessIndex++)
+	{
+		toughnesses[toughnessIndex] = 0;
+	}
+
+	for (int weaponSkillIndex = 0; weaponSkillIndex < weaponSkills.size(); weaponSkillIndex++)
+	{
+		weaponSkills[weaponSkillIndex] = 0;
+	}
+
+	majorityToughness = 1;
+	majorityWeaponSkill = 1;
+}
 /*-----------------------------------------------------------------------------
  @name Size
  @description gets the number of units in the squad
@@ -70,6 +90,11 @@ int Squad::Size()
 std::string Squad::Name()
 {
 	return name;
+}
+
+int Squad::MajorityToughness()
+{
+	return majorityToughness;
 }
 
 
@@ -101,10 +126,41 @@ bool Squad::AddUnit(Unit* unitToAdd)
 	if (unitToAdd != nullptr)
 	{
 		units.push_back(unitToAdd);
+		weaponSkills[unitToAdd->WeaponSkill()]++;
+		toughnesses[unitToAdd->Toughness()]++;
+		CalculateMajorityToughness();
 		return true;
 	}
 	else
 	{
 		return false;
 	}
+}
+
+
+void Squad::CalculateMajorityToughness()
+{
+	majorityToughness = CalculateMajority(toughnesses);
+}
+
+int Squad::CalculateMajority(std::vector<int>& numbers)
+{
+	int maxNumberOfUnitsWithACertainToughness = 0;
+	int index = 1;
+
+	for (int numbersIndex = numbers.size() - 1; numbersIndex > 0; numbersIndex--)
+	{
+		if (numbers[numbersIndex] > maxNumberOfUnitsWithACertainToughness)
+		{
+			maxNumberOfUnitsWithACertainToughness = toughnesses[numbersIndex];
+			index = numbersIndex;
+		}
+	}
+
+	if (index > 1)
+	{
+		majorityToughness = index;
+	}
+
+	return index;
 }

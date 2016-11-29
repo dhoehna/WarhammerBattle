@@ -1,0 +1,9 @@
+C:\Users\v-dahoeh\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\bin\Debug\WarhammerBattleGenerator.exe.config
+C:\Users\v-dahoeh\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\bin\Debug\WarhammerBattleGenerator.exe
+C:\Users\v-dahoeh\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\bin\Debug\WarhammerBattleGenerator.pdb
+C:\Users\v-dahoeh\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.csprojResolveAssemblyReference.cache
+C:\Users\v-dahoeh\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.Form1.resources
+C:\Users\v-dahoeh\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.Properties.Resources.resources
+C:\Users\v-dahoeh\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.csproj.GenerateResource.Cache
+C:\Users\v-dahoeh\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.exe
+C:\Users\v-dahoeh\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.pdb

@@ -1,17 +1,17 @@
 #include "SkarbrandStats.h"
 
-SkarbrandStats::BloodLetterStats()
+SkarbrandStats::SkarbrandStats()
 {
 	Initilize();
 }
 
-SkarbrandStats::BloodLetterStats(SkarbrandStats & rightSide)
+SkarbrandStats::SkarbrandStats(SkarbrandStats & rightSide)
 {
 	Initilize();
 }
 
 
-BloodLetterStats::~BloodLetterStats()
+SkarbrandStats::~SkarbrandStats()
 {
 }
 

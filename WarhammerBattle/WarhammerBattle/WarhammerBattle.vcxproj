@@ -91,6 +91,7 @@
     <ClCompile Include="LordOfChangeStats.cpp" />
     <ClCompile Include="SkarbrandStats.cpp" />
     <ClCompile Include="Squad.cpp" />
+    <ClCompile Include="SquadHelper.cpp" />
     <ClCompile Include="SquadTester.cpp" />
     <ClCompile Include="Stats.cpp" />
     <ClCompile Include="StatsFactory.cpp" />
@@ -112,6 +113,7 @@
     <ClInclude Include="LordOfChangeStats.h" />
     <ClInclude Include="SkarbrandStats.h" />
     <ClInclude Include="Squad.h" />
+    <ClInclude Include="SquadHelper.h" />
     <ClInclude Include="SquadTester.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="StatsFactory.h" />

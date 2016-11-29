@@ -1,20 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WarhammerBattle", "WarhammerBattle\WarhammerBattle.vcxproj", "{4C0D9337-16E4-42B1-BE48-E3B95911E291}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarhammerBattleGenerator", "WarhammerBattleGenerator\WarhammerBattleGenerator.csproj", "{42549365-51A0-407B-9EB1-BB4D8C98478C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|Win32 = Debug|Win32
+		Release|Any CPU = Release|Any CPU
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Debug|Win32.ActiveCfg = Debug|Win32
 		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Debug|Win32.Build.0 = Debug|Win32
+		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Release|Any CPU.ActiveCfg = Release|Win32
 		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Release|Win32.ActiveCfg = Release|Win32
 		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Release|Win32.Build.0 = Release|Win32
+		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Debug|Win32.Build.0 = Debug|Any CPU
+		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Release|Win32.ActiveCfg = Release|Any CPU
+		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Release|Win32.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

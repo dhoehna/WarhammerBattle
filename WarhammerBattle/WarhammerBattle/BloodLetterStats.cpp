@@ -27,13 +27,13 @@ BloodLetterStats* BloodLetterStats::Clone()
 
 void BloodLetterStats::Initilize()
 {
-	weaponSkill = 10;
-	ballisticSkill = 10;
-	strength = 6;
-	toughness = 6;
-	wounds = 5;
-	initiative = 10;
-	attacks = 6;
-	leaderShip = 9;
-	save = 3;
+	weaponSkill = 5;
+	ballisticSkill = 5;
+	strength = 4;
+	toughness = 3;
+	wounds = 1;
+	initiative = 4;
+	attacks = 4;
+	leaderShip = 7;
+	save = 5;
 }

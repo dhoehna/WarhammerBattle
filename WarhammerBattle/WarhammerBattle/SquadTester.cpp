@@ -24,6 +24,8 @@ void SquadTester::RunAllTests()
 	TestSize();
 	std::cout << std::endl;
 	TestCopyConstructor();
+	std::cout << std::endl;
+	TestGetMajorityToughness();
 }
 
 void SquadTester::TestAddUnit()
@@ -160,4 +162,63 @@ void SquadTester::TestCopyConstructor()
 	std::cout << "Printing copied squad" << std::endl;
 	std::cout << "Expect 5 5 4 3 1 4 4 7 5\n1 1 1 1 1 1 1 1 6" << std::endl;
 	std::cout << "Result " << squad << std::endl;
+}
+
+void SquadTester::TestGetMajorityToughness()
+{
+	std::cout << "Testing getting the majority toughness" << std::endl;
+
+	Squad squad;
+
+	std::cout << "Getting majority toughness with no units" << std::endl;
+	int majorityToughness = squad.MajorityToughness();
+	std::cout << "Expect 1" << std::endl;
+	std::cout << "Result " << majorityToughness << std::endl << std::endl;
+
+	StatsFactory factory;
+
+	Stats* stats = factory.GetStats(BLOODLETTER);
+	Unit* unit = new Unit(stats);
+	squad.AddUnit(unit);
+
+	std::cout << "Getting majroity toughness with one unit" << std::endl;
+	std::cout << "Expect 3" << std::endl;
+	std::cout << "Result " << squad.MajorityToughness() << std::endl;
+
+	Unit* unit2 = new Unit(*unit);
+
+	squad.AddUnit(unit2);
+
+	std::cout << "Getting majority toughness after adding the same unit a second time" << std::endl;
+	std::cout << "Expect 3" << std::endl;
+	std::cout << "Result " << squad.MajorityToughness() << std::endl << std::endl;
+
+	Stats* stats3 = factory.GetStats(BLOODTHIRSTER);
+	Unit* unit3 = new Unit(stats3);
+	squad.AddUnit(unit3);
+
+	std::cout << "Getting majority toughness after adding a different unit" << std::endl;
+	std::cout << "Expect 3" << std::endl;
+	std::cout << "Result " << squad.MajorityToughness() << std::endl << std::endl;
+
+	Unit* unit4 = new Unit(*unit3);
+	squad.AddUnit(unit4);
+
+	std::cout << "Getting the majroty toughness after adding another unit of the same toughness" << std::endl;
+	std::cout << "Expect 6" << std::endl;
+	std::cout << "Result " << squad.MajorityToughness() << std::endl << std::endl;
+
+	Unit* unit5 = new Unit(*unit);
+	squad.AddUnit(unit5);
+	std::cout << "Getting the majority toughness after adding another type of the first unit" << std::endl;
+	std::cout << "Expect 3" << std::endl;
+	std::cout << "Result " << squad.MajorityToughness() << std::endl << std::endl;
+
+	Stats* stats6 = factory.GetStats(KU_GATH);
+	Unit* unit6 = new Unit(stats6);
+
+	squad.AddUnit(unit6);
+	std::cout << "Getting the majority toughness after adding a third type of stats" << std::endl;
+	std::cout << "Expect 3" << std::endl;
+	std::cout << "Result " << squad.MajorityToughness() << std::endl;
 }
