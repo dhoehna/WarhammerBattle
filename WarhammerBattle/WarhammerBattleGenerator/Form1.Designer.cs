@@ -32,7 +32,6 @@
             this.typeLabel = new System.Windows.Forms.Label();
             this.typeComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.weaponSkillComboBox = new System.Windows.Forms.ComboBox();
             this.weaponSkillLabel = new System.Windows.Forms.Label();
             this.ballisticSkillComboBox = new System.Windows.Forms.ComboBox();
@@ -51,16 +50,15 @@
             this.woundsLabel = new System.Windows.Forms.Label();
             this.initiativeComboBox = new System.Windows.Forms.ComboBox();
             this.initiativeLabel = new System.Windows.Forms.Label();
-            this.unitDataGridView = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.unitDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // typeLabel
             // 
             this.typeLabel.AutoSize = true;
-            this.typeLabel.Location = new System.Drawing.Point(49, 41);
+            this.typeLabel.Location = new System.Drawing.Point(143, 44);
             this.typeLabel.Name = "typeLabel";
             this.typeLabel.Size = new System.Drawing.Size(31, 13);
             this.typeLabel.TabIndex = 0;
@@ -70,7 +68,7 @@
             // 
             this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeComboBox.FormattingEnabled = true;
-            this.typeComboBox.Location = new System.Drawing.Point(86, 38);
+            this.typeComboBox.Location = new System.Drawing.Point(180, 41);
             this.typeComboBox.Name = "typeComboBox";
             this.typeComboBox.Size = new System.Drawing.Size(121, 21);
             this.typeComboBox.TabIndex = 1;
@@ -78,18 +76,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(248, 41);
+            this.label1.Location = new System.Drawing.Point(138, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Name";
-            // 
-            // nameTextBox
-            // 
-            this.nameTextBox.Location = new System.Drawing.Point(285, 41);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nameTextBox.TabIndex = 3;
             // 
             // weaponSkillComboBox
             // 
@@ -253,16 +244,13 @@
             this.initiativeLabel.TabIndex = 20;
             this.initiativeLabel.Text = "Initiative";
             // 
-            // unitDataGridView
+            // comboBox1
             // 
-            this.unitDataGridView.AllowUserToAddRows = false;
-            this.unitDataGridView.AllowUserToDeleteRows = false;
-            this.unitDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.unitDataGridView.Location = new System.Drawing.Point(19, 283);
-            this.unitDataGridView.Name = "unitDataGridView";
-            this.unitDataGridView.ReadOnly = true;
-            this.unitDataGridView.Size = new System.Drawing.Size(449, 96);
-            this.unitDataGridView.TabIndex = 22;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(179, 12);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 22;
             // 
             // form1BindingSource
             // 
@@ -272,8 +260,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 391);
-            this.Controls.Add(this.unitDataGridView);
+            this.ClientSize = new System.Drawing.Size(523, 265);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.initiativeComboBox);
             this.Controls.Add(this.initiativeLabel);
             this.Controls.Add(this.saveComboBox);
@@ -292,14 +280,12 @@
             this.Controls.Add(this.ballisticSkillLabel);
             this.Controls.Add(this.weaponSkillComboBox);
             this.Controls.Add(this.weaponSkillLabel);
-            this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.typeComboBox);
             this.Controls.Add(this.typeLabel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_SaveUnits);
-            ((System.ComponentModel.ISupportInitialize)(this.unitDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -311,7 +297,6 @@
         private System.Windows.Forms.Label typeLabel;
         private System.Windows.Forms.ComboBox typeComboBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.ComboBox weaponSkillComboBox;
         private System.Windows.Forms.Label weaponSkillLabel;
         private System.Windows.Forms.ComboBox ballisticSkillComboBox;
@@ -330,8 +315,8 @@
         private System.Windows.Forms.Label woundsLabel;
         private System.Windows.Forms.ComboBox initiativeComboBox;
         private System.Windows.Forms.Label initiativeLabel;
-        private System.Windows.Forms.DataGridView unitDataGridView;
         private System.Windows.Forms.BindingSource form1BindingSource;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

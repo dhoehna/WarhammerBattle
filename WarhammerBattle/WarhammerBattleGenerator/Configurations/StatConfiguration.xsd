@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xsd:element name="StatsConfiguration">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Types">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="Type">
+                <xsd:complexType>
+                  <xsd:attribute name="name" type="xsd:string" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="Maximums">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="MaximumWeaponSkill">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MaximumBallisticSkill">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MaximumStrength">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MaximumToughness">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MaximumWounds">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MaximumAttacks">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MaximumLeadership">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MaximumSave">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="Minumums">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="MinumumWeaponSkill">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MinumumBallisticSkill">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MinumumStrength">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MinumumToughness">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MinumumWounds">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MinumumAttacks">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MinumumLeadership">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="MinumumSave">
+                <xsd:complexType>
+                  <xsd:attribute name="value" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xs:schema>

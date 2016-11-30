@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StatsConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<UnitTypes>
+    <UnitType>HQ</UnitType>
+    <UnitType>Elite</UnitType>
+    <UnitType>Troop</UnitType>
+    <UnitType>Heavy Support</UnitType>
+    <UnitType>Fast Attack</UnitType>
+	</UnitTypes>
+	<Maximums>
+		<Maximum name="WeaponSkill" value="10" />
+    <Maximum name="BallisticSkill" value="10" />
+    <Maximum name="Strength" value="10" />
+    <Maximum name="Toughness" value="10" />
+    <Maximum name="Wounds" value="10" />
+    <Maximum name="Attacks" value="10" />
+    <Maximum name="Initiative" value="10" />
+    <Maximum name="Leadership" value="10" />
+    <Maximum name="Save" value="6" />
+	</Maximums>
+	<Minumums>
+		<Minimum name="WeaponSkill" value="1" />
+    <Minimum name="BallisticSkill" value="1" />
+    <Minimum name="Strength" value="1" />
+    <Minimum name="Toughness" value="1" />
+    <Minimum name="Wounds" value="1" />
+    <Minimum name="Attacks" value="1" />
+    <Minimum name="Initiative" value="1" />
+    <Minimum name="Leadership" value="1" />
+    <Minimum name="Save" value="2" />
+	</Minumums>
+</StatsConfiguration>
