@@ -9,9 +9,6 @@ namespace WarhammerBattleGenerator
 {
     public class Stats
     {
-        [XmlElement("name")]
-        public string name { get; set; }
-
         [XmlElement("weaponSkill")]
         public int weaponSkill { get; set; }
 

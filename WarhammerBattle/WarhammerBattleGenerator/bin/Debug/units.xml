@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<units xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <unit>
+    <unitName>Blood Letter</unitName>
+    <unitType>Troop</unitType>
+    <stats>
+      <weaponSkill>2</weaponSkill>
+      <ballisticSkill>4</ballisticSkill>
+      <strength>5</strength>
+      <toughness>4</toughness>
+      <wounds>3</wounds>
+      <attacks>3</attacks>
+      <initiative>3</initiative>
+      <leadership>3</leadership>
+      <save>4</save>
+    </stats>
+  </unit>
+</units>

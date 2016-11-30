@@ -15,23 +15,23 @@ namespace WarhammerBattleGenerator
 {
     public partial class Form1 : Form
     {
-        const string STAT_FILE = "stats.xml";
+        const string UNITS_LOCATION = "units.xml";
         const string STAT_CONFIGURATION = "../Debug/Configurations/StatConfiguration.xml";
-        private StatCollection statCollection { get; set; }
+        private UnitCollection unitCollection { get; set; }
 
         private StatConfiguration statConfiguration { get; set; }
         public Form1()
         {
             InitializeComponent();
 
-            if(!File.Exists(STAT_FILE))
+            if(!File.Exists(UNITS_LOCATION))
             {
-                File.Create(STAT_FILE);
-                statCollection = new StatCollection();
+                File.Create(UNITS_LOCATION);
+                unitCollection = new UnitCollection();
             }
             else
             {
-                statCollection = StatCollection.PullInfoFromConfig(STAT_FILE);
+                unitCollection = UnitCollection.Load(UNITS_LOCATION);
             }
 
             statConfiguration = StatConfiguration.Load(STAT_CONFIGURATION);
@@ -53,7 +53,7 @@ namespace WarhammerBattleGenerator
 
         private void Form1_SaveUnits(object sender, FormClosingEventArgs e)
         {
-            statCollection.Save(STAT_FILE);
+            unitCollection.Save(UNITS_LOCATION);
         }
 
         private void InsertNumbersIntoComboBox(ComboBox comboBox, string statName)
@@ -76,8 +76,6 @@ namespace WarhammerBattleGenerator
         {
             Stats newStats = new Stats();
 
-            
-            newStats.name = unitNameComboBox.Text;
             newStats.weaponSkill = Convert.ToInt32(weaponSkillComboBox.SelectedItem);
             newStats.ballisticSkill = Convert.ToInt32(ballisticSkillComboBox.SelectedItem);
             newStats.strength = Convert.ToInt32(strengthComboBox.SelectedItem);
@@ -88,7 +86,15 @@ namespace WarhammerBattleGenerator
             newStats.leadership = Convert.ToInt32(leadershipComboBox.SelectedItem);
             newStats.save = Convert.ToInt32(saveComboBox.SelectedItem);
 
-            statCollection.Add(newStats);
+            Unit unit = new Unit();
+
+            unit.unitName = unitNameComboBox.Text;
+            unit.unitType = typeComboBox.SelectedItem.ToString();
+            unit.stats = newStats;
+
+            unitCollection.Add(unit);
+
+            MessageBox.Show("Unit added successfully");
         }
     }
 }

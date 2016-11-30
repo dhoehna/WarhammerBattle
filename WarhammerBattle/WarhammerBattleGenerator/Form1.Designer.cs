@@ -51,10 +51,15 @@
             this.initiativeComboBox = new System.Windows.Forms.ComboBox();
             this.initiativeLabel = new System.Windows.Forms.Label();
             this.unitNameComboBox = new System.Windows.Forms.ComboBox();
-            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deleteUnitButton = new System.Windows.Forms.Button();
             this.saveUnitButton = new System.Windows.Forms.Button();
+            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // typeLabel
@@ -88,7 +93,7 @@
             // 
             this.weaponSkillComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.weaponSkillComboBox.FormattingEnabled = true;
-            this.weaponSkillComboBox.Location = new System.Drawing.Point(86, 92);
+            this.weaponSkillComboBox.Location = new System.Drawing.Point(103, 11);
             this.weaponSkillComboBox.Name = "weaponSkillComboBox";
             this.weaponSkillComboBox.Size = new System.Drawing.Size(121, 21);
             this.weaponSkillComboBox.TabIndex = 5;
@@ -96,7 +101,7 @@
             // weaponSkillLabel
             // 
             this.weaponSkillLabel.AutoSize = true;
-            this.weaponSkillLabel.Location = new System.Drawing.Point(10, 95);
+            this.weaponSkillLabel.Location = new System.Drawing.Point(27, 14);
             this.weaponSkillLabel.Name = "weaponSkillLabel";
             this.weaponSkillLabel.Size = new System.Drawing.Size(70, 13);
             this.weaponSkillLabel.TabIndex = 4;
@@ -106,7 +111,7 @@
             // 
             this.ballisticSkillComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ballisticSkillComboBox.FormattingEnabled = true;
-            this.ballisticSkillComboBox.Location = new System.Drawing.Point(86, 127);
+            this.ballisticSkillComboBox.Location = new System.Drawing.Point(103, 46);
             this.ballisticSkillComboBox.Name = "ballisticSkillComboBox";
             this.ballisticSkillComboBox.Size = new System.Drawing.Size(121, 21);
             this.ballisticSkillComboBox.TabIndex = 7;
@@ -114,7 +119,7 @@
             // ballisticSkillLabel
             // 
             this.ballisticSkillLabel.AutoSize = true;
-            this.ballisticSkillLabel.Location = new System.Drawing.Point(16, 130);
+            this.ballisticSkillLabel.Location = new System.Drawing.Point(33, 49);
             this.ballisticSkillLabel.Name = "ballisticSkillLabel";
             this.ballisticSkillLabel.Size = new System.Drawing.Size(64, 13);
             this.ballisticSkillLabel.TabIndex = 6;
@@ -124,7 +129,7 @@
             // 
             this.strengthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.strengthComboBox.FormattingEnabled = true;
-            this.strengthComboBox.Location = new System.Drawing.Point(86, 156);
+            this.strengthComboBox.Location = new System.Drawing.Point(103, 75);
             this.strengthComboBox.Name = "strengthComboBox";
             this.strengthComboBox.Size = new System.Drawing.Size(121, 21);
             this.strengthComboBox.TabIndex = 9;
@@ -132,7 +137,7 @@
             // strengthLabel
             // 
             this.strengthLabel.AutoSize = true;
-            this.strengthLabel.Location = new System.Drawing.Point(36, 156);
+            this.strengthLabel.Location = new System.Drawing.Point(53, 75);
             this.strengthLabel.Name = "strengthLabel";
             this.strengthLabel.Size = new System.Drawing.Size(44, 13);
             this.strengthLabel.TabIndex = 8;
@@ -142,7 +147,7 @@
             // 
             this.toughnessComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toughnessComboBox.FormattingEnabled = true;
-            this.toughnessComboBox.Location = new System.Drawing.Point(86, 188);
+            this.toughnessComboBox.Location = new System.Drawing.Point(103, 107);
             this.toughnessComboBox.Name = "toughnessComboBox";
             this.toughnessComboBox.Size = new System.Drawing.Size(121, 21);
             this.toughnessComboBox.TabIndex = 11;
@@ -150,7 +155,7 @@
             // toughnessLabel
             // 
             this.toughnessLabel.AutoSize = true;
-            this.toughnessLabel.Location = new System.Drawing.Point(20, 191);
+            this.toughnessLabel.Location = new System.Drawing.Point(37, 110);
             this.toughnessLabel.Name = "toughnessLabel";
             this.toughnessLabel.Size = new System.Drawing.Size(60, 13);
             this.toughnessLabel.TabIndex = 10;
@@ -160,7 +165,7 @@
             // 
             this.saveComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.saveComboBox.FormattingEnabled = true;
-            this.saveComboBox.Location = new System.Drawing.Point(313, 188);
+            this.saveComboBox.Location = new System.Drawing.Point(330, 107);
             this.saveComboBox.Name = "saveComboBox";
             this.saveComboBox.Size = new System.Drawing.Size(121, 21);
             this.saveComboBox.TabIndex = 19;
@@ -168,7 +173,7 @@
             // saveLabel
             // 
             this.saveLabel.AutoSize = true;
-            this.saveLabel.Location = new System.Drawing.Point(264, 191);
+            this.saveLabel.Location = new System.Drawing.Point(281, 110);
             this.saveLabel.Name = "saveLabel";
             this.saveLabel.Size = new System.Drawing.Size(32, 13);
             this.saveLabel.TabIndex = 18;
@@ -178,7 +183,7 @@
             // 
             this.leadershipComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.leadershipComboBox.FormattingEnabled = true;
-            this.leadershipComboBox.Location = new System.Drawing.Point(313, 156);
+            this.leadershipComboBox.Location = new System.Drawing.Point(330, 75);
             this.leadershipComboBox.Name = "leadershipComboBox";
             this.leadershipComboBox.Size = new System.Drawing.Size(121, 21);
             this.leadershipComboBox.TabIndex = 17;
@@ -186,7 +191,7 @@
             // leadershipLabel
             // 
             this.leadershipLabel.AutoSize = true;
-            this.leadershipLabel.Location = new System.Drawing.Point(237, 159);
+            this.leadershipLabel.Location = new System.Drawing.Point(254, 78);
             this.leadershipLabel.Name = "leadershipLabel";
             this.leadershipLabel.Size = new System.Drawing.Size(59, 13);
             this.leadershipLabel.TabIndex = 16;
@@ -196,7 +201,7 @@
             // 
             this.attacksComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.attacksComboBox.FormattingEnabled = true;
-            this.attacksComboBox.Location = new System.Drawing.Point(313, 127);
+            this.attacksComboBox.Location = new System.Drawing.Point(330, 46);
             this.attacksComboBox.Name = "attacksComboBox";
             this.attacksComboBox.Size = new System.Drawing.Size(121, 21);
             this.attacksComboBox.TabIndex = 15;
@@ -204,7 +209,7 @@
             // attacksLabel
             // 
             this.attacksLabel.AutoSize = true;
-            this.attacksLabel.Location = new System.Drawing.Point(253, 130);
+            this.attacksLabel.Location = new System.Drawing.Point(270, 49);
             this.attacksLabel.Name = "attacksLabel";
             this.attacksLabel.Size = new System.Drawing.Size(43, 13);
             this.attacksLabel.TabIndex = 14;
@@ -214,7 +219,7 @@
             // 
             this.woundsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.woundsComboBox.FormattingEnabled = true;
-            this.woundsComboBox.Location = new System.Drawing.Point(86, 219);
+            this.woundsComboBox.Location = new System.Drawing.Point(103, 138);
             this.woundsComboBox.Name = "woundsComboBox";
             this.woundsComboBox.Size = new System.Drawing.Size(121, 21);
             this.woundsComboBox.TabIndex = 13;
@@ -222,7 +227,7 @@
             // woundsLabel
             // 
             this.woundsLabel.AutoSize = true;
-            this.woundsLabel.Location = new System.Drawing.Point(37, 222);
+            this.woundsLabel.Location = new System.Drawing.Point(54, 141);
             this.woundsLabel.Name = "woundsLabel";
             this.woundsLabel.Size = new System.Drawing.Size(47, 13);
             this.woundsLabel.TabIndex = 12;
@@ -232,7 +237,7 @@
             // 
             this.initiativeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.initiativeComboBox.FormattingEnabled = true;
-            this.initiativeComboBox.Location = new System.Drawing.Point(313, 97);
+            this.initiativeComboBox.Location = new System.Drawing.Point(330, 16);
             this.initiativeComboBox.Name = "initiativeComboBox";
             this.initiativeComboBox.Size = new System.Drawing.Size(121, 21);
             this.initiativeComboBox.TabIndex = 21;
@@ -240,7 +245,7 @@
             // initiativeLabel
             // 
             this.initiativeLabel.AutoSize = true;
-            this.initiativeLabel.Location = new System.Drawing.Point(250, 97);
+            this.initiativeLabel.Location = new System.Drawing.Point(267, 16);
             this.initiativeLabel.Name = "initiativeLabel";
             this.initiativeLabel.Size = new System.Drawing.Size(46, 13);
             this.initiativeLabel.TabIndex = 20;
@@ -253,10 +258,6 @@
             this.unitNameComboBox.Name = "unitNameComboBox";
             this.unitNameComboBox.Size = new System.Drawing.Size(121, 21);
             this.unitNameComboBox.TabIndex = 22;
-            // 
-            // form1BindingSource
-            // 
-            this.form1BindingSource.DataSource = typeof(WarhammerBattleGenerator.Form1);
             // 
             // deleteUnitButton
             // 
@@ -278,32 +279,67 @@
             this.saveUnitButton.UseVisualStyleBackColor = true;
             this.saveUnitButton.Click += new System.EventHandler(this.Form1_SaveUnit);
             // 
+            // form1BindingSource
+            // 
+            this.form1BindingSource.DataSource = typeof(WarhammerBattleGenerator.Form1);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.weaponSkillLabel);
+            this.tabPage1.Controls.Add(this.weaponSkillComboBox);
+            this.tabPage1.Controls.Add(this.ballisticSkillLabel);
+            this.tabPage1.Controls.Add(this.ballisticSkillComboBox);
+            this.tabPage1.Controls.Add(this.initiativeComboBox);
+            this.tabPage1.Controls.Add(this.strengthLabel);
+            this.tabPage1.Controls.Add(this.initiativeLabel);
+            this.tabPage1.Controls.Add(this.strengthComboBox);
+            this.tabPage1.Controls.Add(this.saveComboBox);
+            this.tabPage1.Controls.Add(this.toughnessLabel);
+            this.tabPage1.Controls.Add(this.saveLabel);
+            this.tabPage1.Controls.Add(this.toughnessComboBox);
+            this.tabPage1.Controls.Add(this.leadershipComboBox);
+            this.tabPage1.Controls.Add(this.woundsLabel);
+            this.tabPage1.Controls.Add(this.leadershipLabel);
+            this.tabPage1.Controls.Add(this.woundsComboBox);
+            this.tabPage1.Controls.Add(this.attacksComboBox);
+            this.tabPage1.Controls.Add(this.attacksLabel);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(461, 166);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Stats";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 69);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(469, 192);
+            this.tabControl1.TabIndex = 25;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(461, 166);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Optional Rules";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 302);
+            this.ClientSize = new System.Drawing.Size(518, 302);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.saveUnitButton);
             this.Controls.Add(this.deleteUnitButton);
             this.Controls.Add(this.unitNameComboBox);
-            this.Controls.Add(this.initiativeComboBox);
-            this.Controls.Add(this.initiativeLabel);
-            this.Controls.Add(this.saveComboBox);
-            this.Controls.Add(this.saveLabel);
-            this.Controls.Add(this.leadershipComboBox);
-            this.Controls.Add(this.leadershipLabel);
-            this.Controls.Add(this.attacksComboBox);
-            this.Controls.Add(this.attacksLabel);
-            this.Controls.Add(this.woundsComboBox);
-            this.Controls.Add(this.woundsLabel);
-            this.Controls.Add(this.toughnessComboBox);
-            this.Controls.Add(this.toughnessLabel);
-            this.Controls.Add(this.strengthComboBox);
-            this.Controls.Add(this.strengthLabel);
-            this.Controls.Add(this.ballisticSkillComboBox);
-            this.Controls.Add(this.ballisticSkillLabel);
-            this.Controls.Add(this.weaponSkillComboBox);
-            this.Controls.Add(this.weaponSkillLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.typeComboBox);
             this.Controls.Add(this.typeLabel);
@@ -311,6 +347,9 @@
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_SaveUnits);
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,6 +382,9 @@
         private System.Windows.Forms.ComboBox unitNameComboBox;
         private System.Windows.Forms.Button deleteUnitButton;
         private System.Windows.Forms.Button saveUnitButton;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
 
