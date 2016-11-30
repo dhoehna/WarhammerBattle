@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<StatCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<StatCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <units>
+    <name>Blood Letter</name>
+    <weaponSkill>1</weaponSkill>
+    <ballisticSkill>4</ballisticSkill>
+    <strength>5</strength>
+    <toughness>5</toughness>
+    <wounds>5</wounds>
+    <attacks>4</attacks>
+    <initiative>3</initiative>
+    <leadership>5</leadership>
+    <save>4</save>
+  </units>
+</StatCollection>

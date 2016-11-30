@@ -13,6 +13,6 @@ namespace WarhammerBattleGenerator.Configurations
         public string name { get; set; }
 
         [XmlAttribute("value")]
-        public string minimum { get; set; }
+        public int minimum { get; set; }
     }
 }

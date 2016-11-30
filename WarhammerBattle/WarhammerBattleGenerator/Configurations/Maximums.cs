@@ -11,5 +11,19 @@ namespace WarhammerBattleGenerator.Configurations
     {
         [XmlElement("Maximum")]
         public List<Maximum> maximums { get; set; }
+
+        public int GetMaximum(string name)
+        {
+            Maximum maximumValue = maximums.FirstOrDefault(x => x.name.Equals(name, StringComparison.OrdinalIgnoreCase));
+
+            if (maximumValue != null)
+            {
+                return maximumValue.maximum;
+            }
+            else
+            {
+                return 1;
+            }
+        }
     }
 }

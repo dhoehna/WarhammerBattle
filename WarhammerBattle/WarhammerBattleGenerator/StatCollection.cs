@@ -14,6 +14,11 @@ namespace WarhammerBattleGenerator
         [XmlElement("units")]
         public List<Stats> stats { get; set; }
 
+        public StatCollection()
+        {
+            stats = new List<Stats>();
+        }
+
         public static StatCollection PullInfoFromConfig(string sourcePath)
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(StatCollection));
@@ -34,6 +39,15 @@ namespace WarhammerBattleGenerator
 
             statSaver.Serialize(writer, this);
             writer.Dispose();
+        }
+
+        public void Add(Stats statsToAdd)
+        {
+            //Make sure we aren't adding any duplicates
+            if (!stats.Any(x => x.name.Equals(statsToAdd.name, StringComparison.OrdinalIgnoreCase)))
+            {
+                stats.Add(statsToAdd);
+            }
         }
     }
 }

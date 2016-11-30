@@ -11,5 +11,19 @@ namespace WarhammerBattleGenerator.Configurations
     {
         [XmlElement("Minimum")]
         public List<Minimum> minumum { get; set; }
+
+        public int GetMinimum(string name)
+        {
+            Minimum minimumValue =  minumum.FirstOrDefault(x => x.name.Equals(name, StringComparison.OrdinalIgnoreCase));
+
+            if(minimumValue != null)
+            {
+                return minimumValue.minimum;
+            }
+            else
+            {
+                return 1;
+            }
+        }
     }
 }

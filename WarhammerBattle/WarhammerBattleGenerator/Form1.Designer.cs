@@ -42,16 +42,18 @@
             this.toughnessLabel = new System.Windows.Forms.Label();
             this.saveComboBox = new System.Windows.Forms.ComboBox();
             this.saveLabel = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.leadershipComboBox = new System.Windows.Forms.ComboBox();
             this.leadershipLabel = new System.Windows.Forms.Label();
             this.attacksComboBox = new System.Windows.Forms.ComboBox();
             this.attacksLabel = new System.Windows.Forms.Label();
-            this.soundsComboBox = new System.Windows.Forms.ComboBox();
+            this.woundsComboBox = new System.Windows.Forms.ComboBox();
             this.woundsLabel = new System.Windows.Forms.Label();
             this.initiativeComboBox = new System.Windows.Forms.ComboBox();
             this.initiativeLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.unitNameComboBox = new System.Windows.Forms.ComboBox();
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deleteUnitButton = new System.Windows.Forms.Button();
+            this.saveUnitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,14 +174,14 @@
             this.saveLabel.TabIndex = 18;
             this.saveLabel.Text = "Save";
             // 
-            // comboBox5
+            // leadershipComboBox
             // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(313, 156);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 17;
+            this.leadershipComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.leadershipComboBox.FormattingEnabled = true;
+            this.leadershipComboBox.Location = new System.Drawing.Point(313, 156);
+            this.leadershipComboBox.Name = "leadershipComboBox";
+            this.leadershipComboBox.Size = new System.Drawing.Size(121, 21);
+            this.leadershipComboBox.TabIndex = 17;
             // 
             // leadershipLabel
             // 
@@ -208,14 +210,14 @@
             this.attacksLabel.TabIndex = 14;
             this.attacksLabel.Text = "Attacks";
             // 
-            // soundsComboBox
+            // woundsComboBox
             // 
-            this.soundsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.soundsComboBox.FormattingEnabled = true;
-            this.soundsComboBox.Location = new System.Drawing.Point(86, 219);
-            this.soundsComboBox.Name = "soundsComboBox";
-            this.soundsComboBox.Size = new System.Drawing.Size(121, 21);
-            this.soundsComboBox.TabIndex = 13;
+            this.woundsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.woundsComboBox.FormattingEnabled = true;
+            this.woundsComboBox.Location = new System.Drawing.Point(86, 219);
+            this.woundsComboBox.Name = "woundsComboBox";
+            this.woundsComboBox.Size = new System.Drawing.Size(121, 21);
+            this.woundsComboBox.TabIndex = 13;
             // 
             // woundsLabel
             // 
@@ -244,33 +246,55 @@
             this.initiativeLabel.TabIndex = 20;
             this.initiativeLabel.Text = "Initiative";
             // 
-            // comboBox1
+            // unitNameComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(179, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 22;
+            this.unitNameComboBox.FormattingEnabled = true;
+            this.unitNameComboBox.Location = new System.Drawing.Point(179, 12);
+            this.unitNameComboBox.Name = "unitNameComboBox";
+            this.unitNameComboBox.Size = new System.Drawing.Size(121, 21);
+            this.unitNameComboBox.TabIndex = 22;
             // 
             // form1BindingSource
             // 
             this.form1BindingSource.DataSource = typeof(WarhammerBattleGenerator.Form1);
             // 
+            // deleteUnitButton
+            // 
+            this.deleteUnitButton.Location = new System.Drawing.Point(313, 267);
+            this.deleteUnitButton.Name = "deleteUnitButton";
+            this.deleteUnitButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteUnitButton.TabIndex = 23;
+            this.deleteUnitButton.Text = "delete";
+            this.deleteUnitButton.UseVisualStyleBackColor = true;
+            this.deleteUnitButton.Click += new System.EventHandler(this.Form1_DeleteUnit);
+            // 
+            // saveUnitButton
+            // 
+            this.saveUnitButton.Location = new System.Drawing.Point(132, 267);
+            this.saveUnitButton.Name = "saveUnitButton";
+            this.saveUnitButton.Size = new System.Drawing.Size(75, 23);
+            this.saveUnitButton.TabIndex = 24;
+            this.saveUnitButton.Text = "save";
+            this.saveUnitButton.UseVisualStyleBackColor = true;
+            this.saveUnitButton.Click += new System.EventHandler(this.Form1_SaveUnit);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 265);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(523, 302);
+            this.Controls.Add(this.saveUnitButton);
+            this.Controls.Add(this.deleteUnitButton);
+            this.Controls.Add(this.unitNameComboBox);
             this.Controls.Add(this.initiativeComboBox);
             this.Controls.Add(this.initiativeLabel);
             this.Controls.Add(this.saveComboBox);
             this.Controls.Add(this.saveLabel);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.leadershipComboBox);
             this.Controls.Add(this.leadershipLabel);
             this.Controls.Add(this.attacksComboBox);
             this.Controls.Add(this.attacksLabel);
-            this.Controls.Add(this.soundsComboBox);
+            this.Controls.Add(this.woundsComboBox);
             this.Controls.Add(this.woundsLabel);
             this.Controls.Add(this.toughnessComboBox);
             this.Controls.Add(this.toughnessLabel);
@@ -307,16 +331,18 @@
         private System.Windows.Forms.Label toughnessLabel;
         private System.Windows.Forms.ComboBox saveComboBox;
         private System.Windows.Forms.Label saveLabel;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox leadershipComboBox;
         private System.Windows.Forms.Label leadershipLabel;
         private System.Windows.Forms.ComboBox attacksComboBox;
         private System.Windows.Forms.Label attacksLabel;
-        private System.Windows.Forms.ComboBox soundsComboBox;
+        private System.Windows.Forms.ComboBox woundsComboBox;
         private System.Windows.Forms.Label woundsLabel;
         private System.Windows.Forms.ComboBox initiativeComboBox;
         private System.Windows.Forms.Label initiativeLabel;
         private System.Windows.Forms.BindingSource form1BindingSource;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox unitNameComboBox;
+        private System.Windows.Forms.Button deleteUnitButton;
+        private System.Windows.Forms.Button saveUnitButton;
     }
 }
 
