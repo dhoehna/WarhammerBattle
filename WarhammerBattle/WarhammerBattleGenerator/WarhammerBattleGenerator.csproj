@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\Maximum.cs" />
+    <Compile Include="Configurations\Maximums.cs" />
+    <Compile Include="Configurations\Minimum.cs" />
+    <Compile Include="Configurations\Minimums.cs" />
     <Compile Include="Configurations\StatConfiguration.cs" />
     <Compile Include="Configurations\UnitTypes.cs" />
     <Compile Include="Form1.cs">
