@@ -69,7 +69,16 @@ namespace WarhammerBattleGenerator
 
         private void Form1_DeleteUnit(object sender, EventArgs e)
         {
+            bool unitDeletedSuccessfully = unitCollection.Delete(unitNameComboBox.Text);
 
+            if(unitDeletedSuccessfully)
+            {
+                MessageBox.Show("Unit deleted successfully", "Deletion Successful");
+            }
+            else
+            {
+                MessageBox.Show("Error with deleting unit", "Deletion not-successful");
+            }
         }
 
         private void Form1_SaveUnit(object sender, EventArgs e)
@@ -92,9 +101,16 @@ namespace WarhammerBattleGenerator
             unit.unitType = typeComboBox.SelectedItem.ToString();
             unit.stats = newStats;
 
-            unitCollection.Add(unit);
+            bool wasAddedSuccessfully = unitCollection.AddOrUpdate(unit);
 
-            MessageBox.Show("Unit added successfully");
+            if (wasAddedSuccessfully)
+            {
+                MessageBox.Show("Unit added successfully");
+            }
+            else
+            {
+                MessageBox.Show("Unit was not added");
+            }
         }
     }
 }

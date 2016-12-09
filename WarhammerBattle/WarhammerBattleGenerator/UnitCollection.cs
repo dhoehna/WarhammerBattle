@@ -37,13 +37,33 @@ namespace WarhammerBattleGenerator
             writer.Dispose();
         }
 
-        public bool Add(Unit unitToAdd)
+        public bool AddOrUpdate(Unit unitToAdd)
         {
-            //Make sure we aren't adding a duplicate
-            if (!units.Any(x => x.unitName.Equals(unitToAdd.unitName, StringComparison.OrdinalIgnoreCase)))
+            Unit existingUnit = units.FirstOrDefault(x => x.unitName.Equals(unitToAdd.unitName, StringComparison.OrdinalIgnoreCase));
+
+            if (existingUnit == null) //We are adding the unit
             {
                 units.Add(unitToAdd);
+                return true;
             }
+            else //Updating
+            {
+                units.Remove(existingUnit);
+                units.Add(unitToAdd);
+                return true;
+            }
+        }
+
+        public bool Delete(string unitName)
+        {
+            Unit existingUnit = units.FirstOrDefault(x => x.unitName.Equals(unitName, StringComparison.OrdinalIgnoreCase));
+
+            if(existingUnit != null)
+            {
+                units.Remove(existingUnit);
+                return true;
+            }
+
             return true;
         }
     }
