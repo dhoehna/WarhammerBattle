@@ -53,13 +53,13 @@
             this.unitNameComboBox = new System.Windows.Forms.ComboBox();
             this.deleteUnitButton = new System.Windows.Forms.Button();
             this.saveUnitButton = new System.Windows.Forms.Button();
-            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
+            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // typeLabel
@@ -258,6 +258,8 @@
             this.unitNameComboBox.Name = "unitNameComboBox";
             this.unitNameComboBox.Size = new System.Drawing.Size(121, 21);
             this.unitNameComboBox.TabIndex = 22;
+            this.unitNameComboBox.SelectedIndexChanged += new System.EventHandler(this.DisplayUnit);
+            this.unitNameComboBox.SelectedValueChanged += new System.EventHandler(this.DisplayUnit);
             // 
             // deleteUnitButton
             // 
@@ -278,10 +280,6 @@
             this.saveUnitButton.Text = "save";
             this.saveUnitButton.UseVisualStyleBackColor = true;
             this.saveUnitButton.Click += new System.EventHandler(this.Form1_SaveUnit);
-            // 
-            // form1BindingSource
-            // 
-            this.form1BindingSource.DataSource = typeof(WarhammerBattleGenerator.Form1);
             // 
             // tabPage1
             // 
@@ -331,6 +329,10 @@
             this.tabPage2.Text = "Optional Rules";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // form1BindingSource
+            // 
+            this.form1BindingSource.DataSource = typeof(WarhammerBattleGenerator.Form1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,10 +348,10 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_SaveUnits);
-            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

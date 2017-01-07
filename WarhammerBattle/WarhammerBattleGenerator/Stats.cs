@@ -35,6 +35,23 @@ namespace WarhammerBattleGenerator
 
         [XmlElement("save")]
         public int save { get; set; }
+
+        public static Stats MakeDefaultStats()
+        {
+            Stats defaultStats = new Stats();
+
+            defaultStats.weaponSkill = 1;
+            defaultStats.ballisticSkill = 1;
+            defaultStats.strength = 1;
+            defaultStats.toughness = 1;
+            defaultStats.wounds = 1;
+            defaultStats.attacks = 1;
+            defaultStats.initiative = 1;
+            defaultStats.leadership = 1;
+            defaultStats.save = 6;
+
+            return defaultStats;
+        }
         
     }
 }

@@ -17,5 +17,17 @@ namespace WarhammerBattleGenerator
 
         [XmlElement("stats")]
         public Stats stats { get; set; }
+
+        public static Unit MakeDefault()
+        {
+            Unit defaultUnit = new Unit();
+
+            defaultUnit.stats = Stats.MakeDefaultStats();
+            defaultUnit.unitName = string.Empty;
+            defaultUnit.unitType = string.Empty;
+
+            return defaultUnit;
+
+        }
     }
 }

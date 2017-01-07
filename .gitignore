@@ -27,6 +27,8 @@ $RECYCLE.BIN/
 .DS_Store
 .AppleDouble
 .LSOverride
+*.VC.opendb
+*.VC.db
 
 # Thumbnails
 ._*
@@ -55,3 +57,5 @@ WarhammerBattle/WarhammerBattle/Debug/WarhammerBattle.tlog/CL.command.1.tlog
 *.db
 *.idb
 WarhammerBattle/WarhammerBattle.VC.VC.opendb
+WarhammerBattle/WarhammerBattleGenerator/bin
+WarhammerBattle/WarhammerBattleGenerator/obj

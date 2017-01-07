@@ -37,6 +37,23 @@ namespace WarhammerBattleGenerator
             writer.Dispose();
         }
 
+        public string[] GetUnitNames()
+        {
+            return units.Select(x => x.unitName).ToArray();
+        }
+
+        public Unit GetUnit(string unitName)
+        {
+            Unit retrievedUnit = units.FirstOrDefault(x => x.unitName.Equals(unitName));
+
+            if(retrievedUnit == null)
+            {
+                retrievedUnit = Unit.MakeDefault();
+            }
+
+            return retrievedUnit;
+        }
+
         public bool AddOrUpdate(Unit unitToAdd)
         {
             Unit existingUnit = units.FirstOrDefault(x => x.unitName.Equals(unitToAdd.unitName, StringComparison.OrdinalIgnoreCase));

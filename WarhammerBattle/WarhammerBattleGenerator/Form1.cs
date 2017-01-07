@@ -48,6 +48,8 @@ namespace WarhammerBattleGenerator
             InsertNumbersIntoComboBox(leadershipComboBox, "leadership");
             InsertNumbersIntoComboBox(saveComboBox, "save");
 
+            unitNameComboBox.Items.AddRange(unitCollection.GetUnitNames());
+
         }
 
 
@@ -74,6 +76,7 @@ namespace WarhammerBattleGenerator
             if(unitDeletedSuccessfully)
             {
                 MessageBox.Show("Unit deleted successfully", "Deletion Successful");
+                ResetForm();
             }
             else
             {
@@ -111,6 +114,38 @@ namespace WarhammerBattleGenerator
             {
                 MessageBox.Show("Unit was not added");
             }
+        }
+
+        private void ResetForm()
+        {
+            FillFormWithUnit(Unit.MakeDefault());
+            unitNameComboBox.Text = string.Empty;
+        }
+
+        private void DisplayUnit(object sender, EventArgs e)
+        {
+            string selectedUnitName = unitNameComboBox.SelectedItem.ToString();
+
+            Unit selectedUnit = unitCollection.GetUnit(selectedUnitName);
+
+            FillFormWithUnit(selectedUnit);
+            
+
+        }
+
+        private void FillFormWithUnit(Unit unitToFill)
+        {
+            typeComboBox.SelectedText = unitToFill.unitType;
+
+            weaponSkillComboBox.SelectedItem = unitToFill.stats.weaponSkill;
+            ballisticSkillComboBox.SelectedItem = unitToFill.stats.ballisticSkill;
+            strengthComboBox.SelectedItem = unitToFill.stats.strength;
+            toughnessComboBox.SelectedItem = unitToFill.stats.toughness;
+            woundsComboBox.SelectedItem = unitToFill.stats.wounds;
+            attacksComboBox.SelectedItem = unitToFill.stats.attacks;
+            initiativeComboBox.SelectedItem = unitToFill.stats.initiative;
+            leadershipComboBox.SelectedItem = unitToFill.stats.leadership;
+            saveComboBox.SelectedItem = unitToFill.stats.save;
         }
     }
 }

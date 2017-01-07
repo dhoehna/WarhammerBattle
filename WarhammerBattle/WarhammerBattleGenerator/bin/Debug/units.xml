@@ -2,17 +2,17 @@
 <units xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <unit>
     <unitName>Blood Letter</unitName>
-    <unitType>Troop</unitType>
+    <unitType>HQ</unitType>
     <stats>
-      <weaponSkill>2</weaponSkill>
-      <ballisticSkill>4</ballisticSkill>
-      <strength>5</strength>
+      <weaponSkill>1</weaponSkill>
+      <ballisticSkill>6</ballisticSkill>
+      <strength>3</strength>
       <toughness>4</toughness>
-      <wounds>3</wounds>
-      <attacks>3</attacks>
-      <initiative>3</initiative>
-      <leadership>3</leadership>
-      <save>4</save>
+      <wounds>1</wounds>
+      <attacks>1</attacks>
+      <initiative>1</initiative>
+      <leadership>1</leadership>
+      <save>6</save>
     </stats>
   </unit>
 </units>
