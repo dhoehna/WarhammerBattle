@@ -1,18 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<units xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <unit>
-    <unitName>Blood Letter</unitName>
-    <unitType>HQ</unitType>
-    <stats>
-      <weaponSkill>1</weaponSkill>
-      <ballisticSkill>6</ballisticSkill>
-      <strength>3</strength>
-      <toughness>4</toughness>
-      <wounds>1</wounds>
-      <attacks>1</attacks>
-      <initiative>1</initiative>
-      <leadership>1</leadership>
-      <save>6</save>
-    </stats>
-  </unit>
-</units>
+<units xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />

@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
-using System.Xml.Linq;
+using System.Windows.Forms;
 using WarhammerBattleGenerator.Configurations;
 
 namespace WarhammerBattleGenerator
@@ -104,15 +96,33 @@ namespace WarhammerBattleGenerator
             unit.unitType = typeComboBox.SelectedItem.ToString();
             unit.stats = newStats;
 
+            bool isUnitBeingAdded = unitCollection.DoesUnitExist(unit.unitName);
+
             bool wasAddedSuccessfully = unitCollection.AddOrUpdate(unit);
 
-            if (wasAddedSuccessfully)
+
+            if (isUnitBeingAdded)
             {
-                MessageBox.Show("Unit added successfully");
+                if (wasAddedSuccessfully)
+                {
+                    MessageBox.Show("Unit added successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Unit was not added");
+                }
             }
             else
             {
-                MessageBox.Show("Unit was not added");
+                if (wasAddedSuccessfully)
+                {
+                    MessageBox.Show("Unit updated successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Unit was not updated");
+                }
+
             }
         }
 

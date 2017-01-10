@@ -54,6 +54,11 @@ namespace WarhammerBattleGenerator
             return retrievedUnit;
         }
 
+        public bool DoesUnitExist(string unitName)
+        {
+            return GetUnitNames().FirstOrDefault(x => x.Equals(unitName)) != null;
+        }
+
         public bool AddOrUpdate(Unit unitToAdd)
         {
             Unit existingUnit = units.FirstOrDefault(x => x.unitName.Equals(unitToAdd.unitName, StringComparison.OrdinalIgnoreCase));
