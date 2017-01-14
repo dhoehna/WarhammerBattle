@@ -5,10 +5,18 @@
 #include "Unit.h"
 #include <string>
 #include <algorithm>
+#include "tinyxml2.h"
 
 
 int main(int argc, char** argv)
 {
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile("..\\WarhammerBattleGenerator\\bin\\Debug\\units.xml");
+	const char* unitName = doc.FirstChildElement("units")->FirstChildElement("unit")->FirstChildElement("unitName")->GetText();
+	std::cout << std::endl;
+
+
+	/*
 	bool shouldWeTest = false;
 	if (argc >= 2)
 	{
@@ -21,7 +29,7 @@ int main(int argc, char** argv)
 			shouldWeTest = true;
 		}
 	}
-
+	*/
 
 	/**
 	if (shouldWeTest)
