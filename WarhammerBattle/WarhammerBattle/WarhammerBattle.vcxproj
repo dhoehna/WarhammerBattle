@@ -82,46 +82,23 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BattleEngine.cpp" />
-    <ClCompile Include="BloodLetterStats.cpp" />
-    <ClCompile Include="BloodLetterStatsTester.cpp" />
-    <ClCompile Include="BloodThirsterStats.cpp" />
-    <ClCompile Include="DefaultStats.cpp" />
-    <ClCompile Include="KairosFateweaverStats.cpp" />
-    <ClCompile Include="KuGathStats.cpp" />
-    <ClCompile Include="LordOfChangeStats.cpp" />
-    <ClCompile Include="SkarbrandStats.cpp" />
     <ClCompile Include="Squad.cpp" />
     <ClCompile Include="SquadHelper.cpp" />
-    <ClCompile Include="SquadTester.cpp" />
     <ClCompile Include="Stats.cpp" />
-    <ClCompile Include="StatsFactory.cpp" />
-    <ClCompile Include="StatsFactoryTester.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Unit.cpp" />
-    <ClCompile Include="UnitTester.cpp" />
     <ClCompile Include="WarhammerBattle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BattleEngine.h" />
-    <ClInclude Include="BloodLetterStats.h" />
-    <ClInclude Include="BloodLetterStatsTester.h" />
-    <ClInclude Include="BloodThirsterStats.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="DefaultStats.h" />
     <ClInclude Include="ITester.h" />
-    <ClInclude Include="KairosFateweaverStats.h" />
-    <ClInclude Include="KuGathStats.h" />
-    <ClInclude Include="LordOfChangeStats.h" />
-    <ClInclude Include="SkarbrandStats.h" />
     <ClInclude Include="Squad.h" />
     <ClInclude Include="SquadHelper.h" />
-    <ClInclude Include="SquadTester.h" />
     <ClInclude Include="Stats.h" />
-    <ClInclude Include="StatsFactory.h" />
-    <ClInclude Include="StatsFactoryTester.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Unit.h" />
-    <ClInclude Include="UnitTester.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -27,46 +27,10 @@
     <ClCompile Include="Unit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BloodLetterStats.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Stats.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BloodLetterStatsTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DefaultStats.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UnitTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StatsFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StatsFactoryTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Squad.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SquadTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SkarbrandStats.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="KairosFateweaverStats.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="KuGathStats.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BloodThirsterStats.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LordOfChangeStats.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SquadHelper.cpp">
@@ -83,52 +47,19 @@
     <ClInclude Include="Unit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BloodLetterStats.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Stats.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BloodLetterStatsTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DefaultStats.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UnitTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StatsFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Constants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StatsFactoryTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Squad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SquadTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ITester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SkarbrandStats.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="KairosFateweaverStats.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="KuGathStats.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BloodThirsterStats.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LordOfChangeStats.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SquadHelper.h">

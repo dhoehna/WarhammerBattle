@@ -12,7 +12,6 @@ C:\Users\Test\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGe
 C:\Users\Test\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\bin\Debug\Configurations\StatConfiguration.xml
 C:\Users\Test\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\bin\Debug\WarhammerBattleGenerator.exe
 C:\Users\Test\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\bin\Debug\WarhammerBattleGenerator.pdb
-C:\Users\Test\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.csprojResolveAssemblyReference.cache
 C:\Users\Test\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.Form1.resources
 C:\Users\Test\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.Properties.Resources.resources
 C:\Users\Test\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.csproj.GenerateResource.Cache

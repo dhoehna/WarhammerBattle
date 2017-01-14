@@ -3,15 +3,9 @@
 #include "vld.h"
 #include "Stats.h"
 #include "Unit.h"
-#include "StatsFactory.h"
 #include <string>
 #include <algorithm>
 
-//Tests
-#include "BloodLetterStatsTester.h"
-#include "UnitTester.h"
-#include "StatsFactoryTester.h"
-#include "SquadTester.h"
 
 int main(int argc, char** argv)
 {
@@ -28,6 +22,8 @@ int main(int argc, char** argv)
 		}
 	}
 
+
+	/**
 	if (shouldWeTest)
 	{
 		BloodLetterStatsTester bloodletterStatsTester;
@@ -80,7 +76,7 @@ int main(int argc, char** argv)
 		 How will I disguinguish between attacker and defender?  have an enum  {ATTACKER, DEFENDER}? or a string and
 		 have const strings?  Maybe the enum is better.
 
-		 So 
+		 So
 			Side int;
 			array of stat pointers
 
@@ -122,7 +118,7 @@ int main(int argc, char** argv)
 		count from there to 1
 		do damage stuff
 		the squad will recalculate the average WS and I when units die.
-		
+
 		what will we need to ask the squad?
 		Get all attcks with Initiave blah
 		get average weapon skill
@@ -199,7 +195,10 @@ int main(int argc, char** argv)
 		double percentTie = 100 - (percentAttackerWon + percentDefenderWon);
 
 
-		std::cout << "Attacker won: " << percentAttackerWon << "\nDefender won: " << percentDefenderWon << "\ntie: " << percentTie << std::endl;*/
+		std::cout << "Attacker won: " << percentAttackerWon << "\nDefender won: " << percentDefenderWon << "\ntie: " << percentTie << std::endl;
+
+		
 	}
+	*/
 }
 
