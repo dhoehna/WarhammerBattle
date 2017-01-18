@@ -12,16 +12,33 @@ int main(int argc, char** argv)
 {
 	tinyxml2::XMLDocument doc;
 	doc.LoadFile("..\\WarhammerBattleGenerator\\bin\\Debug\\units.xml");
-	
 
-	for (tinyxml2::XMLElement* child = doc.FirstChildElement("units"); child != NULL; child = child->NextSiblingElement())
+
+	for (tinyxml2::XMLElement* child = doc.FirstChildElement("units")->FirstChildElement("unit"); child != NULL; child = child->NextSiblingElement())
 	{
-		
+		const char* unitName = child->FirstChildElement("unitName")->GetText();
+		const char* unitType = child->FirstChildElement("unitType")->GetText();
+
+		tinyxml2::XMLElement* stats = child->FirstChildElement("stats");
+
+		int weaponSkill = std::stoi(stats->FirstChildElement("weaponSkill")->GetText());
+		int ballistecSkill = std::stoi(stats->FirstChildElement("ballisticSkill")->GetText());
+		int strength = std::stoi(stats->FirstChildElement("strength")->GetText());
+		int toughness = std::stoi(stats->FirstChildElement("toughness")->GetText());
+		int wounds = std::stoi(stats->FirstChildElement("wounds")->GetText());
+		int attacks = std::stoi(stats->FirstChildElement("attacks")->GetText());
+		int initiative = std::stoi(stats->FirstChildElement("initiative")->GetText());
+		int leadership = std::stoi(stats->FirstChildElement("leadership")->GetText());
+		int save = std::stoi(stats->FirstChildElement("save")->GetText());
+
+		Stats* stats = new Stats();
+
+
 	}
 	//const char* unitName = doc.FirstChildElement("units")->FirstChildElement("unit")->FirstChildElement("unitName")->GetText();
 	std::cout << std::endl;
 
-	
+
 
 
 	/*
@@ -213,7 +230,7 @@ int main(int argc, char** argv)
 
 		std::cout << "Attacker won: " << percentAttackerWon << "\nDefender won: " << percentDefenderWon << "\ntie: " << percentTie << std::endl;
 
-		
+
 	}
 	*/
 }

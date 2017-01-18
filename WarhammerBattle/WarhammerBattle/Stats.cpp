@@ -5,59 +5,15 @@ Stats::~Stats()
 	//nothing to do here.
 }
 
-/*-----------------------------------------------------------------------------
- @name Equals operator
- @description compares two stats for equality by comparing each value.
- @return false if one value does not match, otherwise true.
-*/
-bool Stats::operator==(Stats& rightSide)
+Stats::Stats()
 {
-	if (this->weaponSkill != rightSide.weaponSkill)
-	{
-		return false;
-	}
-	
-	if (this->ballisticSkill != rightSide.ballisticSkill)
-	{
-		return false;
-	}
 
-	if (this->attacks != rightSide.attacks)
-	{
-		return false;
-	}
+}
 
-	if (this->initiative != rightSide.initiative)
-	{
-		return false;
-	}
+Stats::Stats(int weaponSkill, int ballisticSkill, int strength, int toughness, int wounds, int attacks, int initiative, int leadership, int save) :
+	weaponSkill(weaponSkill), ballisticSkill(ballisticSkill), strength(strength), toughness(toughness), wounds(wounds), attacks(attacks), leaderShip(leadership), save(save)
+{
 
-	if (this->leaderShip != rightSide.leaderShip)
-	{
-		return false;
-	}
-
-	if (this->save != rightSide.save)
-	{
-		return false;
-	}
-
-	if (this->strength != rightSide.strength)
-	{
-		return false;
-	}
-
-	if (this->toughness != rightSide.toughness)
-	{
-		return false;
-	}
-
-	if (this->wounds != rightSide.wounds)
-	{
-		return false;
-	}
-
-	return true;
 }
 
 /*-----------------------------------------------------------------------------

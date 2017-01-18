@@ -13,6 +13,11 @@ public:
 	int Save();
 	int LeaderShip();
 
+
+	Stats();
+
+	Stats(int weaponSkill, int ballisticSkill, int strength, int toughness, int wounds, int attacks, int initiative, int leadership, int save);
+
 	/*----------------------------------------------------------------------------
 	 @name Initiative
 	 @description gets the initiative
@@ -21,33 +26,10 @@ public:
 	int Initiative();
 
 	/*----------------------------------------------------------------------------
-	 @name Create
-	 @description makes a new Stats object.  Used in the virtual constructor idiom
-		https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Virtual_Constructor
-	 @return a pointer to the newly created Stats object.
-	*/
-	virtual Stats* Create() = 0;
-
-	/*----------------------------------------------------------------------------
-	 @name Clone
-	 @description makes a deep copy of this Stats object.  Used for virtual constructor idiom
-		https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Virtual_Constructor
-	 @return a pointer to the newly created copy.
-	*/
-	virtual Stats* Clone() = 0;
-
-	/*----------------------------------------------------------------------------
 	 @name destructor
 	 @description destroys this object.
 	*/
 	virtual ~Stats();
-
-	/*----------------------------------------------------------------------------
-	 @name equals operator
-	 @description compares two Stats for equality
-	 @return true if the Stats are equal, otherwise false.
-	*/
-	virtual bool operator==(Stats& rightSide);
 
 	/*----------------------------------------------------------------------------
 	 @name output operator
@@ -57,7 +39,7 @@ public:
 	*/
 	friend std::ostream& operator<<(std::ostream& os, const Stats& rightSide);
 
-protected:
+private:
 	int weaponSkill;
 	int ballisticSkill;
 	int strength;
