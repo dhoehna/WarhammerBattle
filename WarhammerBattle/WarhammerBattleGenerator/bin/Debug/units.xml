@@ -15,4 +15,49 @@
       <save>4</save>
     </stats>
   </unit>
+  <unit>
+    <unitName>Blood Thirster</unitName>
+    <unitType>HQ</unitType>
+    <stats>
+      <weaponSkill>10</weaponSkill>
+      <ballisticSkill>10</ballisticSkill>
+      <strength>2</strength>
+      <toughness>4</toughness>
+      <wounds>9</wounds>
+      <attacks>8</attacks>
+      <initiative>5</initiative>
+      <leadership>3</leadership>
+      <save>3</save>
+    </stats>
+  </unit>
+  <unit>
+    <unitName>Deamonette</unitName>
+    <unitType>Troop</unitType>
+    <stats>
+      <weaponSkill>2</weaponSkill>
+      <ballisticSkill>3</ballisticSkill>
+      <strength>7</strength>
+      <toughness>4</toughness>
+      <wounds>3</wounds>
+      <attacks>6</attacks>
+      <initiative>6</initiative>
+      <leadership>6</leadership>
+      <save>5</save>
+    </stats>
+  </unit>
+  <unit>
+    <unitName>Halla</unitName>
+    <unitType>Troop</unitType>
+    <stats>
+      <weaponSkill>3</weaponSkill>
+      <ballisticSkill>7</ballisticSkill>
+      <strength>6</strength>
+      <toughness>3</toughness>
+      <wounds>3</wounds>
+      <attacks>4</attacks>
+      <initiative>3</initiative>
+      <leadership>3</leadership>
+      <save>5</save>
+    </stats>
+  </unit>
 </units>

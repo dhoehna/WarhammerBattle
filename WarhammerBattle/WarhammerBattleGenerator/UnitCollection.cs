@@ -56,7 +56,8 @@ namespace WarhammerBattleGenerator
 
         public bool DoesUnitExist(string unitName)
         {
-            return GetUnitNames().FirstOrDefault(x => x.Equals(unitName)) != null;
+            //The unit exists if we found the name for it.
+            return GetUnitNames().FirstOrDefault(x => x.Equals(unitName)) == null;
         }
 
         public bool AddOrUpdate(Unit unitToAdd)
