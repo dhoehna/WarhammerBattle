@@ -7,6 +7,16 @@ UnitCollection::UnitCollection()
 	units = new std::list<Unit*>();
 }
 
+void UnitCollection::Add(Unit* unit)
+{
+
+}
+
+void UnitCollection::Add(Stats* stats)
+{
+
+}
+
 
 UnitCollection::~UnitCollection()
 {

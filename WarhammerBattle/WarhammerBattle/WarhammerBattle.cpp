@@ -22,7 +22,7 @@ int main(int argc, char** argv)
 		tinyxml2::XMLElement* stats = child->FirstChildElement("stats");
 
 		int weaponSkill = std::stoi(stats->FirstChildElement("weaponSkill")->GetText());
-		int ballistecSkill = std::stoi(stats->FirstChildElement("ballisticSkill")->GetText());
+		int ballisticSkill = std::stoi(stats->FirstChildElement("ballisticSkill")->GetText());
 		int strength = std::stoi(stats->FirstChildElement("strength")->GetText());
 		int toughness = std::stoi(stats->FirstChildElement("toughness")->GetText());
 		int wounds = std::stoi(stats->FirstChildElement("wounds")->GetText());
@@ -31,7 +31,9 @@ int main(int argc, char** argv)
 		int leadership = std::stoi(stats->FirstChildElement("leadership")->GetText());
 		int save = std::stoi(stats->FirstChildElement("save")->GetText());
 
-		Stats* stats = new Stats();
+		Stats* stats = new Stats(weaponSkill, ballisticSkill, strength, toughness, wounds, attacks, initiative, leadership, save);
+
+
 
 
 	}

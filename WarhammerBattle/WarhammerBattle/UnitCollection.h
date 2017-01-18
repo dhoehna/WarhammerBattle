@@ -8,6 +8,8 @@ public:
 	UnitCollection();
 	~UnitCollection();
 
+	void Add(Unit* unit);
+	void Add(Stats* stats);
 private:
 	std::list<Unit*>* units;
 };

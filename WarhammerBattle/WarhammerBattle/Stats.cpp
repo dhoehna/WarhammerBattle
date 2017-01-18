@@ -7,13 +7,22 @@ Stats::~Stats()
 
 Stats::Stats()
 {
-
+	//Make a default stats
+	weaponSkill = 1;
+	ballisticSkill = 1;
+	strength = 1;
+	toughness = 1;
+	wounds = 1;
+	attacks = 1;
+	initiative = 1;
+	leaderShip = 1;
+	save = 6;
 }
 
 Stats::Stats(int weaponSkill, int ballisticSkill, int strength, int toughness, int wounds, int attacks, int initiative, int leadership, int save) :
 	weaponSkill(weaponSkill), ballisticSkill(ballisticSkill), strength(strength), toughness(toughness), wounds(wounds), attacks(attacks), leaderShip(leadership), save(save)
 {
-
+	/* intentionally left blank*/
 }
 
 /*-----------------------------------------------------------------------------
