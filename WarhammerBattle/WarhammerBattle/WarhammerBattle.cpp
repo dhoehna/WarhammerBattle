@@ -12,8 +12,11 @@ int main(int argc, char** argv)
 {
 	tinyxml2::XMLDocument doc;
 	doc.LoadFile("..\\WarhammerBattleGenerator\\bin\\Debug\\units.xml");
-	const char* unitName = doc.FirstChildElement("units")->FirstChildElement("unit")->FirstChildElement("unitName")->GetText();
+	const tinyxml2::XMLElement*  thing = doc.FirstChildElement("units");
+	//const char* unitName = doc.FirstChildElement("units")->FirstChildElement("unit")->FirstChildElement("unitName")->GetText();
 	std::cout << std::endl;
+
+	
 
 
 	/*
