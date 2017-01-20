@@ -2,14 +2,15 @@
 #define UNITCOLLECTION_H
 #include <list>
 #include "Unit.h"
+#include <string>
 class UnitCollection
 {
 public:
 	UnitCollection();
 	~UnitCollection();
 
-	void Add(Unit* unit);
-	void Add(Stats* stats);
+	void Add(std::string name, std::string unitType, Unit* unit);
+	void Add(std::string name, std::string unitType, Stats* stats);
 private:
 	std::list<Unit*>* units;
 };

@@ -7,14 +7,14 @@ UnitCollection::UnitCollection()
 	units = new std::list<Unit*>();
 }
 
-void UnitCollection::Add(Unit* unit)
+void UnitCollection::Add(std::string name, std::string unitType, Unit* unit)
 {
 
 }
 
-void UnitCollection::Add(Stats* stats)
+void UnitCollection::Add(std::string name, std::string unitType, Stats* stats)
 {
-
+	units->push_front(new Unit(name, unitType, stats));
 }
 
 

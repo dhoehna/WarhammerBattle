@@ -23,8 +23,10 @@
  @remark this class will delete stats when this object is dosposed of.
  @param stats the stats that the unit should use.
 */
-Unit::Unit(Stats* stats)
+Unit::Unit(std::string name, std::string unitType, Stats* stats)
 {
+	this->unitType = unitType;
+	this->name = name;
 	this->stats = stats;
 	isDead = false;
 	numberOfUnsavedWounds = 0;
@@ -36,7 +38,9 @@ Unit::Unit(Stats* stats)
 */
 Unit::Unit(const Unit& rightSide)
 {
-	stats = rightSide.stats->Clone();
+	this->unitType = rightSide.unitType;
+	this->name = rightSide.name;
+	stats = new Stats((*rightSide.stats));
 	isDead = rightSide.isDead;
 	numberOfUnsavedWounds = rightSide.numberOfUnsavedWounds;
 }
@@ -148,4 +152,14 @@ int Unit::LeaderShip()
 int Unit::Initiative()
 {
 	return stats->Initiative();
+}
+
+std::string Unit::Name()
+{
+	return name;
+}
+
+std::string Unit::UnitType()
+{
+	return unitType;
 }

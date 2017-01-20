@@ -2,6 +2,7 @@
 #define UNIT_H
 #include "Stats.h"
 #include "DefaultStats.h"
+#include <string>
 #include <iostream>
 class Unit
 {
@@ -21,7 +22,7 @@ public:
 	  @description makes a ne unit object with the passed in stats.
 	  @param stats the stats for the unit
 	 */
-	Unit(Stats* stats);
+	Unit(std::string name, std::string unitType, Stats* stats);
 
 	/*----------------------------------------------------------------------------
 	 @name copy constructor
@@ -66,11 +67,15 @@ public:
 	int Save();
 	int LeaderShip();
 	int Initiative();
+	std::string Name();
+	std::string UnitType();
 
 private:
 	int numberOfUnsavedWounds;
 	bool isDead;
 	Stats* stats;
+	std::string name;
+	std::string unitType;
 };
 
 #endif
