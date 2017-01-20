@@ -20,9 +20,22 @@ Stats::Stats()
 }
 
 Stats::Stats(int weaponSkill, int ballisticSkill, int strength, int toughness, int wounds, int attacks, int initiative, int leadership, int save) :
-	weaponSkill(weaponSkill), ballisticSkill(ballisticSkill), strength(strength), toughness(toughness), wounds(wounds), attacks(attacks), leaderShip(leadership), save(save)
+	weaponSkill(weaponSkill), ballisticSkill(ballisticSkill), strength(strength), toughness(toughness), wounds(wounds), attacks(attacks), initiative(initiative), leaderShip(leadership), save(save)
 {
 	/* intentionally left blank*/
+}
+
+Stats::Stats(const Stats& statsToCopy)
+{
+	this->weaponSkill = statsToCopy.weaponSkill;
+	this->ballisticSkill = statsToCopy.ballisticSkill;
+	this->strength = statsToCopy.strength;
+	this->toughness = statsToCopy.toughness;
+	this->wounds = statsToCopy.wounds;
+	this->attacks = statsToCopy.attacks;
+	this->initiative = statsToCopy.initiative;
+	this->leaderShip = statsToCopy.leaderShip;
+	this->save = statsToCopy.save;
 }
 
 /*-----------------------------------------------------------------------------

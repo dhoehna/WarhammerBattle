@@ -18,6 +18,8 @@ public:
 
 	Stats(int weaponSkill, int ballisticSkill, int strength, int toughness, int wounds, int attacks, int initiative, int leadership, int save);
 
+	Stats(const Stats& statsToCopy);
+
 	/*----------------------------------------------------------------------------
 	 @name Initiative
 	 @description gets the initiative
