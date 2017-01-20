@@ -60,12 +60,12 @@ void Squad::Initilize()
 { 
 	toughnesses.resize(20);
 	weaponSkills.resize(20);
-	for (int toughnessIndex = 0; toughnessIndex < toughnesses.size(); toughnessIndex++)
+	for (size_t toughnessIndex = 0; toughnessIndex < toughnesses.size(); toughnessIndex++)
 	{
 		toughnesses[toughnessIndex] = 0;
 	}
 
-	for (int weaponSkillIndex = 0; weaponSkillIndex < weaponSkills.size(); weaponSkillIndex++)
+	for (size_t weaponSkillIndex = 0; weaponSkillIndex < weaponSkills.size(); weaponSkillIndex++)
 	{
 		weaponSkills[weaponSkillIndex] = 0;
 	}
