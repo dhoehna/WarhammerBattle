@@ -136,12 +136,14 @@
   <ItemGroup>
     <ClInclude Include="Squad.h" />
     <ClInclude Include="Stats.h" />
+    <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Unit.h" />
     <ClInclude Include="UnitCollection.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Squad.cpp" />
     <ClCompile Include="Stats.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="Unit.cpp" />
     <ClCompile Include="UnitCollection.cpp" />
   </ItemGroup>
