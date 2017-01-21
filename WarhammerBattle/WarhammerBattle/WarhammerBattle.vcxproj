@@ -82,12 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BattleEngine.cpp" />
-    <ClCompile Include="Squad.cpp" />
     <ClCompile Include="SquadHelper.cpp" />
-    <ClCompile Include="Stats.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
-    <ClCompile Include="Unit.cpp" />
-    <ClCompile Include="UnitCollection.cpp" />
     <ClCompile Include="WarhammerBattle.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -95,12 +91,8 @@
     <ClInclude Include="Constants.h" />
     <ClInclude Include="DefaultStats.h" />
     <ClInclude Include="ITester.h" />
-    <ClInclude Include="Squad.h" />
     <ClInclude Include="SquadHelper.h" />
-    <ClInclude Include="Stats.h" />
     <ClInclude Include="tinyxml2.h" />
-    <ClInclude Include="Unit.h" />
-    <ClInclude Include="UnitCollection.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

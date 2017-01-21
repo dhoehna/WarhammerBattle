@@ -7,28 +7,48 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WarhammerBattle", "Warhamme
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarhammerBattleGenerator", "WarhammerBattleGenerator\WarhammerBattleGenerator.csproj", "{42549365-51A0-407B-9EB1-BB4D8C98478C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SharedClasses", "SharedClasses\SharedClasses.vcxproj", "{7FA3200D-0BF6-4029-81E6-8913F425FC32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
 		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Debug|Win32.ActiveCfg = Debug|Win32
 		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Debug|Win32.Build.0 = Debug|Win32
+		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Debug|x64.ActiveCfg = Debug|Win32
 		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Release|Any CPU.ActiveCfg = Release|Win32
 		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Release|Win32.ActiveCfg = Release|Win32
 		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Release|Win32.Build.0 = Release|Win32
+		{4C0D9337-16E4-42B1-BE48-E3B95911E291}.Release|x64.ActiveCfg = Release|Win32
 		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Debug|Win32.ActiveCfg = Debug|Any CPU
 		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Debug|Win32.Build.0 = Debug|Any CPU
+		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Debug|x64.Build.0 = Debug|Any CPU
 		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Release|Win32.ActiveCfg = Release|Any CPU
 		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Release|Win32.Build.0 = Release|Any CPU
+		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Release|x64.ActiveCfg = Release|Any CPU
+		{42549365-51A0-407B-9EB1-BB4D8C98478C}.Release|x64.Build.0 = Release|Any CPU
+		{7FA3200D-0BF6-4029-81E6-8913F425FC32}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{7FA3200D-0BF6-4029-81E6-8913F425FC32}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7FA3200D-0BF6-4029-81E6-8913F425FC32}.Debug|Win32.Build.0 = Debug|Win32
+		{7FA3200D-0BF6-4029-81E6-8913F425FC32}.Debug|x64.ActiveCfg = Debug|x64
+		{7FA3200D-0BF6-4029-81E6-8913F425FC32}.Debug|x64.Build.0 = Debug|x64
+		{7FA3200D-0BF6-4029-81E6-8913F425FC32}.Release|Any CPU.ActiveCfg = Release|Win32
+		{7FA3200D-0BF6-4029-81E6-8913F425FC32}.Release|Win32.ActiveCfg = Release|Win32
+		{7FA3200D-0BF6-4029-81E6-8913F425FC32}.Release|Win32.Build.0 = Release|Win32
+		{7FA3200D-0BF6-4029-81E6-8913F425FC32}.Release|x64.ActiveCfg = Release|x64
+		{7FA3200D-0BF6-4029-81E6-8913F425FC32}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
