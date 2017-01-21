@@ -16,150 +16,153 @@
 
 #include "Unit.h"
 
-
-/*-----------------------------------------------------------------------------
- @name Default constructor
- @description Makes a new unit with the passed in stats->
- @remark this class will delete stats when this object is dosposed of.
- @param stats the stats that the unit should use.
-*/
-Unit::Unit(std::string name, std::string unitType, Stats* stats)
+namespace UnitClasses
 {
-	this->unitType = unitType;
-	this->name = name;
-	this->stats = stats;
-	isDead = false;
-	numberOfUnsavedWounds = 0;
-}
 
-/*-----------------------------------------------------------------------------
- @name copy constructor
- @description makes a new Unit based on the unit passed in.  This is a deep copy.
-*/
-Unit::Unit(const Unit& rightSide)
-{
-	this->unitType = rightSide.unitType;
-	this->name = rightSide.name;
-	stats = new Stats((*rightSide.stats));
-	isDead = rightSide.isDead;
-	numberOfUnsavedWounds = rightSide.numberOfUnsavedWounds;
-}
-
-/*-----------------------------------------------------------------------------
- @name destructor
- @description
-*/
-Unit::~Unit()
-{
-	delete stats;
-
-	stats = nullptr;
-}
-
-std::ostream& operator<<(std::ostream& os, const Unit& rightSide)
-{
-	os << ((*rightSide.stats));
-	return os;
-}
-
-/*-----------------------------------------------------------------------------
- @name AllocateWounds
- @description gives this unit a number of wounds equal to numberOfUnSavedWounds
- @sideeffect this will turn isDead to true if the unit has reached the max number of unsaved wounds.
- @param numberOfUnsavedWounds the number of unsaved wounds to give to the unit
- @return the number of wounds that still need to be allocated
-*/
-int Unit::AllocateWounds(int numberOfUnSavedWounds)
-{
-	while (!isDead && numberOfUnSavedWounds > 0)
+	/*-----------------------------------------------------------------------------
+	 @name Default constructor
+	 @description Makes a new unit with the passed in stats->
+	 @remark this class will delete stats when this object is dosposed of.
+	 @param stats the stats that the unit should use.
+	*/
+	Unit::Unit(std::string name, std::string unitType, Stats* stats)
 	{
-		numberOfUnsavedWounds++;
-
-		if (numberOfUnsavedWounds == stats->Wounds())
-		{
-			isDead = true;
-		}
-
-		numberOfUnSavedWounds--;
+		this->unitType = unitType;
+		this->name = name;
+		this->stats = stats;
+		isDead = false;
+		numberOfUnsavedWounds = 0;
 	}
 
-	int tempNumberOfUnsavedWounds = numberOfUnsavedWounds;
+	/*-----------------------------------------------------------------------------
+	 @name copy constructor
+	 @description makes a new Unit based on the unit passed in.  This is a deep copy.
+	*/
+	Unit::Unit(const Unit& rightSide)
+	{
+		this->unitType = rightSide.unitType;
+		this->name = rightSide.name;
+		stats = new Stats((*rightSide.stats));
+		isDead = rightSide.isDead;
+		numberOfUnsavedWounds = rightSide.numberOfUnsavedWounds;
+	}
 
-	return tempNumberOfUnsavedWounds;
-}
+	/*-----------------------------------------------------------------------------
+	 @name destructor
+	 @description
+	*/
+	Unit::~Unit()
+	{
+		delete stats;
 
-/*-----------------------------------------------------------------------------
- @name IsDead
- @description sees if the number of unsaved wounds is equal to the total number
-	of wounds.
- @return boolean
-*/
-bool Unit::IsDead()
-{
-	return isDead;
-}
+		stats = nullptr;
+	}
 
-/*-----------------------------------------------------------------------------
- @name Reset
- @description make the unit alive again.
-*/
-void Unit::Reset()
-{
-	isDead = false;
-	numberOfUnsavedWounds = 0;
-}
+	std::ostream& operator<<(std::ostream& os, const Unit& rightSide)
+	{
+		os << ((*rightSide.stats));
+		return os;
+	}
 
-int Unit::WeaponSkill() 
-{
-	return stats->WeaponSkill();
-}
+	/*-----------------------------------------------------------------------------
+	 @name AllocateWounds
+	 @description gives this unit a number of wounds equal to numberOfUnSavedWounds
+	 @sideeffect this will turn isDead to true if the unit has reached the max number of unsaved wounds.
+	 @param numberOfUnsavedWounds the number of unsaved wounds to give to the unit
+	 @return the number of wounds that still need to be allocated
+	*/
+	int Unit::AllocateWounds(int numberOfUnSavedWounds)
+	{
+		while (!isDead && numberOfUnSavedWounds > 0)
+		{
+			numberOfUnsavedWounds++;
 
-int Unit::BallisticSkill() 
-{
-	return stats->BallisticSkill();
-}
+			if (numberOfUnsavedWounds == stats->Wounds())
+			{
+				isDead = true;
+			}
 
-int Unit::Strength() 
-{	
-	return stats->Strength();
-}
+			numberOfUnSavedWounds--;
+		}
 
-int Unit::Toughness() 
-{
-	return stats->Toughness();
-}
+		int tempNumberOfUnsavedWounds = numberOfUnsavedWounds;
 
-int Unit::Attacks() 
-{
-	return stats->Attacks();
-}
+		return tempNumberOfUnsavedWounds;
+	}
 
-int Unit::Wounds()
-{
-	return stats->Wounds();
-}
+	/*-----------------------------------------------------------------------------
+	 @name IsDead
+	 @description sees if the number of unsaved wounds is equal to the total number
+		of wounds.
+	 @return boolean
+	*/
+	bool Unit::IsDead()
+	{
+		return isDead;
+	}
 
-int Unit::Save()
-{
-	return stats->Save();
-}
+	/*-----------------------------------------------------------------------------
+	 @name Reset
+	 @description make the unit alive again.
+	*/
+	void Unit::Reset()
+	{
+		isDead = false;
+		numberOfUnsavedWounds = 0;
+	}
 
-int Unit::LeaderShip() 
-{
-	return stats->LeaderShip();
-}
+	int Unit::WeaponSkill()
+	{
+		return stats->WeaponSkill();
+	}
 
-int Unit::Initiative()
-{
-	return stats->Initiative();
-}
+	int Unit::BallisticSkill()
+	{
+		return stats->BallisticSkill();
+	}
 
-std::string Unit::Name()
-{
-	return name;
-}
+	int Unit::Strength()
+	{
+		return stats->Strength();
+	}
 
-std::string Unit::UnitType()
-{
-	return unitType;
+	int Unit::Toughness()
+	{
+		return stats->Toughness();
+	}
+
+	int Unit::Attacks()
+	{
+		return stats->Attacks();
+	}
+
+	int Unit::Wounds()
+	{
+		return stats->Wounds();
+	}
+
+	int Unit::Save()
+	{
+		return stats->Save();
+	}
+
+	int Unit::LeaderShip()
+	{
+		return stats->LeaderShip();
+	}
+
+	int Unit::Initiative()
+	{
+		return stats->Initiative();
+	}
+
+	std::string Unit::Name()
+	{
+		return name;
+	}
+
+	std::string Unit::UnitType()
+	{
+		return unitType;
+	}
 }
