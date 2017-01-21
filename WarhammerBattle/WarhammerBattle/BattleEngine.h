@@ -13,7 +13,6 @@
 #define BATTLE_ENGINE_H
 #include <time.h> 
 #include <random>
-#include "Unit.h"
 class BattleEngine
 {
 public:
