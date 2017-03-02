@@ -11,8 +11,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SharedClasses", "SharedClas
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SquadMaker", "SquadMaker\SquadMaker.vcxproj", "{87F65F25-A925-4EB3-9875-E483F6155D37}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestStaticLibrary", "TestStaticLibrary\TestStaticLibrary.vcxproj", "{CFF11F79-36BA-4CAD-A571-B4D264AFA875}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,16 +61,6 @@ Global
 		{87F65F25-A925-4EB3-9875-E483F6155D37}.Release|Win32.Build.0 = Release|Win32
 		{87F65F25-A925-4EB3-9875-E483F6155D37}.Release|x64.ActiveCfg = Release|x64
 		{87F65F25-A925-4EB3-9875-E483F6155D37}.Release|x64.Build.0 = Release|x64
-		{CFF11F79-36BA-4CAD-A571-B4D264AFA875}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{CFF11F79-36BA-4CAD-A571-B4D264AFA875}.Debug|Win32.ActiveCfg = Debug|Win32
-		{CFF11F79-36BA-4CAD-A571-B4D264AFA875}.Debug|Win32.Build.0 = Debug|Win32
-		{CFF11F79-36BA-4CAD-A571-B4D264AFA875}.Debug|x64.ActiveCfg = Debug|x64
-		{CFF11F79-36BA-4CAD-A571-B4D264AFA875}.Debug|x64.Build.0 = Debug|x64
-		{CFF11F79-36BA-4CAD-A571-B4D264AFA875}.Release|Any CPU.ActiveCfg = Release|Win32
-		{CFF11F79-36BA-4CAD-A571-B4D264AFA875}.Release|Win32.ActiveCfg = Release|Win32
-		{CFF11F79-36BA-4CAD-A571-B4D264AFA875}.Release|Win32.Build.0 = Release|Win32
-		{CFF11F79-36BA-4CAD-A571-B4D264AFA875}.Release|x64.ActiveCfg = Release|x64
-		{CFF11F79-36BA-4CAD-A571-B4D264AFA875}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

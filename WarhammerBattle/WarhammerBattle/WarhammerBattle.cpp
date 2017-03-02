@@ -7,14 +7,14 @@
 
 
 int main(int argc, char** argv)
-{
-	//tinyxml2::XMLDocument doc;
-	//doc.LoadFile("..\\WarhammerBattleGenerator\\bin\\Debug\\units.xml");
-	
+{	
 	UnitClasses::UnitCollection unitsAvalibleForBattle("..\\WarhammerBattleGenerator\\bin\\Debug\\units.xml");
 
-	
-	//const char* unitName = doc.FirstChildElement("units")->FirstChildElement("unit")->FirstChildElement("unitName")->GetText();
+
+	/*
+	So, now we have the UnitCollection.
+	Now we want to make two units and fight them.
+	*/
 	std::cout << std::endl;
 
 
