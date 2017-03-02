@@ -134,6 +134,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AllUnitClasses.h" />
     <ClInclude Include="Squad.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="tinyxml2.h" />

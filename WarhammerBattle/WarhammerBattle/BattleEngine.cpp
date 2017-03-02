@@ -50,7 +50,7 @@ BattleEngine::~BattleEngine()
  @param defender The defender
  @return an int representing who won. Either TIE, ATTACKER, or DEFENDER
 */
-int BattleEngine::Battle(Unit& attacker, Unit& defender)
+int BattleEngine::Battle(UnitClasses::Unit& attacker, UnitClasses::Unit& defender)
 {
 
 	bool isAttackerDead = false;

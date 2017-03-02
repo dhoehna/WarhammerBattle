@@ -60,4 +60,19 @@
       <save>5</save>
     </stats>
   </unit>
+  <unit>
+    <unitName>BloodLetter</unitName>
+    <unitType>HQ</unitType>
+    <stats>
+      <weaponSkill>5</weaponSkill>
+      <ballisticSkill>3</ballisticSkill>
+      <strength>2</strength>
+      <toughness>2</toughness>
+      <wounds>3</wounds>
+      <attacks>2</attacks>
+      <initiative>3</initiative>
+      <leadership>3</leadership>
+      <save>4</save>
+    </stats>
+  </unit>
 </units>

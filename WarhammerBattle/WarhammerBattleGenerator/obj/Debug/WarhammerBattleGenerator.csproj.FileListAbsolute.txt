@@ -17,3 +17,12 @@ C:\Users\Test\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGe
 C:\Users\Test\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.csproj.GenerateResource.Cache
 C:\Users\Test\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.exe
 C:\Users\Test\Documents\GitHub\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.pdb
+C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\bin\Debug\WarhammerBattleGenerator.exe.config
+C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\bin\Debug\Configurations\StatConfiguration.xml
+C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\bin\Debug\WarhammerBattleGenerator.exe
+C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\bin\Debug\WarhammerBattleGenerator.pdb
+C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.Form1.resources
+C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.Properties.Resources.resources
+C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.csproj.GenerateResource.Cache
+C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.exe
+C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.pdb

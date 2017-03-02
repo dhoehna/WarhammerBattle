@@ -12,6 +12,7 @@
 #ifndef BATTLE_ENGINE_H
 #define BATTLE_ENGINE_H
 #include <time.h> 
+#include "Unit.h"
 #include <random>
 class BattleEngine
 {
@@ -43,7 +44,7 @@ public:
 	 @param defender the defender
 	 @return an int representation of who won.
 	*/
-	int Battle( Unit& attacker,  Unit& defender);
+	int Battle(UnitClasses::Unit& attacker, UnitClasses::Unit& defender);
 
 	enum { TIE, ATTACKER, DEFENDER }; //represents who won in the battle.
 
