@@ -4,7 +4,7 @@
 
 UnitFactory::UnitFactory(const char* fileLocation)
 {
-	units = new std::vector<UnitClasses::Unit*>();
+	//units = new std::vector<UnitClasses::Unit*>();
 
 	tinyxml2::XMLDocument doc;
 	doc.LoadFile(fileLocation);

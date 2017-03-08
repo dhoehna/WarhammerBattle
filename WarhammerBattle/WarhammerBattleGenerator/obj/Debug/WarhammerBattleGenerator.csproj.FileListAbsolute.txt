@@ -26,3 +26,4 @@ C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\Warham
 C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.csproj.GenerateResource.Cache
 C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.exe
 C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.pdb
+C:\git\WarhammerBattle\WarhammerBattle\WarhammerBattleGenerator\obj\Debug\WarhammerBattleGenerator.csprojResolveAssemblyReference.cache
