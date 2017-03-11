@@ -95,6 +95,41 @@ LRESULT CALLBACK MainWindowProcessor(HWND eventHandler, UINT msg, WPARAM wParam,
 	return 0;
 }
 
+LRESULT CALLBACK PlayerWindowProcessor(HWND eventHandler, UINT msg, WPARAM wParam, LPARAM lparam)
+{
+	switch (msg)
+	{
+	case WM_PAINT:
+		PAINTSTRUCT pc;
+		HDC hdc;
+
+		hdc = BeginPaint(eventHandler, &pc);
+
+		if (hdc == NULL)
+		{
+			MessageBox(eventHandler, "Error with BeginPaint", "Caption", MB_ICONEXCLAMATION | MB_OK);
+		}
+		TextOut(hdc, 10, 10, "Unit", 4);
+		TextOut(hdc, 10, 40, "Size", 4);
+		/*
+		TextOut(hdc, 10, 55,  "        WS: ", 12);
+		TextOut(hdc, 10, 75,  "        BS: ", 12);
+		TextOut(hdc, 10, 95,  "  Strength: ", 12);
+		TextOut(hdc, 10, 115,  " Toughness: ", 12);
+		TextOut(hdc, 10, 125, "   Attacks: ", 12);
+		TextOut(hdc, 10, 145, "    Wounds: ", 12);
+		TextOut(hdc, 10, 165, "Initiative: ", 12);
+		TextOut(hdc, 10, 185, "Leadership: ", 12);
+		*/
+		EndPaint(eventHandler, &pc);
+		break;
+	default:
+		return DefWindowProc(eventHandler, msg, wParam, lparam);
+	}
+
+	return 0;
+}
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	LPSTR lpCmdLine, int nCmdShow)
 {
@@ -125,7 +160,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		"genericWindow",
 		"Warhammer Battle",
 		WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, CW_USEDEFAULT, 700, 500,
+		CW_USEDEFAULT, CW_USEDEFAULT, 900, 500,
 		NULL, NULL, hInstance, NULL);
 
 	if (mainWindow == NULL)
@@ -138,7 +173,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	WNDCLASSEX playerWindow;
 	playerWindow.cbSize = sizeof(WNDCLASSEX);
 	playerWindow.style = 0;
-	playerWindow.lpfnWndProc = MainWindowProcessor;
+	playerWindow.lpfnWndProc = PlayerWindowProcessor;
 	playerWindow.cbClsExtra = 0;
 	playerWindow.cbWndExtra = 0;
 	playerWindow.hInstance = hInstance;
@@ -160,7 +195,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		"playerWindow",
 		"Player One",
 		WS_CHILD | WS_VISIBLE | WS_CAPTION,
-		50, 50, 200, 300,
+		50, 50, 250, 300,
 		mainWindow, NULL, hInstance, NULL);
 
 	if (playerOneWindow == NULL)
@@ -170,13 +205,87 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		return 0;
 	}
 
+	HWND playerOneUnitTypeComboBox;
+	playerOneUnitTypeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
+		WS_BORDER | WS_VISIBLE |
+		WS_CHILD | CBS_DROPDOWNLIST,
+		// No size yet--resize after setting image list.
+		40,      // Vertical position of Combobox
+		5,      // Horizontal position of Combobox
+		120,      // Sets the width of Combobox
+		1000,    // Sets the height of Combobox
+		playerOneWindow,
+		NULL,
+		hInstance,
+		NULL);
+
+	
+	SendMessage(playerOneUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Blood Letter");
+	SendMessage(playerOneUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Deamonette");
+	SendMessage(playerOneUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Plauge bearer");
+	SendMessage(playerOneUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Pink Horror");
+	
+	SendMessage(playerOneUnitTypeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
+
+	HWND playerOneSizeComboBox;
+	playerOneSizeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
+		WS_BORDER | WS_VISIBLE |
+		WS_CHILD | CBS_DROPDOWNLIST,
+		// No size yet--resize after setting image list.
+		40,      // Vertical position of Combobox
+		35,      // Horizontal position of Combobox
+		50,      // Sets the width of Combobox
+		1000,    // Sets the height of Combobox
+		playerOneWindow,
+		NULL,
+		hInstance,
+		NULL);
+
+	for (int size = 1; size <= 30; size++)
+	{
+		char buffer[10];
+		sprintf(buffer, "%d", size);
+		SendMessage(playerOneSizeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)buffer);
+	}
+
+	SendMessage(playerOneSizeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
+
 	HWND playerTwoWindow;
 	playerTwoWindow = CreateWindowEx(WS_EX_CLIENTEDGE,
-		"playerWindow", 
-		"Player Two", 
-		WS_CHILD | WS_VISIBLE | WS_CAPTION, 
-		400, 50, 200, 300, 
+		"playerWindow",
+		"Player Two",
+		WS_CHILD | WS_VISIBLE | WS_CAPTION,
+		600, 50, 250, 300,
 		mainWindow, NULL, hInstance, NULL);
+
+	if (playerTwoWindow == NULL)
+	{
+		MessageBox(NULL, "Window Creation Failed!", "Error!",
+			MB_ICONEXCLAMATION | MB_OK);
+		return 0;
+	}
+
+	HWND playerTwoUnitTypeComboBox;
+	playerTwoUnitTypeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
+		WS_BORDER | WS_VISIBLE |
+		WS_CHILD | CBS_DROPDOWNLIST,
+		// No size yet--resize after setting image list.
+		40,      // Vertical position of Combobox
+		5,      // Horizontal position of Combobox
+		120,      // Sets the width of Combobox
+		1000,    // Sets the height of Combobox
+		playerTwoWindow,
+		NULL,
+		hInstance,
+		NULL);
+
+
+	SendMessage(playerTwoUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Blood Letter");
+	SendMessage(playerTwoUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Deamonette");
+	SendMessage(playerTwoUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Plauge bearer");
+	SendMessage(playerTwoUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Pink Horror");
+
+	SendMessage(playerTwoUnitTypeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
 
 	/*
 	HWND playerOneContainer;
@@ -205,21 +314,21 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		"Okay",
 		WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON, 100, 100, 100, 100, mainWindow, NULL, (HINSTANCE)GetWindowLong(mainWindow, GWL_HINSTANCE), NULL);
 		*/
-	/*
-	HWND coolButton;
-	coolButton = CreateWindow(
-		"BUTTON",  // Predefined class; Unicode assumed 
-		"OK",      // Button text 
-		WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
-		10,         // x position 
-		10,         // y position 
-		100,        // Button width
-		100,        // Button height
-		mainWindow,     // Parent window
-		NULL,       // No menu.
-		(HINSTANCE)GetWindowLong(mainWindow, GWL_HINSTANCE),
-		NULL);      // Pointer not needed
-	*/
+		/*
+		HWND coolButton;
+		coolButton = CreateWindow(
+			"BUTTON",  // Predefined class; Unicode assumed
+			"OK",      // Button text
+			WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles
+			10,         // x position
+			10,         // y position
+			100,        // Button width
+			100,        // Button height
+			mainWindow,     // Parent window
+			NULL,       // No menu.
+			(HINSTANCE)GetWindowLong(mainWindow, GWL_HINSTANCE),
+			NULL);      // Pointer not needed
+		*/
 	ShowWindow(mainWindow, nCmdShow);
 	UpdateWindow(mainWindow);
 
