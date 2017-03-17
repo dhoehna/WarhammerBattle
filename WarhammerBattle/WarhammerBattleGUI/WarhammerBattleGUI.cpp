@@ -230,12 +230,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	HWND playerOneSizeComboBox;
 	playerOneSizeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
 		WS_BORDER | WS_VISIBLE |
-		WS_CHILD | CBS_DROPDOWNLIST,
+		WS_CHILD | CBS_DROPDOWNLIST | WS_VSCROLL,
 		// No size yet--resize after setting image list.
 		40,      // Vertical position of Combobox
 		35,      // Horizontal position of Combobox
 		50,      // Sets the width of Combobox
-		1000,    // Sets the height of Combobox
+		200,    // Sets the height of Combobox
 		playerOneWindow,
 		NULL,
 		hInstance,
@@ -268,16 +268,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	HWND playerTwoUnitTypeComboBox;
 	playerTwoUnitTypeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
 		WS_BORDER | WS_VISIBLE |
-		WS_CHILD | CBS_DROPDOWNLIST,
+		WS_CHILD | CBS_DROPDOWNLIST |WS_VSCROLL,
 		// No size yet--resize after setting image list.
 		40,      // Vertical position of Combobox
 		5,      // Horizontal position of Combobox
 		120,      // Sets the width of Combobox
-		1000,    // Sets the height of Combobox
+		400,    // Sets the height of Combobox
 		playerTwoWindow,
 		NULL,
 		hInstance,
 		NULL);
+
+	
 
 
 	SendMessage(playerTwoUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Blood Letter");
@@ -287,6 +289,28 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	SendMessage(playerTwoUnitTypeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
 
+	HWND playerTwoSizeComboBox;
+	playerTwoSizeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
+		WS_BORDER | WS_VISIBLE |
+		WS_CHILD | CBS_DROPDOWNLIST | WS_VSCROLL,
+		// No size yet--resize after setting image list.
+		40,      // Vertical position of Combobox
+		35,      // Horizontal position of Combobox
+		50,      // Sets the width of Combobox
+		200,    // Sets the height of Combobox
+		playerTwoWindow,
+		NULL,
+		hInstance,
+		NULL);
+
+	for (int size = 1; size <= 30; size++)
+	{
+		char buffer[10];
+		sprintf(buffer, "%d", size);
+		SendMessage(playerTwoSizeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)buffer);
+	}
+
+	SendMessage(playerTwoSizeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
 	/*
 	HWND playerOneContainer;
 	playerOneContainer = CreateWindowEx(WS_EX_CLIENTEDGE, "Window", "Player One", WS_VISIBLE | WS_CHILD, 10, 10, 100, 100, mainWindow, NULL, hInstance, NULL);
