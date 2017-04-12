@@ -1,6 +1,7 @@
 #include <windows.h>
 #include "WarhammerBattleGUI.h"
 #include "WindowComponents.h"
+#include "UnitCollection.h"
 //
 //const char g_szClassName[] = "myWindowClass";
 //
@@ -112,10 +113,10 @@ LRESULT CALLBACK PlayerWindowProcessor(HWND eventHandler, UINT msg, WPARAM wPara
 		}
 		TextOut(hdc, 10, 10, "Unit: ", 6);
 		TextOut(hdc, 10, 40, "Size: ", 6);
-		TextOut(hdc, 10, 60,  "WS: ", 4);
-		TextOut(hdc, 10, 80,  "BS: ", 4);
-		TextOut(hdc, 10, 100,  "Strength: ", 10);
-		TextOut(hdc, 10, 120,  "Toughness: ", 11);
+		TextOut(hdc, 10, 60, "WS: ", 4);
+		TextOut(hdc, 10, 80, "BS: ", 4);
+		TextOut(hdc, 10, 100, "Strength: ", 10);
+		TextOut(hdc, 10, 120, "Toughness: ", 11);
 		TextOut(hdc, 10, 140, "Attacks: ", 9);
 		TextOut(hdc, 10, 160, "Wounds: ", 8);
 		TextOut(hdc, 10, 180, "Initiative: ", 12);
@@ -129,15 +130,23 @@ LRESULT CALLBACK PlayerWindowProcessor(HWND eventHandler, UINT msg, WPARAM wPara
 	return 0;
 }
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
-	LPSTR lpCmdLine, int nCmdShow)
+WNDCLASSEX RegisterWindowsClass(WNDPROC eventHandler, const char* name, HINSTANCE hInstance)
 {
 	WNDCLASSEX genericWindow = WindowComponents::MakeWindowDefinition(MainWindowProcessor, "genericWindow", hInstance);
 
 	if (!RegisterClassEx(&genericWindow))
 	{
-		MessageBox(NULL, "Could not make a generic window", "Error in caption", MB_ICONEXCLAMATION | MB_OK);
+		MessageBox(NULL, "Failed to register a window", "Register class error", MB_ICONEXCLAMATION | MB_OK);
 	}
+
+	return genericWindow;
+}
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+	LPSTR lpCmdLine, int nCmdShow)
+{
+	UnitClasses::UnitCollection unitsAvalibleForBattle("..\\WarhammerBattleGenerator\\bin\\Debug\\units.xml");
+	WNDCLASSEX genericWindow = RegisterWindowsClass(MainWindowProcessor, "genericWindow", hInstance);
 
 	HWND mainWindow = WindowComponents::GenerateWindow("genericWindow", "Warhammer Battle", NULL, hInstance, 900, 500);
 
@@ -166,15 +175,21 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	HWND playerOneUnitTypeComboBox = WindowComponents::GenerateComboBox(playerOneWindow, hInstance, 40, 5, 120, 1000);
 
-	
+
+
+
+	HWND playerOneSizeComboBox = WindowComponents::GenerataScrollableComboBox(playerOneWindow, hInstance, 40, 35, 50, 200);
+
+
+	HWND playerTwoWindow = WindowComponents::GeneratePlayerWindow(mainWindow, hInstance, 600, 50);
+
+
 	SendMessage(playerOneUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Blood Letter");
 	SendMessage(playerOneUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Deamonette");
 	SendMessage(playerOneUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Plauge bearer");
 	SendMessage(playerOneUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Pink Horror");
-	
-	SendMessage(playerOneUnitTypeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
 
-	HWND playerOneSizeComboBox = WindowComponents::GenerataScrollableComboBox(playerOneWindow, hInstance, 40, 35, 50, 200);
+	SendMessage(playerOneUnitTypeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
 
 	for (int size = 1; size <= 30; size++)
 	{
@@ -183,9 +198,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		SendMessage(playerOneSizeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)buffer);
 	}
 
-	SendMessage(playerOneSizeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
 
-	HWND playerTwoWindow = WindowComponents::GeneratePlayerWindow(mainWindow, hInstance, 600, 50);
+	SendMessage(playerOneSizeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
 
 	if (playerTwoWindow == NULL)
 	{
@@ -194,7 +208,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		return 0;
 	}
 
-	HWND playerTwoUnitTypeComboBox = WindowComponents::GenerateComboBox(playerTwoWindow, hInstance, 40, 5, 120, 400);	
+	HWND playerTwoUnitTypeComboBox = WindowComponents::GenerateComboBox(playerTwoWindow, hInstance, 40, 5, 120, 400);
 
 
 	SendMessage(playerTwoUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Blood Letter");
