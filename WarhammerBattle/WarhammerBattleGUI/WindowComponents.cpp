@@ -24,8 +24,8 @@ namespace WindowComponents
 
 	HWND  GenerateWindow(const char* windowClass, const char* windowTitle, HWND parentWindow, HINSTANCE parentInstance, int width, int heigth)
 	{
-		HWND mainWindow;
-		mainWindow = CreateWindowEx(
+		HWND window;
+		window = CreateWindowEx(
 			WS_EX_CLIENTEDGE,
 			"genericWindow",
 			"Warhammer Battle",
@@ -33,13 +33,13 @@ namespace WindowComponents
 			CW_USEDEFAULT, CW_USEDEFAULT, width, heigth,
 			parentWindow, NULL, parentInstance, NULL);
 
-		return mainWindow;
+		return window;
 	}
 
 	HWND GeneratePlayerWindow(HWND parentWindow, HINSTANCE parentInstance, int xPosition, int yPosition)
 	{
-		HWND playerOneWindow;
-		playerOneWindow = CreateWindowEx(
+		HWND window;
+		window = CreateWindowEx(
 			WS_EX_CLIENTEDGE,
 			"playerWindow",
 			"Player One",
@@ -47,28 +47,28 @@ namespace WindowComponents
 			xPosition, yPosition, 250, 300,
 			parentWindow, NULL, parentInstance, NULL);
 
-		return playerOneWindow;
+		return window;
 	}
 
 	HWND GenerateComboBox(HWND parentWindow, HINSTANCE parentInstance, int xPosition, int yPosition, int width, int heigth)
 	{
-		HWND playerOneUnitTypeComboBox;
-		playerOneUnitTypeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
+		HWND comboBox;
+		comboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
 			WS_BORDER | WS_VISIBLE |
 			WS_CHILD | CBS_DROPDOWNLIST,
 			xPosition, yPosition, width, heigth, parentWindow, NULL, parentInstance, NULL);
 
-		return playerOneUnitTypeComboBox;
+		return comboBox;
 	}
 
 	HWND GenerataScrollableComboBox(HWND parentWindow, HINSTANCE parentInstance, int xPosition, int yPosition, int width, int height)
 	{
-		HWND playerOneUnitTypeComboBox;
-		playerOneUnitTypeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
+		HWND comboBox;
+		comboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
 			WS_BORDER | WS_VISIBLE |
 			WS_CHILD | CBS_DROPDOWNLIST | WS_VSCROLL,
 			xPosition, yPosition, width, height, parentWindow, NULL, parentInstance, NULL);
 
-		return playerOneUnitTypeComboBox;
+		return comboBox;
 	}
 }
