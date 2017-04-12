@@ -110,18 +110,16 @@ LRESULT CALLBACK PlayerWindowProcessor(HWND eventHandler, UINT msg, WPARAM wPara
 		{
 			MessageBox(eventHandler, "Error with BeginPaint", "Caption", MB_ICONEXCLAMATION | MB_OK);
 		}
-		TextOut(hdc, 10, 10, "Unit", 4);
-		TextOut(hdc, 10, 40, "Size", 4);
-		/*
-		TextOut(hdc, 10, 55,  "        WS: ", 12);
-		TextOut(hdc, 10, 75,  "        BS: ", 12);
-		TextOut(hdc, 10, 95,  "  Strength: ", 12);
-		TextOut(hdc, 10, 115,  " Toughness: ", 12);
-		TextOut(hdc, 10, 125, "   Attacks: ", 12);
-		TextOut(hdc, 10, 145, "    Wounds: ", 12);
-		TextOut(hdc, 10, 165, "Initiative: ", 12);
-		TextOut(hdc, 10, 185, "Leadership: ", 12);
-		*/
+		TextOut(hdc, 10, 10, "Unit: ", 6);
+		TextOut(hdc, 10, 40, "Size: ", 6);
+		TextOut(hdc, 10, 60,  "WS: ", 4);
+		TextOut(hdc, 10, 80,  "BS: ", 4);
+		TextOut(hdc, 10, 100,  "Strength: ", 10);
+		TextOut(hdc, 10, 120,  "Toughness: ", 11);
+		TextOut(hdc, 10, 140, "Attacks: ", 9);
+		TextOut(hdc, 10, 160, "Wounds: ", 8);
+		TextOut(hdc, 10, 180, "Initiative: ", 12);
+		TextOut(hdc, 10, 200, "Leadership: ", 12);
 		EndPaint(eventHandler, &pc);
 		break;
 	default:
