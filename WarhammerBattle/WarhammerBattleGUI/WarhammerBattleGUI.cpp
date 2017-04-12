@@ -1,5 +1,6 @@
 #include <windows.h>
 #include "WarhammerBattleGUI.h"
+#include "WindowComponents.h"
 //
 //const char g_szClassName[] = "myWindowClass";
 //
@@ -133,35 +134,38 @@ LRESULT CALLBACK PlayerWindowProcessor(HWND eventHandler, UINT msg, WPARAM wPara
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	LPSTR lpCmdLine, int nCmdShow)
 {
-	WNDCLASSEX genericWindow;
+	//WNDCLASSEX genericWindow;
 
-	genericWindow.cbSize = sizeof(WNDCLASSEX);
-	genericWindow.style = 0;
-	genericWindow.lpfnWndProc = MainWindowProcessor;
-	genericWindow.cbClsExtra = 0;
-	genericWindow.cbWndExtra = 0;
-	genericWindow.hInstance = hInstance;
-	genericWindow.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-	genericWindow.hCursor = LoadCursor(NULL, IDC_ARROW);
-	genericWindow.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
-	genericWindow.lpszMenuName = NULL;
-	genericWindow.lpszClassName = "genericWindow";
-	genericWindow.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
+	//genericWindow.cbSize = sizeof(WNDCLASSEX);
+	//genericWindow.style = 0;
+	//genericWindow.lpfnWndProc = MainWindowProcessor;
+	//genericWindow.cbClsExtra = 0;
+	//genericWindow.cbWndExtra = 0;
+	//genericWindow.hInstance = hInstance;
+	//genericWindow.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+	//genericWindow.hCursor = LoadCursor(NULL, IDC_ARROW);
+	//genericWindow.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+	//genericWindow.lpszMenuName = NULL;
+	//genericWindow.lpszClassName = "genericWindow";
+	//genericWindow.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
 
+	WNDCLASSEX genericWindow = WindowComponents::MakeWindowDefinition(MainWindowProcessor, "genericWindow", hInstance);
 
 	if (!RegisterClassEx(&genericWindow))
 	{
 		MessageBox(NULL, "Could not make a generic window", "Error in caption", MB_ICONEXCLAMATION | MB_OK);
 	}
 
-	HWND mainWindow;
-	mainWindow = CreateWindowEx(
-		WS_EX_CLIENTEDGE,
-		"genericWindow",
-		"Warhammer Battle",
-		WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, CW_USEDEFAULT, 900, 500,
-		NULL, NULL, hInstance, NULL);
+	HWND mainWindow = WindowComponents::GenerateWindow("genericWindow", "Warhammer Battle", NULL, hInstance, 900, 500);
+
+	//HWND mainWindow;
+	//mainWindow = CreateWindowEx(
+	//	WS_EX_CLIENTEDGE,
+	//	"genericWindow",
+	//	"Warhammer Battle",
+	//	WS_OVERLAPPEDWINDOW,
+	//	CW_USEDEFAULT, CW_USEDEFAULT, 900, 500,
+	//	NULL, NULL, hInstance, NULL);
 
 	if (mainWindow == NULL)
 	{
@@ -170,33 +174,36 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		return 0;
 	}
 
-	WNDCLASSEX playerWindow;
-	playerWindow.cbSize = sizeof(WNDCLASSEX);
-	playerWindow.style = 0;
-	playerWindow.lpfnWndProc = PlayerWindowProcessor;
-	playerWindow.cbClsExtra = 0;
-	playerWindow.cbWndExtra = 0;
-	playerWindow.hInstance = hInstance;
-	playerWindow.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-	playerWindow.hCursor = LoadCursor(NULL, IDC_ARROW);
-	playerWindow.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
-	playerWindow.lpszMenuName = NULL;
-	playerWindow.lpszClassName = "playerWindow";
-	playerWindow.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
+	WNDCLASSEX playerWindowDefinition = WindowComponents::MakeWindowDefinition(PlayerWindowProcessor, "playerWindow", hInstance);
 
-	if (!RegisterClassEx(&playerWindow))
+	//WNDCLASSEX playerWindow;
+	//playerWindow.cbSize = sizeof(WNDCLASSEX);
+	//playerWindow.style = 0;
+	//playerWindow.lpfnWndProc = PlayerWindowProcessor;
+	//playerWindow.cbClsExtra = 0;
+	//playerWindow.cbWndExtra = 0;
+	//playerWindow.hInstance = hInstance;
+	//playerWindow.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+	//playerWindow.hCursor = LoadCursor(NULL, IDC_ARROW);
+	//playerWindow.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+	//playerWindow.lpszMenuName = NULL;
+	//playerWindow.lpszClassName = "playerWindow";
+	//playerWindow.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
+
+	if (!RegisterClassEx(&playerWindowDefinition))
 	{
 		MessageBox(NULL, "Could not make a player window", "Error in caption", MB_ICONEXCLAMATION | MB_OK);
 	}
 
-	HWND playerOneWindow;
-	playerOneWindow = CreateWindowEx(
-		WS_EX_CLIENTEDGE,
-		"playerWindow",
-		"Player One",
-		WS_CHILD | WS_VISIBLE | WS_CAPTION,
-		50, 50, 250, 300,
-		mainWindow, NULL, hInstance, NULL);
+	HWND playerOneWindow = WindowComponents::GeneratePlayerWindow(mainWindow, hInstance, 50, 50);
+	//HWND playerOneWindow;
+	//playerOneWindow = CreateWindowEx(
+	//	WS_EX_CLIENTEDGE,
+	//	"playerWindow",
+	//	"Player One",
+	//	WS_CHILD | WS_VISIBLE | WS_CAPTION,
+	//	50, 50, 250, 300,
+	//	mainWindow, NULL, hInstance, NULL);
 
 	if (playerOneWindow == NULL)
 	{
@@ -205,19 +212,21 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		return 0;
 	}
 
-	HWND playerOneUnitTypeComboBox;
-	playerOneUnitTypeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
-		WS_BORDER | WS_VISIBLE |
-		WS_CHILD | CBS_DROPDOWNLIST,
-		// No size yet--resize after setting image list.
-		40,      // Vertical position of Combobox
-		5,      // Horizontal position of Combobox
-		120,      // Sets the width of Combobox
-		1000,    // Sets the height of Combobox
-		playerOneWindow,
-		NULL,
-		hInstance,
-		NULL);
+	//HWND playerOneUnitTypeComboBox;
+	//playerOneUnitTypeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
+	//	WS_BORDER | WS_VISIBLE |
+	//	WS_CHILD | CBS_DROPDOWNLIST,
+	//	// No size yet--resize after setting image list.
+	//	40,      // Vertical position of Combobox
+	//	5,      // Horizontal position of Combobox
+	//	120,      // Sets the width of Combobox
+	//	1000,    // Sets the height of Combobox
+	//	playerOneWindow,
+	//	NULL,
+	//	hInstance,
+	//	NULL);
+
+	HWND playerOneUnitTypeComboBox = WindowComponents::GenerateComboBox(playerOneWindow, hInstance, 40, 5, 120, 1000);
 
 	
 	SendMessage(playerOneUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Blood Letter");
@@ -227,19 +236,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	
 	SendMessage(playerOneUnitTypeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
 
-	HWND playerOneSizeComboBox;
-	playerOneSizeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
-		WS_BORDER | WS_VISIBLE |
-		WS_CHILD | CBS_DROPDOWNLIST | WS_VSCROLL,
-		// No size yet--resize after setting image list.
-		40,      // Vertical position of Combobox
-		35,      // Horizontal position of Combobox
-		50,      // Sets the width of Combobox
-		200,    // Sets the height of Combobox
-		playerOneWindow,
-		NULL,
-		hInstance,
-		NULL);
+	HWND playerOneSizeComboBox = WindowComponents::GenerataScrollableComboBox(playerOneWindow, hInstance, 40, 35, 50, 200);
+	//playerOneSizeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
+	//	WS_BORDER | WS_VISIBLE |
+	//	WS_CHILD | CBS_DROPDOWNLIST | WS_VSCROLL,
+	//	// No size yet--resize after setting image list.
+	//	40,      // Vertical position of Combobox
+	//	35,      // Horizontal position of Combobox
+	//	50,      // Sets the width of Combobox
+	//	200,    // Sets the height of Combobox
+	//	playerOneWindow,
+	//	NULL,
+	//	hInstance,
+	//	NULL);
 
 	for (int size = 1; size <= 30; size++)
 	{
@@ -250,13 +259,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	SendMessage(playerOneSizeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
 
-	HWND playerTwoWindow;
-	playerTwoWindow = CreateWindowEx(WS_EX_CLIENTEDGE,
-		"playerWindow",
-		"Player Two",
-		WS_CHILD | WS_VISIBLE | WS_CAPTION,
-		600, 50, 250, 300,
-		mainWindow, NULL, hInstance, NULL);
+	HWND playerTwoWindow = WindowComponents::GeneratePlayerWindow(mainWindow, hInstance, 600, 50);
+	//HWND playerTwoWindow;
+	//playerTwoWindow = CreateWindowEx(WS_EX_CLIENTEDGE,
+	//	"playerWindow",
+	//	"Player Two",
+	//	WS_CHILD | WS_VISIBLE | WS_CAPTION,
+	//	600, 50, 250, 300,
+	//	mainWindow, NULL, hInstance, NULL);
 
 	if (playerTwoWindow == NULL)
 	{
@@ -265,19 +275,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		return 0;
 	}
 
-	HWND playerTwoUnitTypeComboBox;
-	playerTwoUnitTypeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
-		WS_BORDER | WS_VISIBLE |
-		WS_CHILD | CBS_DROPDOWNLIST |WS_VSCROLL,
-		// No size yet--resize after setting image list.
-		40,      // Vertical position of Combobox
-		5,      // Horizontal position of Combobox
-		120,      // Sets the width of Combobox
-		400,    // Sets the height of Combobox
-		playerTwoWindow,
-		NULL,
-		hInstance,
-		NULL);
+	HWND playerTwoUnitTypeComboBox = WindowComponents::GenerateComboBox(playerTwoWindow, hInstance, 40, 5, 120, 400);
+	//playerTwoUnitTypeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
+	//	WS_BORDER | WS_VISIBLE |
+	//	WS_CHILD | CBS_DROPDOWNLIST |WS_VSCROLL,
+	//	// No size yet--resize after setting image list.
+	//	40,      // Vertical position of Combobox
+	//	5,      // Horizontal position of Combobox
+	//	120,      // Sets the width of Combobox
+	//	400,    // Sets the height of Combobox
+	//	playerTwoWindow,
+	//	NULL,
+	//	hInstance,
+	//	NULL);
 
 	
 
@@ -289,19 +299,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	SendMessage(playerTwoUnitTypeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
 
-	HWND playerTwoSizeComboBox;
-	playerTwoSizeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
-		WS_BORDER | WS_VISIBLE |
-		WS_CHILD | CBS_DROPDOWNLIST | WS_VSCROLL,
-		// No size yet--resize after setting image list.
-		40,      // Vertical position of Combobox
-		35,      // Horizontal position of Combobox
-		50,      // Sets the width of Combobox
-		200,    // Sets the height of Combobox
-		playerTwoWindow,
-		NULL,
-		hInstance,
-		NULL);
+	HWND playerTwoSizeComboBox = WindowComponents::GenerataScrollableComboBox(playerTwoWindow, hInstance, 40, 35, 50, 200);
+	//playerTwoSizeComboBox = CreateWindowEx(WS_EX_CLIENTEDGE, "ComboBox", NULL,
+	//	WS_BORDER | WS_VISIBLE |
+	//	WS_CHILD | CBS_DROPDOWNLIST | WS_VSCROLL,
+	//	// No size yet--resize after setting image list.
+	//	40,      // Vertical position of Combobox
+	//	35,      // Horizontal position of Combobox
+	//	50,      // Sets the width of Combobox
+	//	200,    // Sets the height of Combobox
+	//	playerTwoWindow,
+	//	NULL,
+	//	hInstance,
+	//	NULL);
 
 	for (int size = 1; size <= 30; size++)
 	{

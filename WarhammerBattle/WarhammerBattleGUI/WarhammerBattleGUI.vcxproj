@@ -143,9 +143,11 @@
   <ItemGroup>
     <ClInclude Include="resource.h" />
     <ClInclude Include="WarhammerBattleGUI.h" />
+    <ClInclude Include="WindowComponents.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WarhammerBattleGUI.cpp" />
+    <ClCompile Include="WindowComponents.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="icon1.ico" />
