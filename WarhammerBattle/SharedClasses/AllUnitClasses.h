@@ -5,6 +5,7 @@
 #include "Unit.h"
 #include "Squad.h"
 #include "UnitCollection.h"
+#include "UnitFactory.h"
 
 namespace UnitClasses
 {

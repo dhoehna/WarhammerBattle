@@ -7,18 +7,22 @@
 #include <string>
 #include <map>
 
-
-class UnitFactory
+namespace UnitClasses
 {
-public:
-	UnitFactory(const char* fileLocation);
-	~UnitFactory();
+	class UnitFactory
+	{
+	public:
+		UnitFactory(const char* fileLocation);
+		~UnitFactory();
 
-	UnitClasses::Unit* CreateUnit(std::string unitName);
+		UnitClasses::Unit* CreateUnit(std::string unitName);
 
-private:
-	std::map<std::string, UnitClasses::Unit*> units;
-	void Add(std::string name, std::string unitType, UnitClasses::Stats* stats);
-};
+		void GetUnitNames(const char *names[100]);
+
+	private:
+		std::map<std::string, UnitClasses::Unit*> units;
+		void Add(std::string name, std::string unitType, UnitClasses::Stats* stats);
+	};
+}
 
 #endif

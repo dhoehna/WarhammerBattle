@@ -1,7 +1,7 @@
 #include <windows.h>
 #include "WarhammerBattleGUI.h"
 #include "WindowComponents.h"
-#include "UnitCollection.h"
+#include "UnitFactory.h"
 //
 //const char g_szClassName[] = "myWindowClass";
 //
@@ -130,67 +130,104 @@ LRESULT CALLBACK PlayerWindowProcessor(HWND eventHandler, UINT msg, WPARAM wPara
 	return 0;
 }
 
-WNDCLASSEX RegisterWindowsClass(WNDPROC eventHandler, const char* name, HINSTANCE hInstance)
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+	LPSTR lpCmdLine, int nCmdShow)
 {
+	//Load all units.
+	UnitClasses::UnitFactory unitsAvalibleForBattle("..\\WarhammerBattleGenerator\\bin\\Debug\\units.xml");
+
+	//Register the main window
 	WNDCLASSEX genericWindow = WindowComponents::MakeWindowDefinition(MainWindowProcessor, "genericWindow", hInstance);
 
 	if (!RegisterClassEx(&genericWindow))
 	{
-		MessageBox(NULL, "Failed to register a window", "Register class error", MB_ICONEXCLAMATION | MB_OK);
+		MessageBox(NULL, "Failed to register the main window", "Register class error", MB_ICONEXCLAMATION | MB_OK);
 	}
 
-	return genericWindow;
-}
-
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
-	LPSTR lpCmdLine, int nCmdShow)
-{
-	UnitClasses::UnitCollection unitsAvalibleForBattle("..\\WarhammerBattleGenerator\\bin\\Debug\\units.xml");
-	WNDCLASSEX genericWindow = RegisterWindowsClass(MainWindowProcessor, "genericWindow", hInstance);
-
+	//Load the main window.
 	HWND mainWindow = WindowComponents::GenerateWindow("genericWindow", "Warhammer Battle", NULL, hInstance, 900, 500);
 
 	if (mainWindow == NULL)
 	{
-		MessageBox(NULL, "Window Creation Failed!", "Error!",
+		MessageBox(NULL, "Window Creation Failed for the main window", "Error!",
 			MB_ICONEXCLAMATION | MB_OK);
 		return 0;
 	}
 
+	//Register the window types for the players.
 	WNDCLASSEX playerWindowDefinition = WindowComponents::MakeWindowDefinition(PlayerWindowProcessor, "playerWindow", hInstance);
 
 	if (!RegisterClassEx(&playerWindowDefinition))
 	{
-		MessageBox(NULL, "Could not make a player window", "Error in caption", MB_ICONEXCLAMATION | MB_OK);
+		MessageBox(NULL, "Failed to register the player window class", "Error in caption", MB_ICONEXCLAMATION | MB_OK);
 	}
 
+	//LOad the window for player one.
 	HWND playerOneWindow = WindowComponents::GeneratePlayerWindow(mainWindow, hInstance, 50, 50);
 
 	if (playerOneWindow == NULL)
 	{
-		MessageBox(NULL, "Window Creation Failed!", "Error!",
+		MessageBox(NULL, "Window Creation Failed for the player One window", "Error!",
 			MB_ICONEXCLAMATION | MB_OK);
 		return 0;
 	}
 
+	//Load the window for player two.
+	HWND playerTwoWindow = WindowComponents::GeneratePlayerWindow(mainWindow, hInstance, 600, 50);
+
+	if (playerTwoWindow == NULL)
+	{
+		MessageBox(NULL, "Window Creation Failed for the player two window", "Error!",
+			MB_ICONEXCLAMATION | MB_OK);
+		return 0;
+	}
+
+	HWND playerTwoUnitTypeComboBox = WindowComponents::GenerateComboBox(playerTwoWindow, hInstance, 40, 5, 120, 400);
+	if (playerTwoWindow == NULL)
+	{
+		MessageBox(NULL, "Window Creation Failed for the player two unit type combo box", "Error!",
+			MB_ICONEXCLAMATION | MB_OK);
+		return 0;
+	}
+
+	//Load the combo box that holds all units the player can choose from
 	HWND playerOneUnitTypeComboBox = WindowComponents::GenerateComboBox(playerOneWindow, hInstance, 40, 5, 120, 1000);
 
-
+	if (playerOneUnitTypeComboBox == NULL)
+	{
+		MessageBox(NULL, "Window Creation Failed for the player one unit type combo box.", "Error!",
+			MB_ICONEXCLAMATION | MB_OK);
+		return 0;
+	}
 
 
 	HWND playerOneSizeComboBox = WindowComponents::GenerataScrollableComboBox(playerOneWindow, hInstance, 40, 35, 50, 200);
 
+	if (playerOneSizeComboBox == NULL)
+	{
+		MessageBox(NULL, "Window Creation Failed for the player one unit size combo box.", "Error!",
+			MB_ICONEXCLAMATION | MB_OK);
+		return 0;
+	}
 
-	HWND playerTwoWindow = WindowComponents::GeneratePlayerWindow(mainWindow, hInstance, 600, 50);
+	HWND playerTwoSizeComboBox = WindowComponents::GenerataScrollableComboBox(playerTwoWindow, hInstance, 40, 35, 50, 200);
+	if (playerTwoSizeComboBox == NULL)
+	{
+		MessageBox(NULL, "Window Creation Failed for the player two unit size combo box.", "Error!",
+			MB_ICONEXCLAMATION | MB_OK);
+		return 0;
+	}
 
-
+	//Add the hard coded types in.
 	SendMessage(playerOneUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Blood Letter");
 	SendMessage(playerOneUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Deamonette");
 	SendMessage(playerOneUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Plauge bearer");
 	SendMessage(playerOneUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Pink Horror");
 
+	//Set the starting position for the combo box.
 	SendMessage(playerOneUnitTypeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
 
+	//Add the valid window sizes.
 	for (int size = 1; size <= 30; size++)
 	{
 		char buffer[10];
@@ -201,15 +238,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	SendMessage(playerOneSizeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
 
-	if (playerTwoWindow == NULL)
-	{
-		MessageBox(NULL, "Window Creation Failed!", "Error!",
-			MB_ICONEXCLAMATION | MB_OK);
-		return 0;
-	}
-
-	HWND playerTwoUnitTypeComboBox = WindowComponents::GenerateComboBox(playerTwoWindow, hInstance, 40, 5, 120, 400);
-
 
 	SendMessage(playerTwoUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Blood Letter");
 	SendMessage(playerTwoUnitTypeComboBox, (UINT)CB_ADDSTRING, (WPARAM)0, (LPARAM)"Deamonette");
@@ -218,7 +246,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 	SendMessage(playerTwoUnitTypeComboBox, CB_SETCURSEL, (WPARAM)0, (LPARAM)0);
 
-	HWND playerTwoSizeComboBox = WindowComponents::GenerataScrollableComboBox(playerTwoWindow, hInstance, 40, 35, 50, 200);
 
 	for (int size = 1; size <= 30; size++)
 	{
